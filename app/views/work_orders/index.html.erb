@@ -1,0 +1,24 @@
+<section id="work_orders">
+<h2>Ordens de Serviço</h2>
+<%= link_to 'Adicionar nova ordem de serviço', new_work_order_path %>
+
+<div>
+  <%= flash[:notice] %>
+</div>
+<div>
+<% @work_orders.each do |w| %>
+  <div>
+    <h3>Código: <%= w.code %> </h3>
+      <dl>
+        <dt>Endereço de saída: <%= w.pickup_address %></dt>
+        <dt>Endereço de entrega: <%= w.delivery_address%></dt>
+        <dt>Código do produto: <%= w.product_code %>
+        <dt>Status: <%= w.status%> </dt>
+      <dl>
+    </div>  
+<% end %>
+
+<% if @work_orders.empty? %>
+  <p> Não existem ordens de serviço cadastradas. </p>
+<% end %>
+
