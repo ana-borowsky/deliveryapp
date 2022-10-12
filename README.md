@@ -17,11 +17,16 @@ Commit 'Added work order':
 - adicionada view index para work order, que também será a root path
 - adicionado view new work order
 
-Commit 3:
+Commit 'Continue working on work orders':
 - criada view show de work order
 - criada edit view de work order
 - adicionadas algumas validações em work order
 - adicionado select no status de work order
+
+Commit 'Add devise and I18n':
+- devise instalado. Ainda não foi implementada a diferenciação entre user_admin e user.
+Inicialmente o projeto está sendo feito como o user_admin irá enxergá-lo.
+- implementado I18n
 
 
 

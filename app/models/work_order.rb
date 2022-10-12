@@ -5,7 +5,7 @@ class WorkOrder < ApplicationRecord
   validates :product_weight, numericality: { greater_than: 999 }
   validates :distance, numericality: { greater_than: 0 }
 
-  enum status: { pending:0, delivered:1, canceled:2, late:3 }
+  enum status: { pending:0, delivered:1, canceled:2, late:3, on_the_way:4 }
   before_validation :generate_code, on: :create
 
   def self.status_attributes_for_select

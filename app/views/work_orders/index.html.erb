@@ -13,7 +13,7 @@
         <dt>Endereço de saída: <%= w.pickup_address %></dt>
         <dt>Endereço de entrega: <%= w.delivery_address%></dt>
         <dt>Código do produto: <%= w.product_code %>
-        <dt>Status: <%= w.status%> </dt>
+        <dt>Status: <%= I18n.translate(w.status) %> </dt>
       <dl>
     </div>  
 <% end %>

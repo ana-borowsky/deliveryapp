@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <p>
+    <%= I18n.translate("hello") %>
+    </p>
+    <p>
+    <%= I18n.localize(Date.today) %>
+    </p>
     <title>Deliveryapp</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
@@ -12,7 +18,18 @@
   <h1>Sistema de Fretes</h1>
    <nav>
       <%= link_to 'Ordens de Serviço', root_path %> |
+      <% if user_signed_in? %>
+        <%= current_user.description %>
+        <br> <%= button_to 'Log out', destroy_user_session_path, method: :delete %>
+      <% else %>
+          <%= link_to 'Log in', new_user_session_path %>
+      <% end %>
   </header>
+  <main>
+    <%= alert %>
+    <%= notice %>
+
+  </main>
     <%= yield %>
   </body>
 </html>

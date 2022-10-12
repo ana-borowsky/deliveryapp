@@ -6,7 +6,7 @@
   <strong>Distância: </strong><%= @work_order.distance %>km<br>
   <strong>Peso do produto: </strong><%= @work_order.product_weight %>g<br>
   <strong>Código do produto: </strong><%= @work_order.product_code %> <br>
-  <strong>Status: </strong><%= @work_order.status %> <strong> <br>
+  <strong>Status: </strong><%= I18n.translate(@work_order.status) %> <strong> <br>
 </div>
 
 <%= link_to('Editar', edit_work_order_path(@work_order.id)) %><br><br>

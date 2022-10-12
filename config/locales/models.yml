@@ -1,0 +1,24 @@
+pt-BR:
+  pending: 'Pendente'
+  canceled: 'Cancelado'
+  delivered: 'Entregue'
+  on_the_way: 'Em transporte'
+  activerecord:
+    models:
+      work_order: 'Ordem de serviço'
+    attributes:
+      work_order:
+        pickup_address: 'Endereço de saída'
+        delivery_address: 'Endereço de entrega'
+        product_code: 'Código do produto'
+        product_weight: 'Peso do produto'
+        distance: 'Distância'
+        status: 'Status'
+        statuses:
+          canceled: 'Cancelado'
+          delivered: 'Entregue'
+          pending: 'Pendente'
+          late: 'Atrasado'
+          on_the_way: 'Em transporte'
+          
+
