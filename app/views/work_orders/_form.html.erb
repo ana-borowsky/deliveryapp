@@ -20,7 +20,11 @@
     <%= f.number_field :distance %>
   </div>
   <div>
-    <br><%= f.submit 'Criar' %>
+    <%= f.label :status %>
+    <%= f.select :status, WorkOrder.status_attributes_for_select %><br>
+  </div>
+  <div>
+    <br><%= f.submit 'Salvar' %>
   </div>
 
 <% end %>

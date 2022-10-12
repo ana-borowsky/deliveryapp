@@ -1,5 +1,5 @@
 class WorkOrdersController < ApplicationController
-  before_action :set_work_order, only:[:show]
+  before_action :set_work_order, only:[:show, :edit, :update]
 
   def index
     @work_orders = WorkOrder.all
@@ -19,10 +19,25 @@ class WorkOrdersController < ApplicationController
     end
   end
 
+  def show
+  end
+
+  def edit
+  end
+
+  def update
+    if @work_order.update(work_order_params)
+      redirect_to work_order_path(@work_order.id), notice: 'Ordem de serviço editada com sucesso!'
+    else
+      flash.now[:notice] = 'Não foi possível atualizar a ordem de serviço.'
+      render 'edit'
+    end
+  end
+
   private
 
   def work_order_params
-    params.require(:work_order).permit(:pickup_address, :delivery_address, :product_code, :product_weight, :distance)
+    params.require(:work_order).permit(:pickup_address, :delivery_address, :product_code, :product_weight, :distance, :status)
   end
   
   def set_work_order

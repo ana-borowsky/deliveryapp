@@ -24,17 +24,17 @@ describe 'Usuário cadastra nova ordem de serviço' do
     click_on 'Adicionar nova ordem de serviço'
     fill_in 'Endereço de saída:', with: 'Avenida das palmeiras, 1000'
     fill_in 'Endereço de entrega:', with: 'Rua dos eucaliptos, 213'
-    fill_in 'Código do produto:', with: 'NAHSG1237879'
+    fill_in 'Código do produto:', with: 'NAHSG12378'
     fill_in 'Peso do produto:', with: '100000'
     fill_in 'Distância:', with: '1000'
-    click_on 'Criar'
+    click_on 'Salvar'
 
     #assert
     expect(current_path).to eq root_path
     expect(page).to have_content 'Ordem de serviço cadastrada com sucesso!'
     expect(page).to have_content 'Avenida das palmeiras, 1000'
     expect(page).to have_content 'Rua dos eucaliptos, 213'
-    expect(page).to have_content 'NAHSG1237879'
+    expect(page).to have_content 'NAHSG12378'
     expect(page).to have_content 'Status: pending'
   end
 
