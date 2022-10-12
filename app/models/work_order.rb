@@ -4,6 +4,7 @@ class WorkOrder < ApplicationRecord
   validates :product_code, length: { is: 10 }
   validates :product_weight, numericality: { greater_than: 999 }
   validates :distance, numericality: { greater_than: 0 }
+  validates :distance, :product_weight, numericality: { only_integer: true }
 
   enum status: { pending:0, delivered:1, canceled:2, late:3, on_the_way:4 }
   before_validation :generate_code, on: :create

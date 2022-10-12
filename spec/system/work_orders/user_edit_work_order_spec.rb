@@ -3,9 +3,13 @@ require 'rails_helper'
 describe 'Usuário edita uma ordem de serviço' do
   it 'a partir da página de detalhes' do
     #arrange
+    user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema')
+
+
     work_order = WorkOrder.create!(pickup_address: 'Rua das Laranjeiras, 2000', delivery_address: 'Avenida dos Cáctos, 3000', 
                                   product_code: 'GHFJ123450', product_weight: 10000, distance: 100)
     #act
+    login_as(user)
     visit(root_path)
     click_on work_order.code
     click_on 'Editar'
@@ -20,9 +24,11 @@ describe 'Usuário edita uma ordem de serviço' do
 
   it 'com sucesso' do
     #arrange
+    user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema')
     work_order = WorkOrder.create!(pickup_address: 'Rua das Laranjeiras, 2000', delivery_address: 'Avenida dos Cáctos, 3000', 
                                   product_code: 'GHFJ123450', product_weight: 10000, distance: 100)
     #act
+    login_as(user)
     visit root_path
     click_on work_order.code
     click_on 'Editar'
@@ -30,7 +36,6 @@ describe 'Usuário edita uma ordem de serviço' do
     fill_in 'Peso do produto:', with: '1230'
     fill_in 'Distância:', with: '10000'
     click_on 'Salvar'
-    puts (page.body)
 
     #assert
     expect(page).to have_content 'Endereço de saída: Rua dos ipês amarelos, 345'
@@ -41,9 +46,11 @@ describe 'Usuário edita uma ordem de serviço' do
 
   it 'e mantém os campos obrigatórios' do
     #arrange
+    user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema')
     work_order = WorkOrder.create!(pickup_address: 'Rua das Laranjeiras, 2000', delivery_address: 'Avenida dos Cáctos, 3000', 
                                   product_code: 'GHFJ123450', product_weight: 10000, distance: 100)
     #act
+    login_as(user)
     visit root_path
     click_on work_order.code
     click_on 'Editar'

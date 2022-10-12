@@ -1,0 +1,26 @@
+<section id="shipping_types">
+<h2>Modalidades de Transporte</h2>
+<%= link_to 'Adicionar nova modalidade de transporte', new_shipping_type_path %>
+
+<div>
+  <%= flash[:notice] %>
+</div>
+<div>
+<% @shipping_types.each do |s| %>
+  <div>
+    <h3><%= link_to(w.name, shipping_type_path(s.id)) %> </h3>
+      <dl>
+        <dt>Distância mínima: <%= s.minimum_distance %></dt>
+        <dt>Distância máxima: <%= s.maximum_distance %>
+        <dt>Peso mínimo: <%= s.minimum_weight %>
+        <dt>Peso máximo: <%= s.maximum_weight %>
+        <dt>Taxa:<%= s.fee %>
+        <dt>Status: </dt>
+      <dl>
+    </div>  
+<% end %>
+
+<% if @shipping_types.empty? %>
+  <p> Não existem modalidades de serviço cadastradas. </p>
+<% end %>
+

@@ -3,8 +3,10 @@ require 'rails_helper'
 describe 'Usuário cadastra nova ordem de serviço' do
   it 'a partir da tela inicial' do
     #arrange
+    user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema')
     #act
-    visit(root_path)
+    login_as(user)
+    visit root_path
     click_on 'Ordens de Serviço'
     click_on 'Adicionar nova ordem de serviço'
     #assert
@@ -17,8 +19,10 @@ describe 'Usuário cadastra nova ordem de serviço' do
 
   it 'com sucesso' do
     #arrange
+    user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema')
    
     #act
+    login_as(user)
     visit root_path
     click_on 'Ordens de Serviço'
     click_on 'Adicionar nova ordem de serviço'
@@ -35,10 +39,8 @@ describe 'Usuário cadastra nova ordem de serviço' do
     expect(page).to have_content 'Avenida das palmeiras, 1000'
     expect(page).to have_content 'Rua dos eucaliptos, 213'
     expect(page).to have_content 'NAHSG12378'
-    expect(page).to have_content 'Status: pending'
+    expect(page).to have_content 'Status: Pendente'
   end
-
-
 end
 
 

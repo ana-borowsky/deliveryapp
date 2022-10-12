@@ -28,6 +28,10 @@ Commit 'Add devise and I18n':
 Inicialmente o projeto está sendo feito como o user_admin irá enxergá-lo.
 - implementado I18n
 
+Commit 'Add user authentication and shipping_type':
+- criado model shipping_type (modalidade de transporte)
+- adicionado bloqueio de usuário não autenticado
+- criada view index de modalidades de transporte
 
 
 

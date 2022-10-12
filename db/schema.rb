@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_12_135522) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_12_173303) do
+  create_table "shipping_types", force: :cascade do |t|
+    t.string "name"
+    t.integer "minimum_distance"
+    t.integer "maximum_distance"
+    t.integer "minimum_weight"
+    t.integer "maximum_weight"
+    t.integer "fee"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
