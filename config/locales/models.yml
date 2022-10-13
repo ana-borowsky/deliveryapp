@@ -6,6 +6,7 @@ pt-BR:
   activerecord:
     models:
       work_order: 'Ordem de serviço'
+      shipping_type: 'Modalidade de transporte'
     attributes:
       work_order:
         pickup_address: 'Endereço de saída'
@@ -20,5 +21,11 @@ pt-BR:
           pending: 'Pendente'
           late: 'Atrasado'
           on_the_way: 'Em transporte'
-          
+      shipping_type:
+        name: 'Nome'
+        minimum_distance: 'Disância mínima'
+        maximum_distance: 'Distância máxima'
+        minimum_weight: 'Peso mínimo'
+        maximum_weight: 'Peso máximo'
+        fee: 'Taxa'
 

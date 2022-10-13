@@ -14,7 +14,7 @@ class WorkOrdersController < ApplicationController
     if @work_order.save()
       redirect_to root_path, notice: 'Ordem de serviço cadastrada com sucesso!'
     else
-      flash.now[:notice] = 'Ordem de serviço NÃO cadastrada! Preencha todos os campos.'      
+      flash.now[:notice] = 'Ordem de serviço NÃO cadastrada!'      
       render 'new'
     end
   end

@@ -1,0 +1,30 @@
+<%= form_with(model: @shipping_type) do |f| %>
+  <div>
+    <%= f.label :name, 'Nome:' %>
+    <%= f.text_field :name %>
+  </div>
+    <div>
+    <%= f.label :minimum_distance, 'Distância mínima:' %>
+    <%= f.number_field :minimum_distance %>
+  </div>
+    <div>
+    <%= f.label :maximum_distance, 'Distância máxima:' %>
+    <%= f.number_field :maximum_distance %>
+  </div>
+    <div>
+    <%= f.label :minimum_weight, 'Peso mínimo:' %>
+    <%= f.number_field :minimum_weight %>
+  </div>
+    <div>
+    <%= f.label :maximum_weight, 'Peso máximo:' %>
+    <%= f.number_field :maximum_weight %>
+  </div>
+    <div>
+    <%= f.label :fee, 'Taxa:' %>
+    <%= f.number_field :fee %>
+  </div>
+  <div>
+    <br><%= f.submit 'Salvar' %>
+  </div>
+
+<% end %>

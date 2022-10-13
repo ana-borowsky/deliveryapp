@@ -33,6 +33,13 @@ Commit 'Add user authentication and shipping_type':
 - adicionado bloqueio de usuário não autenticado
 - criada view index de modalidades de transporte
 
+Commit 'work on shipping types'
+- adicionada view new de modalidades de transporte
+- adicionadas validações de modalidades de transporte
+- adicionado shipping types em I18n 
+- adicionada view show de modalidades de transporte
+- adicionada a view edit de modalidades de transporte
+
 
 
 
