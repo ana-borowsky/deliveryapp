@@ -1,0 +1,18 @@
+<section id="vehicles">
+<h2>Veículos</h2>
+<%= link_to 'Adicionar novo veículo', new_vehicle_path %>
+<div>
+<% @vehicles.each do |v| %>
+  <div>
+    <h3><%= v.manufacturer %> <%= v.model %> <%= link_to(v.license_plate, vehicle_path(v.id)) %> </h3>
+      <dl>
+        <dt>Condição:</dt>
+        <dt>Status:</dt>
+      <dl>
+    </div>  
+<% end %>
+
+<% if @vehicles.empty? %>
+  <p> Não existem veículos cadastrados. </p>
+<% end %>
+

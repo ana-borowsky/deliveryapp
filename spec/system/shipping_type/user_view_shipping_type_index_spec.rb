@@ -38,7 +38,7 @@ describe 'Usuário vê a página de modalidades de transporte' do
     expect(page).to have_content 'Taxa: 1000'   
   end
 
-  it 'e verifica que não há galpões cadastrados no momento' do
+  it 'e verifica que não há modalidades de transporte cadastradas no momento' do
     # Arrange
     user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema')
     # Act

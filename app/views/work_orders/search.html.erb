@@ -1,0 +1,6 @@
+<h2>Resultado da busca por: <%= @code %></h2>
+<p><%= @shipping_types.count %> <%= ShippingType.model_name.human(count: @shipping_types.count).downcase %> <%= I18n.translate(:found, count: @shipping_types.count).downcase %></p>
+
+<% @shipping_types.each do |s| %>
+  <%= render s %>
+<% end %>

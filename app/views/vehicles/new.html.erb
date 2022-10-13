@@ -1,0 +1,12 @@
+<% if(@vehicle.errors.any?) %>
+  <p>Verifique os erros abaixo:</p>
+  <ul>
+    <% @vehicle.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+<h2>Novo veículo</h2>
+<%= render 'form' %><br>
+<%= link_to 'Voltar', vehicles_path %>
+

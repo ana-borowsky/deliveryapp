@@ -40,6 +40,23 @@ Commit 'work on shipping types'
 - adicionada view show de modalidades de transporte
 - adicionada a view edit de modalidades de transporte
 
+Commit 'Add search for work orders, add vehicles'
+- Adicionada busca para as ordens de serviço
+- adicionada view search para busca das ordens de serviço
+- criado model de veículos
+- criada view index de veículos
+- criada view show de veículos
+- criada view edit de veículos
+- criada view new de veículos
+
+
+Próximas tarefas:
+consertar a busca
+adicionar status as modalidades de transporte
+adicionar status e condição a veículos
+adicionar distâncias de atuação dos veiculos
+adicionar template busca de ordem de servico
+modificar a aparencia dos preços e pesos para reais e kg
 
 
 

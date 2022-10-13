@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'Usuário edita uma modalidade de serviço' do
+describe 'Usuário edita uma modalidade de transporte' do
   it 'a partir da página de detalhes' do
     #Arrange
     user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema')

@@ -1,0 +1,27 @@
+<%= form_with(model: @vehicle) do |f| %>
+  <div>
+    <%= f.label :license_plate, 'Placa:' %>
+    <%= f.text_field :license_plate %>
+  </div>
+    <div>
+    <%= f.label :manufacturer, 'Fabricante:' %>
+    <%= f.text_field :manufacturer %>
+  </div>
+    <div>
+    <%= f.label :model, 'Modelo:' %>
+    <%= f.text_field :model %>
+  </div>
+    <div>
+    <%= f.label :year, 'Ano de fabricação:' %>
+    <%= f.text_field :year %>
+  </div>
+  <div>
+    <%= f.label :load_capacity, 'Capacidade de carga:' %>
+    <%= f.number_field :load_capacity %>
+  </div>
+
+  <div>
+    <br><%= f.submit 'Salvar' %>
+  </div>
+
+<% end %>

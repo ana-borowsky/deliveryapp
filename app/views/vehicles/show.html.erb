@@ -1,0 +1,11 @@
+<h2>Veículo: <%= @vehicle.manufacturer %> <%= @vehicle.model %> - <%= @vehicle.license_plate %> </h2>
+<div>
+  <strong>Ano de fabricação: </strong><%= @vehicle.year %><br>
+  <strong>Capacidade de carga: </strong><%= @vehicle.load_capacity %>g<br>
+  <strong>Condição: </strong><br>
+  <strong>Status: </strong><br>
+ 
+</div>
+
+<%= link_to('Editar', edit_vehicle_path(@vehicle.id)) %><br><br>
+<%= link_to('Voltar', vehicles_path) %>
