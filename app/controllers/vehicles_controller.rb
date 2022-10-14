@@ -34,10 +34,15 @@ class VehiclesController < ApplicationController
     end
   end
 
+  def search
+    @code = params['query']
+    @vehicles = Vehicle.where("license_plate LIKE ?", "%#{@code}%")
+  end
+
   private
 
   def vehicle_params
-    params.require(:vehicle).permit(:year, :manufacturer, :model, :load_capacity, :license_plate)
+    params.require(:vehicle).permit(:year, :manufacturer, :model, :load_capacity, :license_plate, :maintenance, :available)
   end
   
   def set_vehicle

@@ -7,6 +7,7 @@ pt-BR:
     models:
       work_order: 'Ordem de serviço'
       shipping_type: 'Modalidade de transporte'
+      vehicle: 'Veículo'
     attributes:
       work_order:
         pickup_address: 'Endereço de saída'
@@ -15,6 +16,7 @@ pt-BR:
         product_weight: 'Peso do produto'
         distance: 'Distância'
         status: 'Status'
+        code: 'Código'
         statuses:
           canceled: 'Cancelado'
           delivered: 'Entregue'
@@ -28,4 +30,12 @@ pt-BR:
         minimum_weight: 'Peso mínimo'
         maximum_weight: 'Peso máximo'
         fee: 'Taxa'
+      vehicle:
+        year: 'Ano de fabricação'
+        model: 'Modelo'
+        manufacturer: 'Fabricante'
+        license_plate: 'Placa'
+        load_capacity: 'Capacidade de carga'
+        maintenance: 'Condição'
+        available: 'Disponível'
 

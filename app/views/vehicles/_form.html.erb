@@ -19,9 +19,12 @@
     <%= f.label :load_capacity, 'Capacidade de carga:' %>
     <%= f.number_field :load_capacity %>
   </div>
+    <%= f.label :maintenance, 'Em manutenção' %>
+    <%= f.check_box :maintenance %>
+  <div>
+  </div>
 
   <div>
     <br><%= f.submit 'Salvar' %>
   </div>
-
 <% end %>

@@ -2,7 +2,7 @@
 
 O planejamento para o projeto encontra-se em um PDF dentro da pasta DOCS.
 
-A cada commit, uma lista das atividades que foram realizadas sera descrita neste README.
+A cada commit, uma lista das atividades que foram realizadas será descrita neste README.
 
 Commit 'initial': 
 - projeto criado, 
@@ -49,14 +49,20 @@ Commit 'Add search for work orders, add vehicles'
 - criada view edit de veículos
 - criada view new de veículos
 
+Commit 'Add missing attributes, work on search for work order and vehicles'
+- adicionado status a modalidade de transporte
+- adicionado condição a veículo
+- adicionado status a veículo
+- busca da ordem de serviço consertada
+- adicionado template de busca da ordem de servico
+- adicionada busca por veículos
+- adicionado template de busca por veículos
+
 
 Próximas tarefas:
-consertar a busca
-adicionar status as modalidades de transporte
-adicionar status e condição a veículos
-adicionar distâncias de atuação dos veiculos
-adicionar template busca de ordem de servico
+adicionar distâncias de atuação dos veiculos?
 modificar a aparencia dos preços e pesos para reais e kg
+arrumar erros no teste de busca de veículos, e na página de busca
 
 
 

@@ -1,0 +1,7 @@
+<h3><%= @vehicles.human_attribute_name(:manufacturer) %> <%= vehicle.model %> <%= link_to(vehicle.license_plate, vehicle_path(vehicle.id)) %></h3>
+<dl>
+  <dt><%= @vehicles.human_attribute_name(:year) %>: <%= vehicle.year %></dt>
+  <dt><%= @vehicles.human_attribute_name(:load_capacity) %>: <%= vehicle.load_capacity %></dt>
+  <dt><%= @vehicles.human_attribute_name(:maintenance) %>: <%= I18n.translate(vehicle.maintenance) %></dt>
+  <dt><%= @vehicles.human_attribute_name(:available) %>: <%= I18n.translate(vehicle.available) %></dt>
+</dl>

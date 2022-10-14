@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_13_143447) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_14_001532) do
   create_table "shipping_types", force: :cascade do |t|
     t.string "name"
     t.integer "minimum_distance"
@@ -20,6 +20,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_13_143447) do
     t.integer "fee"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "active", default: true
   end
 
   create_table "users", force: :cascade do |t|
@@ -44,6 +45,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_13_143447) do
     t.integer "load_capacity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "available", default: true
+    t.boolean "maintenance", default: false
   end
 
   create_table "work_orders", force: :cascade do |t|

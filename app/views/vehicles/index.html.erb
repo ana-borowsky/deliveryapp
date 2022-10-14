@@ -1,5 +1,10 @@
 <section id="vehicles">
 <h2>Veículos</h2>
+<%= form_with(url: search_vehicles_path, method: :get) do |f| %>
+  <%= f.label :query, 'Buscar veículo' %>
+  <%= f.text_field :query %>
+  <%= f.submit 'Buscar' %>
+<% end %>
 <%= link_to 'Adicionar novo veículo', new_vehicle_path %>
 <div>
 <% @vehicles.each do |v| %>

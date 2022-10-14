@@ -36,7 +36,7 @@ class WorkOrdersController < ApplicationController
 
   def search
     @code = params['query']
-    @shipping_types = ShippingType.where("code LIKE ?", "%#{@code}%")
+    @work_orders = WorkOrder.where("code LIKE ?", "%#{@code}%")
   end
 
   private
