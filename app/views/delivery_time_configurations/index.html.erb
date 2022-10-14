@@ -1,0 +1,6 @@
+<h2>Configurações de prazo</h2>
+<%= link_to 'Adicionar nova configuração', new_delivery_time_configuration_path %>
+
+<% if @delivery_time_configurations.empty? %>
+  <p> Não existem configurações cadastradas. </p>
+<% end %>

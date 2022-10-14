@@ -11,6 +11,8 @@ pt-BR:
       work_order: 'Ordem de serviço'
       shipping_type: 'Modalidade de transporte'
       vehicle: 'Veículo'
+      delivery_time_configuration: 'Prazo'
+      weight_configuration: 'Configuração de peso'
     attributes:
       work_order:
         pickup_address: 'Endereço de saída'
@@ -41,4 +43,17 @@ pt-BR:
         load_capacity: 'Capacidade de carga'
         maintenance: 'Em manutenção'
         available: 'Disponível'
+      delivery_time_configuration:
+        minimum_distance: 'Disância mínima'
+        maximum_distance: 'Distância máxima'
+        price: 'Preço'
+        shipping_type: 'Modalidade de transporte'
+      weight_configuration:
+        minimum_weight: 'Peso mínimo'
+        maximum_weight: 'Peso máximo'
+        price: 'Preço'
+
+
+
+      
 

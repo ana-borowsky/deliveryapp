@@ -68,6 +68,11 @@ Commit 'Add configurations and weight configurations'
 - criada configurações de preço por peso
 - criada página index e new de configurações de preço por peso
 
+Commit 'Add delivery time configurations'
+- criado model de configurações prazo
+- criada pagina index de configurações de prazo
+- criada página new de configurações de prazo
+
 Próximas tarefas:
 
 adicionar distâncias de atuação dos veiculos?
@@ -77,6 +82,7 @@ fazer pagina de user nao autenticado
 colocar barreira no email
 melhorar validacoes de veículo
 criar model de preços e prazos
+popular o arquivo seeds
 
 
 

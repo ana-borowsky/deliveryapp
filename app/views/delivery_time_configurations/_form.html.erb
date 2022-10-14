@@ -1,0 +1,21 @@
+<%= form_with(model: @delivery_time_configuration) do |f| %>
+  <div>
+    <%= f.label :minimum_distance, 'Distância mínima:' %>
+    <%= f.number_field :minimum_distance %>
+  </div>
+    <div>
+    <%= f.label :maximum_distance, 'Distância máxima:' %>
+    <%= f.number_field :maximum_distance %>
+  </div>
+    <div>
+    <%= f.label :delivery_time, 'Prazo:' %>
+    <%= f.number_field :delivery_time %>
+  </div>
+  <div>
+    <%= f.label :shipping_type_id, 'Modalidade de transporte:' %>
+    <%= f.select :shipping_type_id, DeliveryTimeConfiguration.shipping_types_for_select %><br>
+  </div>
+  <div>
+    <br><%= f.submit 'Salvar' %>
+  </div>
+<% end %>

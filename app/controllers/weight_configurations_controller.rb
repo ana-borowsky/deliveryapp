@@ -1,6 +1,4 @@
 class WeightConfigurationsController < ApplicationController
-  before_action :set_weight_configuration, only:[:show]
-
   def index 
     @weight_configurations = WeightConfiguration.all
   end
@@ -23,9 +21,5 @@ class WeightConfigurationsController < ApplicationController
 
   def weight_configuration_params
     params.require(:weight_configuration).permit(:name, :minimum_weight, :maximum_weight, :price)
-  end
-  
-  def set_weight_configuration
-    @weight_configuration = WeightConfiguration.find(params[:id])
   end
 end
