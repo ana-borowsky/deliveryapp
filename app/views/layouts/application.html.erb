@@ -20,6 +20,7 @@
       <%= link_to 'Ordens de Serviço', root_path %> |
       <%= link_to 'Modalidades de Transporte', shipping_types_path %> |
       <%= link_to 'Veículos', vehicles_path %> |
+      <%= link_to 'Configurações', configurations_path %> |
       <% if user_signed_in? %>
         <%= current_user.description %>
         <br> <%= button_to 'Log out', destroy_user_session_path, method: :delete %>

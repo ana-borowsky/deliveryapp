@@ -1,0 +1,6 @@
+<h2>Configurações de preço por peso</h2>
+<%= link_to 'Adicionar nova configuração', new_weight_configuration_path %>
+
+<% if @weight_configurations.empty? %>
+  <p> Não existem configurações cadastradas. </p>
+<% end %>

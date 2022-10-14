@@ -1,0 +1,17 @@
+<%= form_with(model: @weight_configuration) do |f| %>
+  <div>
+    <%= f.label :minimum_weight, 'Peso mínimo:' %>
+    <%= f.number_field :minimum_weight %>
+  </div>
+    <div>
+    <%= f.label :maximum_weight, 'Peso máximo:' %>
+    <%= f.number_field :maximum_weight %>
+  </div>
+    <div>
+    <%= f.label :price, 'Preço:' %>
+    <%= f.number_field :price %>
+  </div>
+  <div>
+    <br><%= f.submit 'Salvar' %>
+  </div>
+<% end %>

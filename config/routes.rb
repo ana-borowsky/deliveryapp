@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   resources :vehicles, only: [:index, :new, :create, :edit, :show, :update] do
     get 'search', on: :collection 
   end
+  get '/configurations', to: 'configurations#index' 
+  resources :weight_configurations, only: [:index, :new, :create]
 end

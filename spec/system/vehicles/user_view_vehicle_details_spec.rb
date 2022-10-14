@@ -17,8 +17,8 @@ describe 'Usuário vê detalhes de um veículo' do
     expect(page).to have_content 'Honda CG - ASD3434' 
     expect(page).to have_content 'Ano de fabricação: 2020'
     expect(page).to have_content 'Capacidade de carga: 10000g'
-    expect(page).to have_content 'Condição:'
-    expect(page).to have_content 'Status:'
+    expect(page).to have_content 'Em manutenção:'
+    expect(page).to have_content 'Disponível:'
   end
 
   it 'e volta para a tela inicial' do

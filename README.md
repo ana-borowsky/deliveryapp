@@ -63,6 +63,11 @@ Commit 'fix bugs and translations'
 - arrumados erros na página de busca de veiculos
 - arrumados erros em algumas traduções
 
+Commit 'Add configurations and weight configurations'
+- criada página index das configurações
+- criada configurações de preço por peso
+- criada página index e new de configurações de preço por peso
+
 Próximas tarefas:
 
 adicionar distâncias de atuação dos veiculos?
