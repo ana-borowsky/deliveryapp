@@ -23,6 +23,10 @@
     <%= f.label :fee, 'Taxa:' %>
     <%= f.number_field :fee %>
   </div>
+    <div>
+    <%= f.label :active, 'Ativada:' %>
+    <%= f.check_box :active %>
+  </div>
   <div>
     <br><%= f.submit 'Salvar' %>
   </div>

@@ -1,8 +1,8 @@
 <section id="vehicles">
 <h2>Veículos</h2>
 <%= form_with(url: search_vehicles_path, method: :get) do |f| %>
-  <%= f.label :query, 'Buscar veículo' %>
-  <%= f.text_field :query %>
+  <%= f.label :query_vehicle, 'Buscar veículo' %>
+  <%= f.text_field :query_vehicle %>
   <%= f.submit 'Buscar' %>
 <% end %>
 <%= link_to 'Adicionar novo veículo', new_vehicle_path %>
@@ -11,8 +11,8 @@
   <div>
     <h3><%= v.manufacturer %> <%= v.model %> <%= link_to(v.license_plate, vehicle_path(v.id)) %> </h3>
       <dl>
-        <dt>Condição:</dt>
-        <dt>Status:</dt>
+        <dt>Em manutenção: <%= I18n.translate(v.maintenance) %></dt>
+        <dt>Disponível: <%= I18n.translate(v.available) %></dt>
       <dl>
     </div>  
 <% end %>
@@ -20,4 +20,4 @@
 <% if @vehicles.empty? %>
   <p> Não existem veículos cadastrados. </p>
 <% end %>
-
+</section>

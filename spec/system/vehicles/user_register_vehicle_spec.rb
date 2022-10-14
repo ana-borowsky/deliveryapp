@@ -35,7 +35,7 @@ describe 'Usuário cadastra novo veículo' do
     #assert
     expect(current_path).to eq vehicles_path
     expect(page).to have_content 'Honda CG ASD3434' 
-    expect(page).to have_content 'Condição:'
-    expect(page).to have_content 'Status:'
+    expect(page).to have_content 'Em manutenção:'
+    expect(page).to have_content 'Disponível:'
   end
 end

@@ -5,6 +5,8 @@
   <strong>Peso mínimo: </strong><%= @shipping_type.minimum_weight %>g<br>
   <strong>Peso máximo: </strong><%= @shipping_type.maximum_weight %>g<br>
   <strong>Taxa: </strong><%= @shipping_type.fee %> <br>
+  <strong>Ativada: </strong><%= @shipping_type.active %> <br>
+
 </div>
 
 <%= link_to('Editar', edit_shipping_type_path(@shipping_type.id)) %><br><br>

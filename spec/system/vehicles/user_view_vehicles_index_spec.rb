@@ -24,12 +24,12 @@ describe 'Usuário vê a página de veículos' do
       #assert
       expect(page).not_to have_content 'Não existem veículos cadastrados.'
       expect(page).to have_content "#{vehicle_a.manufacturer} #{vehicle_a.model} #{vehicle_a.license_plate}"
-      expect(page).to have_content 'Condição:'
-      expect(page).to have_content 'Status:'
+      expect(page).to have_content 'Em manutenção:'
+      expect(page).to have_content 'Disponível:'
 
       expect(page).to have_content "#{vehicle_b.manufacturer} #{vehicle_b.model} #{vehicle_b.license_plate}"
-      expect(page).to have_content 'Condição:'
-      expect(page).to have_content 'Status:'
+      expect(page).to have_content 'Em manutenção:'
+      expect(page).to have_content 'Disponível:'
   end
 
   it 'e verifica que não há veiculos cadastrados no momento' do

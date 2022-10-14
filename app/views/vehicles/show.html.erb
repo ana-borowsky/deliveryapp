@@ -2,9 +2,8 @@
 <div>
   <strong>Ano de fabricação: </strong><%= @vehicle.year %><br>
   <strong>Capacidade de carga: </strong><%= @vehicle.load_capacity %>g<br>
-  <strong>Condição: </strong><br>
-  <strong>Status: </strong><br>
- 
+  <strong>Em manutenção: </strong> <%= I18n.translate(@vehicle.maintenance) %><br>
+  <strong>Disponível: </strong><%= I18n.translate(@vehicle.available) %><br>
 </div>
 
 <%= link_to('Editar', edit_vehicle_path(@vehicle.id)) %><br><br>

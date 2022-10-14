@@ -1,7 +1,10 @@
 pt-BR:
-  pending: 'Pendente'
+  true: 'Sim'
+  false: 'Não'
   canceled: 'Cancelado'
   delivered: 'Entregue'
+  pending: 'Pendente'
+  late: 'Atrasado'
   on_the_way: 'Em transporte'
   activerecord:
     models:
@@ -36,6 +39,6 @@ pt-BR:
         manufacturer: 'Fabricante'
         license_plate: 'Placa'
         load_capacity: 'Capacidade de carga'
-        maintenance: 'Condição'
+        maintenance: 'Em manutenção'
         available: 'Disponível'
 

@@ -17,8 +17,6 @@ describe 'Usuario busca por um veículo' do
     #act
     visit root_path
     click_on 'Veículos'
-    fill_in 'Buscar veículo', with: 'ASD3434'
-    click_on 'Buscar'
 
     #assert
     expect(page).to have_content 'Para continuar, faça login ou registre-se.'
@@ -33,12 +31,15 @@ describe 'Usuario busca por um veículo' do
     visit root_path
     click_on 'Veículos'
     fill_in 'Buscar veículo', with: 'ASD3434'
-    click_on 'Buscar'
+    within '#vehicles' do
+      click_on 'Buscar'
+    end
+
     #assert
     expect(page).to have_content "Resultado da busca por: ASD3434"
-    expect(page).to have_content "Fabricante: Honda"
-    expect(page).to have_content "Modelo: CG"
-    expect(page).to have_content "Capacidade de carga: 10000g"
+    expect(page).to have_content "Honda CG - ASD3434"
+    expect(page).to have_content 'Em manutenção:'
+    expect(page).to have_content 'Disponível:'
     expect(page).to have_button('Buscar')
   end
 end

@@ -37,7 +37,7 @@ class ShippingTypesController < ApplicationController
   private
 
   def shipping_type_params
-    params.require(:shipping_type).permit(:name, :minimum_distance, :maximum_distance, :minimum_weight, :maximum_weight, :fee)
+    params.require(:shipping_type).permit(:name, :minimum_distance, :maximum_distance, :minimum_weight, :maximum_weight, :fee, :active)
   end
   
   def set_work_order

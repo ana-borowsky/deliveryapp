@@ -58,11 +58,20 @@ Commit 'Add missing attributes, work on search for work order and vehicles'
 - adicionada busca por veículos
 - adicionado template de busca por veículos
 
+Commit 'fix bugs and translations'
+- adicionadas chek boxes
+- arrumados erros na página de busca de veiculos
+- arrumados erros em algumas traduções
 
 Próximas tarefas:
+
 adicionar distâncias de atuação dos veiculos?
 modificar a aparencia dos preços e pesos para reais e kg
 arrumar erros no teste de busca de veículos, e na página de busca
+fazer pagina de user nao autenticado
+colocar barreira no email
+melhorar validacoes de veículo
+criar model de preços e prazos
 
 
 
