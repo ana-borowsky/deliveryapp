@@ -73,15 +73,18 @@ Commit 'Add delivery time configurations'
 - criada pagina index de configurações de prazo
 - criada página new de configurações de prazo
 
+Commit 'Add price per distance configutation'
+- criado model de configurações de preço por distância
+- criada página index de configurações de preço por distância
+- criada página new de configurações de preço por distância
+
 Próximas tarefas:
 
 adicionar distâncias de atuação dos veiculos?
 modificar a aparencia dos preços e pesos para reais e kg
-arrumar erros no teste de busca de veículos, e na página de busca
 fazer pagina de user nao autenticado
 colocar barreira no email
-melhorar validacoes de veículo
-criar model de preços e prazos
+melhorar validacoes
 popular o arquivo seeds
 
 

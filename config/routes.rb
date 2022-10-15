@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   get '/configurations', to: 'configurations#index' 
   resources :weight_configurations, only: [:index, :new, :create]
   resources :delivery_time_configurations, only: [:index, :new, :create]
+  resources :price_per_distance_configurations, only: [:index, :new, :create]
 
 end

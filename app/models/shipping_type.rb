@@ -6,4 +6,5 @@ class ShippingType < ApplicationRecord
   validates :minimum_weight, :maximum_weight, :minimum_distance, :maximum_distance, :fee, numericality: { only_integer: true }
 
   has_many :delivery_time_configurations
+  has_many :price_per_distance_configurations
 end
