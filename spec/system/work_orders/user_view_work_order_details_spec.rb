@@ -16,7 +16,7 @@ describe 'Usuário vê detalhes de ordem de serviço' do
     expect(page).to have_content 'Rua das Laranjeiras, 2000'
     expect(page).to have_content 'Avenida dos Cáctos, 3000'
     expect(page).to have_content 'GHFJ123450'
-    expect(page).to have_content '10000'
-    expect(page).to have_content '100'
+    expect(page).to have_content '100kg'
+    expect(page).to have_content '100km'
   end
 end

@@ -3,7 +3,7 @@
   <dt><%= WorkOrder.human_attribute_name(:pickup_address) %>: <%= work_order.pickup_address %></dt>
   <dt><%= WorkOrder.human_attribute_name(:delivery_address) %>: <%= work_order.delivery_address %></dt>
   <dt><%= WorkOrder.human_attribute_name(:product_code) %>: <%= work_order.product_code %></dt>
-  <dt><%= WorkOrder.human_attribute_name(:product_weight) %>: <%= work_order.product_weight %>g</dt>
+  <dt><%= WorkOrder.human_attribute_name(:product_weight) %>: <%= work_order.product_weight/100 %>kg</dt>
   <dt><%= WorkOrder.human_attribute_name(:distance) %>: <%= work_order.distance %>km</dt>
   <dt><%= WorkOrder.human_attribute_name(:status) %>: <%= I18n.translate(work_order.status) %></dt>
 </dl>

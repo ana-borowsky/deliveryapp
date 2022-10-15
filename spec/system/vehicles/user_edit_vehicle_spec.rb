@@ -37,7 +37,7 @@ describe 'Usuário edita um veículo' do
     click_on 'Salvar'
     #Assert
     expect(page).to have_content 'Fiat Fiorino - ASD3434'
-    expect(page).to have_content 'Capacidade de carga: 100000g'
+    expect(page).to have_content 'Capacidade de carga: 1000kg'
   end
 
   it 'e mantém os campos obrigatórios' do

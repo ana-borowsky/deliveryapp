@@ -8,13 +8,14 @@
       <dl>
         <dt>Distância mínima: <%= s.minimum_distance %>km</dt>
         <dt>Distância máxima: <%= s.maximum_distance %>km
-        <dt>Peso mínimo: <%= s.minimum_weight %>g
-        <dt>Peso máximo: <%= s.maximum_weight %>g
-        <dt>Taxa: <%= s.fee %>
+        <dt>Peso mínimo: <%= s.minimum_weight/100 %>kg
+        <dt>Peso máximo: <%= s.maximum_weight/100 %>kg
+        <dt>Taxa: <%= number_to_currency(s.fee/100) %>
         <dt>Status: </dt>
       <dl>
     </div>  
 <% end %>
+</div>
 
 <% if @shipping_types.empty? %>
   <p> Não existem modalidades de serviço cadastradas. </p>

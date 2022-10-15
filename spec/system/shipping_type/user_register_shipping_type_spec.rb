@@ -40,9 +40,9 @@ describe 'Usuário cadastra uma modalidade de transporte' do
     expect(page).to have_content 'Motoboy' 
     expect(page).to have_content 'Distância mínima: 1km'
     expect(page).to have_content 'Distância máxima: 30km'
-    expect(page).to have_content 'Peso mínimo: 1000'
-    expect(page).to have_content 'Peso máximo: 20000'
-    expect(page).to have_content 'Taxa: 500'   
+    expect(page).to have_content 'Peso mínimo: 10kg'
+    expect(page).to have_content 'Peso máximo: 200kg'
+    expect(page).to have_content 'Taxa: R$ 5,00'   
   end
 end
 

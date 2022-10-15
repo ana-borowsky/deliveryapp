@@ -2,9 +2,9 @@
 <div>
   <strong>Distância mínima: </strong><%= @shipping_type.minimum_distance %>km<br>
   <strong>Distância máxima: </strong><%= @shipping_type.maximum_distance %>km<br>
-  <strong>Peso mínimo: </strong><%= @shipping_type.minimum_weight %>g<br>
-  <strong>Peso máximo: </strong><%= @shipping_type.maximum_weight %>g<br>
-  <strong>Taxa: </strong><%= @shipping_type.fee %> <br>
+  <strong>Peso mínimo: </strong><%= @shipping_type.minimum_weight/100 %>kg<br>
+  <strong>Peso máximo: </strong><%= @shipping_type.maximum_weight/100 %>kg<br>
+  <strong>Taxa: </strong><%= number_to_currency(@shipping_type.fee/100) %> <br>
   <strong>Ativada: </strong><%= @shipping_type.active %> <br>
 
 </div>

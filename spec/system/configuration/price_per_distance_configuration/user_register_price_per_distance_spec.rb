@@ -36,7 +36,7 @@ describe 'Usuário cadastra uma nova configuração de preço por distância' do
 
     #assert
     expect(current_path).to eq price_per_distance_configurations_path
-    expect(page).to have_content 'Tabela de preços por distância'  
+    expect(page).to have_content 'Tabela de preço por distância percorrida'  
   end
 end
 

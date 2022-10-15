@@ -26,16 +26,16 @@ describe 'Usuário vê a página de modalidades de transporte' do
     expect(page).to have_content shipping_type_a.name
     expect(page).to have_content 'Distância mínima: 1km'
     expect(page).to have_content 'Distância máxima: 30km'
-    expect(page).to have_content 'Peso mínimo: 1000'
-    expect(page).to have_content 'Peso máximo: 20000'
-    expect(page).to have_content 'Taxa: 500'    
+    expect(page).to have_content 'Peso mínimo: 10kg'
+    expect(page).to have_content 'Peso máximo: 200kg'
+    expect(page).to have_content 'Taxa: R$ 5,00'    
 
     expect(page).to have_content shipping_type_a.name
     expect(page).to have_content 'Distância mínima: 10km'
     expect(page).to have_content 'Distância máxima: 300km'
-    expect(page).to have_content 'Peso mínimo: 5000'
-    expect(page).to have_content 'Peso máximo: 50000'
-    expect(page).to have_content 'Taxa: 1000'   
+    expect(page).to have_content 'Peso mínimo: 50kg'
+    expect(page).to have_content 'Peso máximo: 500kg'
+    expect(page).to have_content 'Taxa: R$ 10,00'   
   end
 
   it 'e verifica que não há modalidades de transporte cadastradas no momento' do

@@ -4,3 +4,19 @@
 <% if @price_per_distance_configurations.empty? %>
   <p> Não existem configurações cadastradas. </p>
 <% end %>
+
+<p>Tabela de preço por distância percorrida</p>
+<table>
+  <tr>
+    <th>Intervalo de distância</th>
+    <th>Preço</th>
+    <th>Modalidade de transporte</th>
+  </tr>
+  <% @price_per_distance_configurations.each do |p| %>
+    <tr>
+      <td><%= p.minimum_distance/100 %> a <%= p.maximum_distance/100 %>km</td>
+      <td><%= p.price_per_distance %></td>
+      <td><%= p.shipping_type.name %></td>
+    </tr>
+  <% end %>
+</table>

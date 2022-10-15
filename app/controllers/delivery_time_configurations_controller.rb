@@ -20,7 +20,7 @@ class DeliveryTimeConfigurationsController < ApplicationController
   private 
 
   def delivery_time_configuration_params
-    params.require(:delivery_time_configuration).permit(:price, :minimum_distance, :maximum_distance, :shipping_type_id, :delivery_time)
+    params.require(:delivery_time_configuration).permit(:minimum_distance, :maximum_distance, :shipping_type, :delivery_time)
   end
 
 end

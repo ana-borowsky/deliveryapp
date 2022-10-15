@@ -39,7 +39,7 @@ describe 'Usuário edita uma modalidade de transporte' do
     #Assert
     expect(page).to have_content 'Modalidade de transporte: Padrão'
     expect(page).to have_content 'Distância mínima: 5km'
-    expect(page).to have_content 'Peso mínimo: 10000g'
+    expect(page).to have_content 'Peso mínimo: 100kg'
   end
 
   it 'e mantém os campos obrigatórios' do

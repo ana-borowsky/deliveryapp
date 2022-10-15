@@ -41,7 +41,7 @@ describe 'Usuario busca por uma ordem de serviço' do
     expect(page).to have_content "Endereço de entrega: Avenida dos Cáctos, 3000"
     expect(page).to have_content "Código do produto: GHFJ123450"
     expect(page).to have_content "Distância: 100km"
-    expect(page).to have_content "Peso do produto: 10000g"
+    expect(page).to have_content "Peso do produto: 100kg"
     expect(page).to have_button('Buscar')
   end
 end

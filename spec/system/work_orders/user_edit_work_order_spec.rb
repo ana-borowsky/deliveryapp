@@ -39,8 +39,8 @@ describe 'Usuário edita uma ordem de serviço' do
 
     #assert
     expect(page).to have_content 'Endereço de saída: Rua dos ipês amarelos, 345'
-    expect(page).to have_content 'Peso do produto: 123'
-    expect(page).to have_content 'Distância: 10000'
+    expect(page).to have_content 'Peso do produto: 12,30kg'
+    expect(page).to have_content 'Distância: 1000km'
     expect(page).to have_content 'Ordem de serviço editada com sucesso!'
   end
 

@@ -3,10 +3,10 @@
   <strong>Endereço de saída: </strong><%= @work_order.pickup_address %><br>
   <strong>Endereço de entrega: </strong><%= @work_order.delivery_address %><br>
   <strong>Distância: </strong><%= @work_order.distance %>km<br>
-  <strong>Peso do produto: </strong><%= @work_order.product_weight %>g<br>
+  <strong>Peso do produto: </strong><%= @work_order.product_weight/100 %>kg<br>
   <strong>Código do produto: </strong><%= @work_order.product_code %> <br>
   <strong>Status: </strong><%= I18n.translate(@work_order.status) %> <strong> <br>
 </div>
 
 <%= link_to('Editar', edit_work_order_path(@work_order.id)) %><br><br>
-<%= link_to('Voltar', root_path) %>
+<%= link_to('Voltar', work_orders_path) %>
