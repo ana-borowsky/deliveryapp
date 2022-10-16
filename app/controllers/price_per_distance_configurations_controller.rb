@@ -17,6 +17,12 @@ class  PricePerDistanceConfigurationsController < ApplicationController
     end
   end
 
+  def destroy
+    @price_per_distance_configuration = PricePerDistanceConfiguration.find(params[:id])
+    @price_per_distance_configuration.destroy
+    redirect_to price_per_distance_configurations_path, notice: 'Configuração removida com sucesso!'
+  end
+
   private
 
   def price_per_distance_configuration_params

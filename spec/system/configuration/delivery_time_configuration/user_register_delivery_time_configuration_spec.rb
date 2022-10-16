@@ -32,12 +32,12 @@ describe 'Usuário cadastra uma nova configuração de prazo' do
     fill_in 'Distância máxima:', with: '10'
     select 'Motoboy', from: 'Modalidade de transporte'
     fill_in 'Prazo', with: '1000'
-
     click_on 'Salvar'
 
     #assert
     expect(current_path).to eq delivery_time_configurations_path
     expect(page).to have_content 'Tabela de prazos'  
+
   end
 end
 

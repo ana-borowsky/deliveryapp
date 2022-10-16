@@ -78,21 +78,18 @@ Commit 'Add price per distance configutation'
 - criada página index de configurações de preço por distância
 - criada página new de configurações de preço por distância
 
-Commit 
+Commit 'Add tables for configurations'
 - Adicionadas tabelas de todas as configurações
 - Ajustadas exibições em reais e kg
+- Adicionados botões de deletar nas configurações
 
 Próximas tarefas:
-
-adicionar distâncias de atuação dos veiculos?
 fazer pagina de user nao autenticado
 colocar barreira no email
 melhorar validacoes
 distancias e pesos maximum nao podem ser menores que os minimum
 veiculo nao pode estar em manutencao e disponivel ao mesmo tempo
 popular o arquivo seeds
-deletar configurações/ editar
-arrumar erro ao adicionar configuração de prazo vazia
 revisar testes
 
 

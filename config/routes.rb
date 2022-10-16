@@ -9,8 +9,7 @@ Rails.application.routes.draw do
     get 'search', on: :collection 
   end
   get '/configurations', to: 'configurations#index' 
-  resources :weight_configurations, only: [:index, :new, :create]
-  resources :delivery_time_configurations, only: [:index, :new, :create]
-  resources :price_per_distance_configurations, only: [:index, :new, :create]
-
+  resources :weight_configurations, only: [:index, :new, :create, :destroy]
+  resources :delivery_time_configurations, only: [:index, :new, :create, :destroy]
+  resources :price_per_distance_configurations, only: [:index, :new, :create, :destroy]
 end

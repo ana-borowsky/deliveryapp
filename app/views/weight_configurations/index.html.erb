@@ -10,11 +10,13 @@
   <tr>
     <th>Intervalo de peso</th>
     <th>Preço</th>
+    <th></th>
   </tr>
   <% @weight_configurations.each do |w| %>
     <tr>
-      <td><%= w.minimum_weight %> a <%= w.maximum_weight %>g</td>
+      <td><%= w.minimum_weight/100 %> a <%= w.maximum_weight/100 %>kg</td>
       <td><%= number_to_currency(w.price/100.to_f) %></td>
+      <td><%= button_to('Remover', weight_configuration_path(w.id), method: :delete) %></td>
     </tr>
   <% end %>
 </table>

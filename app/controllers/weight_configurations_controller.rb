@@ -17,6 +17,12 @@ class WeightConfigurationsController < ApplicationController
     end
   end
 
+  def destroy
+    @weight_configuration = WeightConfiguration.find(params[:id])
+    @weight_configuration.destroy
+    redirect_to weight_configurations_path, notice: 'Configuração removida com sucesso!'
+  end
+
   private 
 
   def weight_configuration_params

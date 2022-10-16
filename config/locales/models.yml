@@ -13,6 +13,7 @@ pt-BR:
       vehicle: 'Veículo'
       delivery_time_configuration: 'Prazo'
       weight_configuration: 'Configuração de peso'
+      price_per_distance_configuration: 'Preço por distância percorrida'
     attributes:
       work_order:
         pickup_address: 'Endereço de saída'
@@ -52,6 +53,10 @@ pt-BR:
         minimum_weight: 'Peso mínimo'
         maximum_weight: 'Peso máximo'
         price: 'Preço'
+      price_per_distance_configuration:
+        minimum_distance: 'Distância mínima'
+        maximum_distance: 'Distância máxima'
+        price_per_distance: 'Preço' 
 
 
 

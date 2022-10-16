@@ -11,12 +11,15 @@
     <th>Intervalo de distância</th>
     <th>Preço</th>
     <th>Modalidade de transporte</th>
+    <th></th>
   </tr>
   <% @price_per_distance_configurations.each do |p| %>
     <tr>
-      <td><%= p.minimum_distance/100 %> a <%= p.maximum_distance/100 %>km</td>
-      <td><%= p.price_per_distance %></td>
+      <td><%= p.minimum_distance%> a <%= p.maximum_distance %>km</td>
+      <td><%= number_to_currency(p.price_per_distance/100) %></td>
       <td><%= p.shipping_type.name %></td>
+      <td><%= button_to('Remover', price_per_distance_configuration_path(p.id), method: :delete) %></td>
     </tr>
   <% end %>
 </table>
+
