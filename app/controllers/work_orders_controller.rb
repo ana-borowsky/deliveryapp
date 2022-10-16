@@ -1,4 +1,5 @@
 class WorkOrdersController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:search]
   before_action :set_work_order, only:[:show, :edit, :update]
 
   def index
@@ -12,7 +13,7 @@ class WorkOrdersController < ApplicationController
   def create
     @work_order = WorkOrder.new(work_order_params)
     if @work_order.save()
-      redirect_to root_path, notice: 'Ordem de serviço cadastrada com sucesso!'
+      redirect_to work_orders_path, notice: 'Ordem de serviço cadastrada com sucesso!'
     else
       flash.now[:notice] = 'Ordem de serviço NÃO cadastrada!'      
       render 'new'

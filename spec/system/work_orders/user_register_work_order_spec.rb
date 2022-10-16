@@ -6,7 +6,7 @@ describe 'Usuário cadastra nova ordem de serviço' do
     user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema')
     #act
     login_as(user)
-    visit root_path
+    visit work_orders_path
     click_on 'Ordens de Serviço'
     click_on 'Adicionar nova ordem de serviço'
     #assert
@@ -23,7 +23,7 @@ describe 'Usuário cadastra nova ordem de serviço' do
    
     #act
     login_as(user)
-    visit root_path
+    visit work_orders_path
     click_on 'Ordens de Serviço'
     click_on 'Adicionar nova ordem de serviço'
     fill_in 'Endereço de saída:', with: 'Avenida das palmeiras, 1000'
@@ -34,7 +34,7 @@ describe 'Usuário cadastra nova ordem de serviço' do
     click_on 'Salvar'
 
     #assert
-    expect(current_path).to eq root_path
+    expect(current_path).to eq work_orders_path
     expect(page).to have_content 'Ordem de serviço cadastrada com sucesso!'
     expect(page).to have_content 'Avenida das palmeiras, 1000'
     expect(page).to have_content 'Rua dos eucaliptos, 213'

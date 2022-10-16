@@ -10,7 +10,7 @@ describe 'Usuário edita uma ordem de serviço' do
                                   product_code: 'GHFJ123450', product_weight: 10000, distance: 100)
     #act
     login_as(user)
-    visit(root_path)
+    visit work_orders_path
     click_on work_order.code
     click_on 'Editar'
     #assert
@@ -29,7 +29,7 @@ describe 'Usuário edita uma ordem de serviço' do
                                   product_code: 'GHFJ123450', product_weight: 10000, distance: 100)
     #act
     login_as(user)
-    visit root_path
+    visit work_orders_path
     click_on work_order.code
     click_on 'Editar'
     fill_in 'Endereço de saída:', with: 'Rua dos ipês amarelos, 345'
@@ -51,7 +51,7 @@ describe 'Usuário edita uma ordem de serviço' do
                                   product_code: 'GHFJ123450', product_weight: 10000, distance: 100)
     #act
     login_as(user)
-    visit root_path
+    visit work_orders_path
     click_on work_order.code
     click_on 'Editar'
     fill_in 'Endereço de saída:', with: ''

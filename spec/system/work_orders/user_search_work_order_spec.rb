@@ -5,25 +5,13 @@ describe 'Usuario busca por uma ordem de serviço' do
     user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema')
     #act
     login_as(user)
-    visit root_path
+    visit work_orders_path
     #assert
     within('header nav') do
       expect(page).to have_field('Buscar ordem de serviço')
       expect(page).to have_button('Buscar')
     end
   end
-  it 'e deve estar autenticado' do
-    #arrange
-    #act
-    visit root_path
-    fill_in 'Buscar ordem de serviço', with: 'RGJB7YUEJXH263R'
-    click_on 'Buscar'
-
-    #assert
-    expect(page).to have_content 'Para continuar, faça login ou registre-se.'
-  
-  end
-
   it 'e encontra uma ordem de serviço' do
     #arrange
     user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema')
@@ -31,7 +19,7 @@ describe 'Usuario busca por uma ordem de serviço' do
                                   product_code: 'GHFJ123450', product_weight: 10000, distance: 100)
     #act
     login_as(user)
-    visit root_path
+    visit work_orders_path
     fill_in 'Buscar ordem de serviço', with: work_order.code
     click_on 'Buscar'
     #assert

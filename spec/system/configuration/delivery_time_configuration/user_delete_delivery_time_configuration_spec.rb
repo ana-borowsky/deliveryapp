@@ -7,7 +7,7 @@ describe 'Usuário remove uma configuração de prazo' do
     config = DeliveryTimeConfiguration.create!(minimum_distance: 10, maximum_distance: 20, delivery_time: 123, shipping_type: shipping_type)
     #act
     login_as(user)
-    visit root_path
+    visit work_orders_path
     click_on 'Configurações'
     click_on 'Configurações de prazo'
     click_on 'Remover'

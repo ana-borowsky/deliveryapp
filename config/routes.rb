@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'work_orders#index'
+  root to: 'search_work_order#index'
   resources :work_orders, only: [:index, :new, :create, :edit, :show, :update] do
     get 'search', on: :collection 
   end
@@ -12,4 +12,7 @@ Rails.application.routes.draw do
   resources :weight_configurations, only: [:index, :new, :create, :destroy]
   resources :delivery_time_configurations, only: [:index, :new, :create, :destroy]
   resources :price_per_distance_configurations, only: [:index, :new, :create, :destroy]
+  resources :search_work_order, only: [:index] do
+    get 'search', on: :collection
+  end
 end

@@ -6,7 +6,7 @@ describe 'Usuário cadastra novo veículo' do
     user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema')
     #act
     login_as(user)
-    visit root_path
+    visit work_orders_path
     click_on 'Veículos'
     click_on 'Adicionar novo veículo'
     #assert
@@ -22,7 +22,7 @@ describe 'Usuário cadastra novo veículo' do
     user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema')
     #act
     login_as user
-    visit root_path
+    visit work_orders_path
     click_on 'Veículos'
     click_on 'Adicionar novo veículo'
     fill_in 'Placa:', with: 'ASD3434'

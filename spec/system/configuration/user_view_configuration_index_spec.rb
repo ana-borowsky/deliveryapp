@@ -6,7 +6,7 @@ describe 'Usuário vê a página de configurações' do
     user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema')
     #act
     login_as(user)
-    visit root_path
+    visit work_orders_path
     click_on 'Configurações'
     #assert
     expect(current_path).to eq configurations_path 

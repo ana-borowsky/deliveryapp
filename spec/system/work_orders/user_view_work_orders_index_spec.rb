@@ -6,7 +6,7 @@ describe 'Usuario visita tela inicial' do
     user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema')
     #act
     login_as(user)
-    visit root_path
+    visit work_orders_path
     #assert
     expect(page).to have_content 'Sistema de Fretes'
   end
@@ -16,7 +16,7 @@ describe 'Usuario visita tela inicial' do
     user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema')
     #act
     login_as(user)
-    visit root_path
+    visit work_orders_path
     #assert
     expect(page).to have_content 'Ordens de Serviço'
   end
@@ -26,10 +26,10 @@ describe 'Usuario visita tela inicial' do
     user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema')
     #act
     login_as(user)
-    visit root_path
+    visit work_orders_path
     click_on 'Ordens de Serviço'
     #assert
-    expect(current_path).to eq root_path
+    expect(current_path).to eq work_orders_path
   end
 
   it 'e verifica que não há ordens de serviço cadastradas no momento' do
@@ -37,7 +37,7 @@ describe 'Usuario visita tela inicial' do
     user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema')
     #act
     login_as(user)
-    visit root_path
+    visit work_orders_path
     #assert
     expect(page).to have_content 'Não existem ordens de serviço cadastradas.'
   end

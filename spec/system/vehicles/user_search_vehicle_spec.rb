@@ -5,7 +5,7 @@ describe 'Usuario busca por um veículo' do
     user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema')
     #act
     login_as(user)
-    visit root_path
+    visit work_orders_path
     click_on 'Veículos'
     #assert
     expect(page).to have_field('Buscar veículo')
@@ -15,8 +15,7 @@ describe 'Usuario busca por um veículo' do
   it 'e deve estar autenticado' do
     #arrange
     #act
-    visit root_path
-    click_on 'Veículos'
+    visit work_orders_path
 
     #assert
     expect(page).to have_content 'Para continuar, faça login ou registre-se.'
@@ -28,7 +27,7 @@ describe 'Usuario busca por um veículo' do
     vehicle = Vehicle.create!(manufacturer: 'Honda', model: 'CG', year: '2020', load_capacity: 10000, license_plate: 'ASD3434')
     #act
     login_as(user)
-    visit root_path
+    visit work_orders_path
     click_on 'Veículos'
     fill_in 'Buscar veículo', with: 'ASD3434'
     within '#vehicles' do

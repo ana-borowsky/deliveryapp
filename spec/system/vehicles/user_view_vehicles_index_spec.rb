@@ -6,7 +6,7 @@ describe 'Usuário vê a página de veículos' do
     user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema')
     #act
     login_as(user)
-    visit root_path
+    visit work_orders_path
     click_on 'Veículos'
     #assert
     expect(current_path).to eq vehicles_path 
@@ -19,7 +19,7 @@ describe 'Usuário vê a página de veículos' do
       vehicle_b = Vehicle.create!(manufacturer: 'Fiat', model: 'Fiorino', year: '2018', load_capacity: 100000, license_plate: 'AQW3456')
       #act
       login_as(user)
-      visit root_path
+      visit work_orders_path
       click_on 'Veículos'
       #assert
       expect(page).not_to have_content 'Não existem veículos cadastrados.'
@@ -37,7 +37,7 @@ describe 'Usuário vê a página de veículos' do
     user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema')
     # Act
     login_as(user)
-    visit root_path
+    visit work_orders_path
     click_on 'Veículos'
   
     # Assert

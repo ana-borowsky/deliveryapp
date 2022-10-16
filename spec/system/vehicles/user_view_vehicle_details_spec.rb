@@ -9,7 +9,7 @@ describe 'Usuário vê detalhes de um veículo' do
 
     # Act
     login_as user
-    visit root_path
+    visit work_orders_path
     click_on 'Veículos'
     click_on 'ASD3434'
 
@@ -27,13 +27,13 @@ describe 'Usuário vê detalhes de um veículo' do
     vehicle = Vehicle.create!(manufacturer: 'Honda', model: 'CG', year: '2020', load_capacity: 10000, license_plate: 'ASD3434')
     # Act
     login_as user
-    visit root_path
+    visit work_orders_path
     click_on 'Veículos'
     click_on 'ASD3434'
     click_on 'Ordens de Serviço'
 
     # Assert
-    expect(current_path).to eq root_path
+    expect(current_path).to eq work_orders_path
   end
 end
 

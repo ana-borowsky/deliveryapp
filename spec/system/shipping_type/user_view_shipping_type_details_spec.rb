@@ -9,7 +9,7 @@ describe 'Usuário vê detalhes de uma modalidade de transporte' do
 
     # Act
     login_as user
-    visit root_path
+    visit work_orders_path
     click_on 'Modalidades de Transporte'
     click_on 'Motoboy'
 
@@ -29,13 +29,13 @@ describe 'Usuário vê detalhes de uma modalidade de transporte' do
 
     # Act
     login_as user
-    visit root_path
+    visit work_orders_path
     click_on 'Modalidades de Transporte'
     click_on 'Motoboy'
     click_on 'Ordens de Serviço'
 
     # Assert
-    expect(current_path).to eq root_path
+    expect(current_path).to eq work_orders_path
   end
 end
 

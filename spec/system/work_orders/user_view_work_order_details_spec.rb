@@ -8,7 +8,7 @@ describe 'Usuário vê detalhes de ordem de serviço' do
                                     product_code: 'GHFJ123450', product_weight: 10000, distance: 100)
     #act
     login_as(user)
-    visit(root_path)
+    visit work_orders_path
     click_on work_order.code
     #assert
     expect(current_path).to eq work_order_path(work_order.id)

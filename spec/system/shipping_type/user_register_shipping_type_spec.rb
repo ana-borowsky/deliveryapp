@@ -6,7 +6,7 @@ describe 'Usuário cadastra uma modalidade de transporte' do
     user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema')
     #act
     login_as user
-    visit root_path
+    visit work_orders_path
     click_on 'Modalidades de Transporte'
     click_on 'Adicionar nova modalidade de transporte'
 
@@ -24,7 +24,7 @@ describe 'Usuário cadastra uma modalidade de transporte' do
     user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema')
     #act
     login_as user
-    visit root_path
+    visit work_orders_path
     click_on 'Modalidades de Transporte'
     click_on 'Adicionar nova modalidade de transporte'
     fill_in 'Nome', with: 'Motoboy'

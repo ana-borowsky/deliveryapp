@@ -7,7 +7,7 @@ describe 'Usuário remove uma configuração de preço por distância percorrida
     config = PricePerDistanceConfiguration.create!(minimum_distance: 10, maximum_distance: 20, price_per_distance: 123, shipping_type: shipping_type)
     #act
     login_as(user)
-    visit root_path
+    visit work_orders_path
     click_on 'Configurações'
     click_on 'Configurações de preço por distância percorrida'
     click_on 'Remover'

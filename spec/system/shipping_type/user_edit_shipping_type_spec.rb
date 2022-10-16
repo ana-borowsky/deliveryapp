@@ -8,7 +8,7 @@ describe 'Usuário edita uma modalidade de transporte' do
 
     #Act
     login_as user
-    visit root_path
+    visit work_orders_path
     click_on 'Modalidades de Transporte'
     click_on 'Motoboy'
     click_on 'Editar'
@@ -28,7 +28,7 @@ describe 'Usuário edita uma modalidade de transporte' do
     shipping_type = ShippingType.create!(name: 'Motoboy', minimum_distance: 1, maximum_distance: 30, minimum_weight:1000, maximum_weight:20000, fee:500)
     #Act
     login_as user
-    visit root_path
+    visit work_orders_path
     click_on 'Modalidades de Transporte'
     click_on 'Motoboy'
     click_on 'Editar'
@@ -48,7 +48,7 @@ describe 'Usuário edita uma modalidade de transporte' do
     shipping_type = ShippingType.create!(name: 'Motoboy', minimum_distance: 1, maximum_distance: 30, minimum_weight:1000, maximum_weight:20000, fee:500)
     #Act
     login_as user
-    visit root_path
+    visit work_orders_path
     click_on 'Modalidades de Transporte'
     click_on 'Motoboy'
     click_on 'Editar'

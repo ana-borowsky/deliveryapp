@@ -1,4 +1,6 @@
-<h3><%= WorkOrder.human_attribute_name(:code) %>: <%= link_to(work_order.code, work_order_path(work_order.id)) %></h3>
+<% if user_signed_in? %>
+  <h3><%= WorkOrder.human_attribute_name(:code) %>: <%= link_to(work_order.code, work_order_path(work_order.id)) %></h3>
+<% end %>
 <dl>
   <dt><%= WorkOrder.human_attribute_name(:pickup_address) %>: <%= work_order.pickup_address %></dt>
   <dt><%= WorkOrder.human_attribute_name(:delivery_address) %>: <%= work_order.delivery_address %></dt>

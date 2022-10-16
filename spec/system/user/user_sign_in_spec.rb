@@ -4,7 +4,7 @@ describe 'Usuário se autentica' do
   it 'com sucesso' do
     #arrange
     #act
-    visit root_path
+    visit work_orders_path
     click_on 'Sign up'
     fill_in 'Nome', with: 'Ana'
     fill_in 'E-mail', with: 'ana@sistemadefrete.com.br'
@@ -27,11 +27,11 @@ describe 'Usuário se autentica' do
    
     #act
     login_as(user)
-    visit root_path
+    visit work_orders_path
     click_on 'Log out'
 
     #assert
-    expect(page).to have_content 'Para continuar, faça login ou registre-se.'
+    expect(page).to have_content 'Logout efetuado com sucesso.'
     within('nav') do
       expect(page).to have_link 'Log in'
       expect(page).not_to have_button 'Log out'

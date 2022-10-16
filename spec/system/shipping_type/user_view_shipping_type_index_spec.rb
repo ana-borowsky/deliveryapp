@@ -6,7 +6,7 @@ describe 'Usuário vê a página de modalidades de transporte' do
     user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema')
     #act
     login_as(user)
-    visit root_path
+    visit work_orders_path
     click_on 'Modalidades de Transporte'
     #assert
     expect(current_path).to eq shipping_types_path 
@@ -19,7 +19,7 @@ describe 'Usuário vê a página de modalidades de transporte' do
     shipping_type_b = ShippingType.create!(name: 'Padrão', minimum_distance: 10, maximum_distance: 300, minimum_weight:5000, maximum_weight:50000, fee:1000)
     #act
     login_as(user)
-    visit root_path
+    visit work_orders_path
     click_on 'Modalidades de Transporte'
     #assert
     expect(page).not_to have_content 'Não existem modalidades de serviço cadastradas.'
@@ -43,7 +43,7 @@ describe 'Usuário vê a página de modalidades de transporte' do
     user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema')
     # Act
     login_as(user)
-    visit root_path
+    visit work_orders_path
     click_on 'Modalidades de Transporte'
   
     # Assert

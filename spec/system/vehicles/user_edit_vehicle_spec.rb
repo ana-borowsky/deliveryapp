@@ -8,7 +8,7 @@ describe 'Usuário edita um veículo' do
 
     #Act
     login_as user
-    visit root_path
+    visit work_orders_path
     click_on 'Veículos'
     click_on 'ASD3434'
     click_on 'Editar'
@@ -27,7 +27,7 @@ describe 'Usuário edita um veículo' do
     vehicle = Vehicle.create!(manufacturer: 'Honda', model: 'CG', year: '2020', load_capacity: 10000, license_plate: 'ASD3434')
     #Act
     login_as user
-    visit root_path
+    visit work_orders_path
     click_on 'Veículo'
     click_on 'ASD3434'
     click_on 'Editar'
@@ -46,7 +46,7 @@ describe 'Usuário edita um veículo' do
     vehicle = Vehicle.create!(manufacturer: 'Honda', model: 'CG', year: '2020', load_capacity: 10000, license_plate: 'ASD3434')
     #Act
     login_as user
-    visit root_path
+    visit work_orders_path
     click_on 'Veículos'
     click_on 'ASD3434'
     click_on 'Editar'

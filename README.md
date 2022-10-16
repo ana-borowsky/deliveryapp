@@ -83,14 +83,13 @@ Commit 'Add tables for configurations'
 - Ajustadas exibições em reais e kg
 - Adicionados botões de deletar nas configurações
 
+Commit 
+- adicionada pagina de busca pelo usuário não autenticado
+- modificado root path
+- consertados todos os testes
+- adicionada barreira de email @sistemadefrete.com.br
+- arquivo seeds populado
+
 Próximas tarefas:
-fazer pagina de user nao autenticado
-colocar barreira no email
-melhorar validacoes
-distancias e pesos maximum nao podem ser menores que os minimum
 veiculo nao pode estar em manutencao e disponivel ao mesmo tempo
-popular o arquivo seeds
 revisar testes
-
-
-

@@ -6,7 +6,7 @@ describe 'Usuário cadastra uma nova configuração de preço por peso' do
     user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema')
     #act
     login_as user
-    visit root_path
+    visit work_orders_path
     click_on 'Configurações'
     click_on 'Configurações de preço por peso'
     click_on 'Adicionar nova configuração'
@@ -22,7 +22,7 @@ describe 'Usuário cadastra uma nova configuração de preço por peso' do
     user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema')
     #act
     login_as user
-    visit root_path
+    visit work_orders_path
     click_on 'Configurações'
     click_on 'Configurações de preço por peso'
     click_on 'Adicionar nova configuração'

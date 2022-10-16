@@ -6,7 +6,7 @@ describe 'Usuário remove uma configuração de peso' do
     config = WeightConfiguration.create!(minimum_weight: 100, maximum_weight: 2000, price: 1234)
     #act
     login_as(user)
-    visit root_path
+    visit work_orders_path
     click_on 'Configurações'
     click_on 'Configurações de preço por peso'
     click_on 'Remover'
