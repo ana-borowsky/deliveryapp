@@ -1,6 +1,6 @@
 class WorkOrdersController < ApplicationController
   skip_before_action :authenticate_user!, only: [:search]
-  before_action :set_work_order, only:[:show, :edit, :update]
+  before_action :set_work_order, only:[:show, :edit, :update, :end_work_order]
 
   def index
     @work_orders = WorkOrder.all
@@ -56,10 +56,41 @@ class WorkOrdersController < ApplicationController
     end
   end
 
+  def start
+    @work_order = WorkOrder.find(params[:work_order_id])
+    delivery_time = @work_order.shipping_type.calculate_delivery_time(@work_order.distance)
+    if !delivery_time
+      redirect_to work_order_path(@work_order.id), notice: 'Prazo não atendido por nenhuma modalidade de transporte.'
+      return
+    end
+
+    @work_order.date = Date.today + delivery_time.hours
+    @work_order = WorkOrder.find(params[:work_order_id])
+    @available_vehicle = Vehicle.where(available: true)
+                                  .where(maintenance: false)
+                                  .first
+    @work_order.vehicle = @available_vehicle
+    @work_order.vehicle.available = false
+    @work_order.status = 4
+    @work_order.start_date = Date.today
+    if @work_order.save
+      redirect_to work_order_path(@work_order.id), notice: 'Ordem de serviço iniciada!'
+    else
+      flash.now[:notice] = 'Não foi possível iniciar ordem de serviço.'
+    end
+  end
+
+  def end_work_order
+    if @work_order.end_date > @work_order.date
+      @work_order.status = 3
+    end
+    @work_order.vehicle.available = true
+  end
+
   private
 
   def work_order_params
-    params.require(:work_order).permit(:pickup_address, :delivery_address, :product_code, :product_weight, :distance, :status)
+    params.require(:work_order).permit(:pickup_address, :delivery_address, :product_code, :product_weight, :distance, :date, :status, :shipping_type, :vehicle, :start_date, :delay_cause)
   end
   
   def set_work_order

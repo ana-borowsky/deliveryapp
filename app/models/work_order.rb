@@ -9,7 +9,8 @@ class WorkOrder < ApplicationRecord
   enum status: { pending:0, delivered:1, canceled:2, late:3, on_the_way:4 }
   before_validation :generate_code, on: :create
 
-  belongs_to :shipping_type
+  belongs_to :shipping_type, optional: true
+  belongs_to :vehicle, optional: true
 
   def self.status_attributes_for_select
     statuses.map do |status, _|

@@ -3,7 +3,8 @@ describe 'Usuário remove uma configuração de peso' do
   it 'com sucesso' do
     #arrange
     user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema')
-    config = WeightConfiguration.create!(minimum_weight: 100, maximum_weight: 2000, price: 1234)
+    shipping_type = ShippingType.create!(name: 'Motoboy', minimum_distance: 1, maximum_distance: 30, minimum_weight:1000, maximum_weight:20000, fee:500)
+    config = WeightConfiguration.create!(minimum_weight: 100, maximum_weight: 2000, price: 1234, shipping_type: shipping_type)
     #act
     login_as(user)
     visit work_orders_path

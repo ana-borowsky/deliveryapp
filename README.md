@@ -90,16 +90,16 @@ Commit 'add email barrier and work orders search'
 - adicionada barreira de email @sistemadefrete.com.br
 - arquivo seeds populado
 
-Commit
+Commit 'Add start to work order'
 - adicionada lógica do preço
 - adicionada seleção de modalidade de transporte
+- adicionada opção de iniciar ordem de serviço
 
 Próximas tarefas:
+modificar teste da index de work order
 tirar validação de shipping_type de work order antes de ela ser iniciada
 veiculo nao pode estar em manutencao e disponivel ao mesmo tempo
 revisar testes
-iniciar ordem de serviço
-    adicionar veículo disponível
 finalizar ordem de serviço
 Colocar páginas de configuração junto nas de modalidades de transporte
 Colocar diferenciação entre user e user_admin
