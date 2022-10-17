@@ -5,8 +5,31 @@
   <strong>Distância: </strong><%= @work_order.distance %>km<br>
   <strong>Peso do produto: </strong><%= @work_order.product_weight/100.to_f%>kg<br>
   <strong>Código do produto: </strong><%= @work_order.product_code %> <br>
-  <strong>Status: </strong><%= I18n.translate(@work_order.status) %> <strong> <br>
+  <strong>Status: </strong><%= I18n.translate(@work_order.status) %><br>
+  <% if @work_order.shipping_type %>
+    <strong>Modalidade de transporte:</strong> <%= @work_order.shipping_type.name %> - <%= number_to_currency(@work_order.price) %>
+  <% end %>
 </div>
+
+<h3>Modalidades de transporte disponíveis:</h3>
+  <% @available_shipping_types.each do |s| %>
+    <table>
+      <tr>
+        <th>Nome</th>
+        <th>Preço</th>
+        <th></th>
+      </tr>
+      <tr>
+        <td><%= s.name %></td>
+        <td><%= number_to_currency(s.calculate_price(@work_order.distance, @work_order.product_weight)) %></td>
+        <td><%= button_to('Selecionar', work_order_select_shipping_type_path(@work_order.id, shipping_type_id:s.id), method: :post) %></td>
+      </tr>
+    </table>
+  <% end %>
+
+  <% if @available_shipping_types.empty? %>
+  <p> Não existem modalidades de transporte disponíveis para atender esta ordem de serviço. </p>
+<% end %>
 
 <%= link_to('Editar', edit_work_order_path(@work_order.id)) %><br><br>
 <%= link_to('Voltar', work_orders_path) %>

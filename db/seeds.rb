@@ -5,7 +5,7 @@ shipping_type_b = ShippingType.create!(name: 'Rápida', minimum_distance: 1, max
 shipping_type_c = ShippingType.create!(name: 'A jato', minimum_distance: 1, maximum_distance: 30, minimum_weight:1000, maximum_weight:2000, fee:1500)
 
 delivery_time_config = DeliveryTimeConfiguration.create!(minimum_distance: 10, maximum_distance: 20, delivery_time: 123, shipping_type: shipping_type)
-weight_config = WeightConfiguration.create!(minimum_weight: 100, maximum_weight: 2000, price: 1234)
+weight_config = WeightConfiguration.create!(minimum_weight: 100, maximum_weight: 2000, price: 1234, shipping_type: shipping_type)
 price_per_distance_config = PricePerDistanceConfiguration.create!(minimum_distance: 10, maximum_distance: 20, price_per_distance: 123, shipping_type: shipping_type)
 
 vehicle_a = Vehicle.create!(manufacturer: 'Honda', model: 'CG', year: '2020', load_capacity: 10000, license_plate: 'ASD3434')

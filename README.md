@@ -83,13 +83,23 @@ Commit 'Add tables for configurations'
 - Ajustadas exibições em reais e kg
 - Adicionados botões de deletar nas configurações
 
-Commit 
+Commit 'add email barrier and work orders search'
 - adicionada pagina de busca pelo usuário não autenticado
 - modificado root path
 - consertados todos os testes
 - adicionada barreira de email @sistemadefrete.com.br
 - arquivo seeds populado
 
+Commit
+- adicionada lógica do preço
+- adicionada seleção de modalidade de transporte
+
 Próximas tarefas:
+tirar validação de shipping_type de work order antes de ela ser iniciada
 veiculo nao pode estar em manutencao e disponivel ao mesmo tempo
 revisar testes
+iniciar ordem de serviço
+    adicionar veículo disponível
+finalizar ordem de serviço
+Colocar páginas de configuração junto nas de modalidades de transporte
+Colocar diferenciação entre user e user_admin

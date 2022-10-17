@@ -21,6 +21,11 @@ class WorkOrdersController < ApplicationController
   end
 
   def show
+    @available_shipping_types = ShippingType.where("minimum_distance <= ?", @work_order.distance)
+                                  .where("maximum_distance >= ?", @work_order.distance)
+                                  .where("minimum_weight <= ?", @work_order.product_weight)
+                                  .where("maximum_weight >= ?", @work_order.product_weight)
+                                  .where(active: true)
   end
 
   def edit
@@ -38,6 +43,17 @@ class WorkOrdersController < ApplicationController
   def search
     @code = params['query']
     @work_orders = WorkOrder.where("code LIKE ?", "%#{@code}%")
+  end
+
+  def select_shipping_type
+    @work_order = WorkOrder.find(params[:work_order_id])
+    @work_order.shipping_type = ShippingType.find(params[:shipping_type_id])
+    @work_order.price = @work_order.shipping_type.calculate_price(@work_order.distance, @work_order.product_weight)
+    if @work_order.save
+      redirect_to work_order_path(@work_order.id), notice: 'Modalidade de transporte adicionada.'
+    else
+      flash.now[:notice] = 'Não foi possível adicionar a modalidade de transporte.'
+    end
   end
 
   private

@@ -10,4 +10,17 @@ class ShippingType < ApplicationRecord
 
   has_many :delivery_time_configurations
   has_many :price_per_distance_configurations
+  has_many :weight_configurations
+  has_many :work_orders
+
+  def calculate_price(distance, weight)
+    price_distance = price_per_distance_configurations.where("minimum_distance <= ?", distance)
+                                                      .where("maximum_distance >= ?", distance)
+                                                      .first.price_per_distance
+    price_weight = weight_configurations.where("minimum_weight <= ?", weight)
+                                        .where("maximum_weight >= ?", weight)
+                                        .first.price
+    price = fee/100 + (price_distance/100) * distance + price_weight/100 * weight/1000
+  end
+
 end

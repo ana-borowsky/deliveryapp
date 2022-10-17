@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_15_002944) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_17_021905) do
   create_table "delivery_time_configurations", force: :cascade do |t|
     t.integer "delivery_time"
     t.integer "minimum_distance"
@@ -75,6 +75,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_15_002944) do
     t.integer "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "shipping_type_id", null: false
+    t.index ["shipping_type_id"], name: "index_weight_configurations_on_shipping_type_id"
   end
 
   create_table "work_orders", force: :cascade do |t|
@@ -88,8 +90,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_15_002944) do
     t.datetime "updated_at", null: false
     t.string "product_code"
     t.string "code"
+    t.integer "shipping_type_id"
+    t.integer "price"
+    t.index ["shipping_type_id"], name: "index_work_orders_on_shipping_type_id"
   end
 
   add_foreign_key "delivery_time_configurations", "shipping_types"
   add_foreign_key "price_per_distance_configurations", "shipping_types"
+  add_foreign_key "weight_configurations", "shipping_types"
+  add_foreign_key "work_orders", "shipping_types"
 end

@@ -26,6 +26,6 @@ class WeightConfigurationsController < ApplicationController
   private 
 
   def weight_configuration_params
-    params.require(:weight_configuration).permit(:name, :minimum_weight, :maximum_weight, :price)
+    params.require(:weight_configuration).permit(:name, :minimum_weight, :maximum_weight, :price, :shipping_type_id)
   end
 end
