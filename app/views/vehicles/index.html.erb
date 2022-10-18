@@ -12,7 +12,7 @@
     <h3><%= v.manufacturer %> <%= v.model %> <%= link_to(v.license_plate, vehicle_path(v.id)) %> </h3>
       <dl>
         <dt>Em manutenção: <%= I18n.translate(v.maintenance) %></dt>
-        <dt>Disponível: <%= I18n.translate(v.available) %></dt>
+        <dt>Disponível: <%= I18n.translate(v.available && !v.maintenance) %></dt>
       <dl>
     </div>  
 <% end %>

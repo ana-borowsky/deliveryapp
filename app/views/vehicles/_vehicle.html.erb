@@ -1,5 +1,5 @@
 <h3><%= vehicle.manufacturer %> <%= vehicle.model %> - <%= link_to(vehicle.license_plate, vehicle_path(vehicle.id)) %></h3>
 <dl>
   <dt><%= @vehicles.human_attribute_name(:maintenance) %>: <%= I18n.translate(vehicle.maintenance) %></dt>
-  <dt><%= @vehicles.human_attribute_name(:available) %>: <%= I18n.translate(vehicle.available) %></dt>
+  <dt><%= @vehicles.human_attribute_name(:available) %>: <%= I18n.translate(vehicle.available && !vehicle.maintenance) %></dt>
 </dl>

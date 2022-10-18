@@ -73,10 +73,15 @@ class WorkOrdersController < ApplicationController
     end
     @work_order.date = Date.today + delivery_time.hours
     @available_vehicle = Vehicle.where(available: true)
-                                  .where(maintenance: false)
-                                  .first
+                                .where(maintenance: false)
+                                .first
+    if !@available_vehicle
+      redirect_to work_order_path(@work_order.id), notice: 'Não há veículos disponíveis para atender a ordem de serviço no momento.'
+      return
+    end
+    @available_vehicle.available = false
+    @available_vehicle.save
     @work_order.vehicle = @available_vehicle
-    @work_order.vehicle.available = false
     @work_order.status = 'on_the_way'
     @work_order.start_date = Date.today
     if @work_order.save
@@ -97,7 +102,7 @@ class WorkOrdersController < ApplicationController
       @work_order.status = 'delivered'
       redirect_to work_order_path(@work_order.id), notice: 'Ordem de serviço finalizada!'
     end
-    @work_order.vehicle.available = true
+    @work_order.vehicle.update(available: true)
     @work_order.save!
   end
 

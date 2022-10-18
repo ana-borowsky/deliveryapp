@@ -33,7 +33,7 @@
 
 <%= link_to('Voltar', work_orders_path) %><br>
 
-<% if @work_order.status != 'delivered' && @work_order.status != 'canceled' && @work_order.status != 'late' %>
+<% if @work_order.status == 'pending' %>
   <br><%= link_to('Editar', edit_work_order_path(@work_order.id)) %><br><br>
 
   <h3>Modalidades de transporte disponíveis:</h3>
@@ -50,7 +50,7 @@
         <td><%= button_to('Selecionar', work_order_select_shipping_type_path(@work_order.id, shipping_type_id:s.id), method: :post) %></td>
       </tr>
     </table>
-  <% end %>
+<% end %>
 
   <% if @available_shipping_types.empty? %>
     <p> Não existem modalidades de transporte disponíveis para atender esta ordem de serviço. </p>

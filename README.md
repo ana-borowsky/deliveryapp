@@ -106,8 +106,10 @@ Commit 'Add end option to work order'
 Commit 'Add index to pending work orders'
 - Adicionada opção de ver apenas ordens de serviço pendentes
 
+Commit 'Fix bugs on vehicles'
+- Arrumados problemas encontrados nos veículos
+
 Próximas tarefas:
-selecionar OS pendentes
 Adicionar motivo de atraso, caso seja o caso
 bloquear rotas de edição quando for o caso
 modificar teste da index de work order
