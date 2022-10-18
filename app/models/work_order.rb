@@ -2,7 +2,7 @@ class WorkOrder < ApplicationRecord
   validates :pickup_address, :product_weight, :delivery_address, :product_code, :distance, presence: true
   validates :distance, :product_weight, numericality: true 
   validates :product_code, length: { is: 10 }
-  validates :product_weight, numericality: { greater_than: 999 }
+  validates :product_weight, numericality: { greater_than_or_equal_to: 1 }
   validates :distance, numericality: { greater_than: 0 }
   validates :distance, :product_weight, numericality: { only_integer: true }
 

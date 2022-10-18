@@ -95,6 +95,9 @@ Commit 'Add start to work order'
 - adicionada seleção de modalidade de transporte
 - adicionada opção de iniciar ordem de serviço
 
+Commit 'Remake seeds'
+- Seeds inteiro reescrito
+
 Próximas tarefas:
 modificar teste da index de work order
 tirar validação de shipping_type de work order antes de ela ser iniciada

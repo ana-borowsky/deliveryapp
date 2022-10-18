@@ -60,7 +60,7 @@ class WorkOrdersController < ApplicationController
     @work_order = WorkOrder.find(params[:work_order_id])
     delivery_time = @work_order.shipping_type.calculate_delivery_time(@work_order.distance)
     if !delivery_time
-      redirect_to work_order_path(@work_order.id), notice: 'Prazo não atendido por nenhuma modalidade de transporte.'
+      redirect_to work_order_path(@work_order.id), notice: 'Prazo não atendido por nenhuma modalidade de transporte. Ordem de serviço não pode ser iniciada.'
       return
     end
 
