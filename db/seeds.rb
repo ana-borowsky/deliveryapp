@@ -44,7 +44,7 @@ weight_config_q = WeightConfiguration.create!(minimum_weight: 2001, maximum_weig
 weight_config_r = WeightConfiguration.create!(minimum_weight: 5001, maximum_weight: 10_000, price: 450, shipping_type: shipping_type_c)
 weight_config_s = WeightConfiguration.create!(minimum_weight: 5001, maximum_weight: 10_000, price: 500, shipping_type: shipping_type_c)
 weight_config_t = WeightConfiguration.create!(minimum_weight: 10_001, maximum_weight: 50_000, price: 550, shipping_type: shipping_type_c)
-weight_config_u = WeightConfiguration.create!(minimum_weight: 50_001, maximum_weight: 100_000, price: 600, shipping_type: shipping_type_c)
+weight_config_u = WeightConfiguration.create!(minimum_weight: 50_001, maximum_weight: 100_000, price: 600, shipping_type: shipping_type_c
 
 price_per_distance_config_a = PricePerDistanceConfiguration.create!(minimum_distance: 1, maximum_distance: 30, price_per_distance: 100, shipping_type: shipping_type_a)
 price_per_distance_config_b = PricePerDistanceConfiguration.create!(minimum_distance: 31, maximum_distance: 100, price_per_distance: 150, shipping_type: shipping_type_a)
@@ -79,5 +79,9 @@ work_order_a = WorkOrder.create!(pickup_address: 'Rua das Laranjeiras, 100', del
                                 product_code: 'HJUH123450', product_weight: 100, distance: 10)
 work_order_b = WorkOrder.create!(pickup_address: 'Rua das Araucárias, 2000', delivery_address: 'Avenida dos Ipês Amarelos, 20', 
                                 product_code: 'MKJN123423', product_weight: 10000, distance: 500)
-work_order_c = WorkOrder.create!(pickup_address: 'Rua das Cerejeiraseiras, 30', delivery_address: 'Avenida das Hortências, 4000', 
+work_order_c = WorkOrder.create!(pickup_address: 'Rua das Cerejeireiras, 30', delivery_address: 'Avenida das Hortências, 4000', 
                                 product_code: 'KOIN123467', product_weight: 100000, distance: 100)
+work_order_d = WorkOrder.create!(pickup_address: 'Rua das Margaridas, 13', delivery_address: 'Avenida das Orquídeas, 67', 
+                                product_code: 'KOIN123467', product_weight: 100000, distance: 1000)
+work_order_e = WorkOrder.create!(pickup_address: 'Rua das Amoreiras, 16', delivery_address: 'Avenida das Hortelãs, 85', 
+                                  product_code: 'KOIN123467', product_weight: 100000, distance: 700)

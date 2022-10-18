@@ -49,6 +49,10 @@ class WorkOrdersController < ApplicationController
     @work_order = WorkOrder.find(params[:work_order_id])
     @work_order.shipping_type = ShippingType.find(params[:shipping_type_id])
     @work_order.price = @work_order.shipping_type.calculate_price(@work_order.distance, @work_order.product_weight)
+    if !@work_order.price 
+      redirect_to work_order_path(@work_order.id), notice: 'Não foi possível calcular o preço.'
+      return
+    end
     if @work_order.save
       redirect_to work_order_path(@work_order.id), notice: 'Modalidade de transporte adicionada.'
     else
@@ -63,15 +67,13 @@ class WorkOrdersController < ApplicationController
       redirect_to work_order_path(@work_order.id), notice: 'Prazo não atendido por nenhuma modalidade de transporte. Ordem de serviço não pode ser iniciada.'
       return
     end
-
     @work_order.date = Date.today + delivery_time.hours
-    @work_order = WorkOrder.find(params[:work_order_id])
     @available_vehicle = Vehicle.where(available: true)
                                   .where(maintenance: false)
                                   .first
     @work_order.vehicle = @available_vehicle
     @work_order.vehicle.available = false
-    @work_order.status = 4
+    @work_order.status = 'on_the_way'
     @work_order.start_date = Date.today
     if @work_order.save
       redirect_to work_order_path(@work_order.id), notice: 'Ordem de serviço iniciada!'
@@ -82,7 +84,7 @@ class WorkOrdersController < ApplicationController
 
   def end_work_order
     if @work_order.end_date > @work_order.date
-      @work_order.status = 3
+      @work_order.status = 'late'
     end
     @work_order.vehicle.available = true
   end

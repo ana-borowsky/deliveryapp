@@ -98,9 +98,11 @@ Commit 'Add start to work order'
 Commit 'Remake seeds'
 - Seeds inteiro reescrito
 
+Commit 'Fix bugs''
+- bugs resolvidos
+
 Próximas tarefas:
 modificar teste da index de work order
-tirar validação de shipping_type de work order antes de ela ser iniciada
 veiculo nao pode estar em manutencao e disponivel ao mesmo tempo
 revisar testes
 finalizar ordem de serviço

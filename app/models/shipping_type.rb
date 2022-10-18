@@ -16,21 +16,20 @@ class ShippingType < ApplicationRecord
   def calculate_price(distance, weight)
     price_distance = price_per_distance_configurations.where("minimum_distance <= ?", distance)
                                                       .where("maximum_distance >= ?", distance)
-                                                      .first.price_per_distance
+                                                      .first&.price_per_distance
+  
     price_weight = weight_configurations.where("minimum_weight <= ?", weight)
                                         .where("maximum_weight >= ?", weight)
-                                        .first.price
-    fee/100 + (price_distance/100) * distance + price_weight/100 * weight/1000
+                                        .first&.price
+    if price_distance && price_weight
+      fee/100 + (price_distance/100) * distance + price_weight/100 * weight/1000
+    end
   end
 
   def calculate_delivery_time(distance)
     time_configuration = delivery_time_configurations.where("minimum_distance <= ?", distance)
                                               .where("maximum_distance >= ?", distance)
                                               .first
-    if time_configuration 
-      time_configuration.delivery_time
-    else
-      nil
-    end
+    time_configuration&.delivery_time
   end
 end

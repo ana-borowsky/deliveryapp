@@ -20,6 +20,7 @@ describe 'Usuário cadastra uma nova configuração de preço por peso' do
   it 'com sucesso' do
     #arrange
     user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema')
+    shipping_type = ShippingType.create!(name: 'Motoboy', minimum_distance: 1, maximum_distance: 30, minimum_weight:1000, maximum_weight:20000, fee:500)
     #act
     login_as user
     visit work_orders_path
@@ -29,6 +30,7 @@ describe 'Usuário cadastra uma nova configuração de preço por peso' do
     fill_in 'Peso mínimo:', with: '1000'
     fill_in 'Peso máximo', with: '10000'
     fill_in 'Preço', with: '3000'
+    select 'Motoboy', from: 'Modalidade de transporte'
     click_on 'Salvar'
 
     #assert
