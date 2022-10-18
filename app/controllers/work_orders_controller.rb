@@ -82,17 +82,23 @@ class WorkOrdersController < ApplicationController
     end
   end
 
-  def end_work_order
-    if @work_order.end_date > @work_order.date
+  def end
+    @work_order = WorkOrder.find(params[:work_order_id])
+    @work_order.end_date = Date.today
+    if @work_order.end_date && @work_order.end_date > @work_order.date
       @work_order.status = 'late'
+    else
+      @work_order.status = 'delivered'
+      redirect_to work_order_path(@work_order.id), notice: 'Ordem de serviço finalizada!'
     end
     @work_order.vehicle.available = true
+    @work_order.save!
   end
 
   private
 
   def work_order_params
-    params.require(:work_order).permit(:pickup_address, :delivery_address, :product_code, :product_weight, :distance, :date, :status, :shipping_type, :vehicle, :start_date, :delay_cause)
+    params.require(:work_order).permit(:pickup_address, :delivery_address, :product_code, :product_weight, :distance, :date, :status, :shipping_type, :vehicle, :start_date, :end_date, :delay_cause)
   end
   
   def set_work_order

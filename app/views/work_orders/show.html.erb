@@ -11,17 +11,27 @@
     <strong>Prazo: </strong> <%= I18n.localize(@work_order.date)%><br>
     <strong>Data de início: </strong><%= I18n.localize(@work_order.start_date) %><br>
   <% end %>
+  <% if @work_order.status == 'delivered' %>
+    <strong>Veículo: </strong><%= @work_order.vehicle.license_plate.upcase %></strong> <br>
+    <strong>Prazo: </strong> <%= I18n.localize(@work_order.date)%><br>
+    <strong>Data de início: </strong><%= I18n.localize(@work_order.start_date) %><br>
+    <strong>Data de finalização: </strong><%= I18n.localize(@work_order.end_date) %><br>
+  <% end %>
   <% if @work_order.shipping_type %>
     <strong>Modalidade de transporte:</strong> <%= @work_order.shipping_type.name %> - <%= number_to_currency(@work_order.price) %><br>
     <% if @work_order.status == 'pending' %>
     <%= button_to('Iniciar ordem de serviço', work_order_start_path(@work_order.id), method: :post) %>
     <% end %>
+    <% if @work_order.status == 'on_the_way' %>
+    <%= button_to('Finalizar ordem de serviço', work_order_end_path(@work_order.id), method: :post) %>
+    <% end %>
   <% end %>
 </div>
-<br><%= link_to('Editar', edit_work_order_path(@work_order.id)) %><br><br>
-<%= link_to('Voltar', work_orders_path) %>
+<%= link_to('Voltar', work_orders_path) %><br>
 
-<h3>Modalidades de transporte disponíveis:</h3>
+<% if !(@work_order.status == 'delivered' || @work_order.status == 'canceled' || @work_order.status == 'late') %>
+  <br><%= link_to('Editar', edit_work_order_path(@work_order.id)) %><br><br>
+  <h3>Modalidades de transporte disponíveis:</h3>
   <% @available_shipping_types.each do |s| %>
     <table>
       <tr>
@@ -36,6 +46,7 @@
       </tr>
     </table>
   <% end %>
+<% end %>
 
   <% if @available_shipping_types.empty? %>
   <p> Não existem modalidades de transporte disponíveis para atender esta ordem de serviço. </p>

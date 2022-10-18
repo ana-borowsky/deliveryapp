@@ -44,6 +44,6 @@ describe 'Usuario visita página de detalhes da ordem de serviço' do
     expect(page).to have_content 'Veículo: ASD3434'
     expect(page).to have_content "Prazo: #{I18n.localize(work_order.reload.date)}"
     expect(page).to have_content "Data de início: #{I18n.localize(Date.today)}"
-    expect(page).not_to have_button 'Inicar ordem de serviço'
+    expect(page).not_to have_button 'Iniciar ordem de serviço'
   end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_17_201507) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_18_130054) do
   create_table "delivery_time_configurations", force: :cascade do |t|
     t.integer "delivery_time"
     t.integer "minimum_distance"
@@ -95,6 +95,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_17_201507) do
     t.integer "vehicle_id"
     t.date "start_date"
     t.string "delay_cause"
+    t.date "end_date"
     t.index ["shipping_type_id"], name: "index_work_orders_on_shipping_type_id"
     t.index ["vehicle_id"], name: "index_work_orders_on_vehicle_id"
   end

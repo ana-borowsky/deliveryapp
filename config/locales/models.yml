@@ -1,10 +1,10 @@
 pt-BR:
   true: 'Sim'
   false: 'Não'
-  canceled: 'Cancelado'
+  canceled: 'Cancelada'
   delivered: 'Entregue'
   pending: 'Pendente'
-  late: 'Atrasado'
+  late: 'Atrasada'
   on_the_way: 'Em transporte'
   activerecord:
     models:

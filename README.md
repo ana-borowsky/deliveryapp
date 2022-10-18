@@ -101,10 +101,16 @@ Commit 'Remake seeds'
 Commit 'Fix bugs''
 - bugs resolvidos
 
+Commit 'Add end work order'
+ - Adicionada finalização ordem de serviço
+
 Próximas tarefas:
+selecionar OS pendentes
+Adicionar motivo de atraso, caso seja o caso
+bloquear rotas de edição quando for o caso
 modificar teste da index de work order
 veiculo nao pode estar em manutencao e disponivel ao mesmo tempo
-revisar testes
-finalizar ordem de serviço
 Colocar páginas de configuração junto nas de modalidades de transporte
 Colocar diferenciação entre user e user_admin
+REVISÃO
+Adicionar bootstrap

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     get 'search', on: :collection 
     post 'select_shipping_type'
     post 'start'
+    post 'end'
   end
   resources :shipping_types, only: [:index, :new, :create, :edit, :show, :update]
   resources :vehicles, only: [:index, :new, :create, :edit, :show, :update] do
