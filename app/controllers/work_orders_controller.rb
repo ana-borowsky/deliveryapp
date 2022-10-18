@@ -45,6 +45,10 @@ class WorkOrdersController < ApplicationController
     @work_orders = WorkOrder.where("code LIKE ?", "%#{@code}%")
   end
 
+  def pending
+    @pending_work_orders = WorkOrder.where(status: :pending)
+  end
+
   def select_shipping_type
     @work_order = WorkOrder.find(params[:work_order_id])
     @work_order.shipping_type = ShippingType.find(params[:shipping_type_id])
@@ -87,6 +91,8 @@ class WorkOrdersController < ApplicationController
     @work_order.end_date = Date.today
     if @work_order.end_date && @work_order.end_date > @work_order.date
       @work_order.status = 'late'
+      redirect_to late_work_order_path(@work_order.id), notice: 'Ordem de serviço finalizada com atraso!'
+      return
     else
       @work_order.status = 'delivered'
       redirect_to work_order_path(@work_order.id), notice: 'Ordem de serviço finalizada!'

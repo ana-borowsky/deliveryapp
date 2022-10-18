@@ -1,9 +1,10 @@
-<section id="work_orders">
-<h2>Ordens de Serviço</h2>
-<%= link_to 'Adicionar nova ordem de serviço', new_work_order_path %><br>
-<%= link_to 'Mostrar ordens de serviço pendentes', pending_work_orders_path %><br>
+<section id="pending work_orders">
+<h2>Ordens de Serviço Pendentes</h2>
 <div>
-<% @work_orders.each do |w| %>
+Número de ordens de serviço pendentes encontradas: <%= @pending_work_orders.count %>
+</div>
+<div>
+<% @pending_work_orders.each do |w| %>
   <div>
     <h3>Código: <%= link_to(w.code, work_order_path(w.id)) %> </h3>
       <dl>
@@ -12,11 +13,10 @@
         <dt>Código do produto: <%= w.product_code %>
         <dt>Status: <%= I18n.translate(w.status) %> </dt>
       <dl>
-    </div>  
+  </div> 
 <% end %>
-
-<% if @work_orders.empty? %>
-  <p> Não existem ordens de serviço cadastradas. </p>
-<% end %>
+  <% if @pending_work_orders.empty? %>
+    <p> Não existem ordens de serviço pendentes no momento. </p>
+  <% end %> 
 </section>
 

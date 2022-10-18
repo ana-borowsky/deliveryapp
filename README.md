@@ -1,5 +1,4 @@
 # README
-
 O planejamento para o projeto encontra-se em um PDF dentro da pasta DOCS.
 
 A cada commit, uma lista das atividades que foram realizadas será descrita neste README.
@@ -98,11 +97,14 @@ Commit 'Add start to work order'
 Commit 'Remake seeds'
 - Seeds inteiro reescrito
 
-Commit 'Fix bugs''
+Commit 'Fix bugs'
 - bugs resolvidos
 
-Commit 'Add end work order'
- - Adicionada finalização ordem de serviço
+Commit 'Add end option to work order'
+- Adicionada finalização de ordem de serviço
+
+Commit 'Add index to pending work orders'
+- Adicionada opção de ver apenas ordens de serviço pendentes
 
 Próximas tarefas:
 selecionar OS pendentes
