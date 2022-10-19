@@ -3,7 +3,7 @@ require 'rails_helper'
 describe 'Usuario visita página de veículos' do
   it 'e verifica que há veículo cadastrado' do
     #arrange
-    user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema')
+    user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema', admin: true)
     vehicle = Vehicle.create!(manufacturer: 'Honda', model: 'CG', year: '2020', load_capacity: 10000, license_plate: 'ASD3434')
     #act
     login_as(user)
@@ -15,7 +15,7 @@ describe 'Usuario visita página de veículos' do
 
   it 'e que veículo encontra-se disponível' do
     #arrange
-    user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema')
+    user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema', admin: true)
     vehicle = Vehicle.create!(manufacturer: 'Honda', model: 'CG', year: '2020', load_capacity: 10000, license_plate: 'ASD3434')
     #act
     login_as(user)
@@ -29,7 +29,7 @@ describe 'Usuario visita página de veículos' do
 
   it 'e que se for alocado para atender uma ordem de serviço, ficará indisponível' do
     #arrange
-    user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema')
+    user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema', admin: true)
     shipping_type = ShippingType.create!(name: 'Motoboy', minimum_distance: 1, maximum_distance: 300, minimum_weight:1, 
                                         maximum_weight:20000, fee:500)
     vehicle = Vehicle.create!(manufacturer: 'Honda', model: 'CG', year: '2020', load_capacity: 10000, license_plate: 'ASD3434')
@@ -55,7 +55,7 @@ describe 'Usuario visita página de veículos' do
 
   it 'e que, ao encerrar uma ordem de serviço, volta a ficar disponível' do
     #arrange
-    user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema')
+    user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema', admin: true)
     shipping_type = ShippingType.create!(name: 'Motoboy', minimum_distance: 1, maximum_distance: 300, minimum_weight:1, 
                                         maximum_weight:20000, fee:500)
     vehicle = Vehicle.create!(manufacturer: 'Honda', model: 'CG', year: '2020', load_capacity: 10000, license_plate: 'ASD3434')
@@ -82,7 +82,7 @@ describe 'Usuario visita página de veículos' do
 
   it 'e que se estiver em manutenção, não será possível selecioná-lo para atender uma ordem de serviço' do
     #arrange
-    user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema')
+    user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema', admin: true)
     shipping_type = ShippingType.create!(name: 'Motoboy', minimum_distance: 1, maximum_distance: 300, minimum_weight:1, 
                                         maximum_weight:20000, fee:500)
     vehicle = Vehicle.create!(manufacturer: 'Honda', model: 'CG', year: '2020', load_capacity: 10000, license_plate: 'ASD3434', maintenance: true)

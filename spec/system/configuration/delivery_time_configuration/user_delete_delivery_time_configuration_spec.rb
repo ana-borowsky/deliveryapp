@@ -2,7 +2,7 @@ require 'rails_helper'
 describe 'Usuário remove uma configuração de prazo' do
   it 'com sucesso' do
     #arrange
-    user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema')
+    user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema', admin: true)
     shipping_type = ShippingType.create!(name: 'Motoboy', minimum_distance: 1, maximum_distance: 30, minimum_weight:1000, maximum_weight:20000, fee:500)
     config = DeliveryTimeConfiguration.create!(minimum_distance: 10, maximum_distance: 20, delivery_time: 123, shipping_type: shipping_type)
     #act

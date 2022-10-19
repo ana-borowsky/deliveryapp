@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'Usuário se autentica' do
+describe 'Usuário regular se autentica' do
   it 'com sucesso' do
     #arrange
     #act

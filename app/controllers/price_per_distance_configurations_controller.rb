@@ -1,4 +1,6 @@
 class  PricePerDistanceConfigurationsController < ApplicationController
+  skip_before_action :allow_admin_only, only: [:index]
+
   def index
     @price_per_distance_configurations = PricePerDistanceConfiguration.all
   end

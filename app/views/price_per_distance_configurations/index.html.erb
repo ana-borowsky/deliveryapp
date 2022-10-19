@@ -1,5 +1,7 @@
 <h2>Configurações de preço por distância percorrida</h2>
-<%= link_to 'Adicionar nova configuração', new_price_per_distance_configuration_path %>
+<% if current_user.admin? %>
+  <%= link_to 'Adicionar nova configuração', new_price_per_distance_configuration_path %>
+<% end %>
 
 <% if @price_per_distance_configurations.empty? %>
   <p> Não existem configurações cadastradas. </p>
@@ -18,7 +20,9 @@
       <td><%= p.minimum_distance%> a <%= p.maximum_distance %>km</td>
       <td><%= number_to_currency(p.price_per_distance/100) %></td>
       <td><%= p.shipping_type.name %></td>
-      <td><%= button_to('Remover', price_per_distance_configuration_path(p.id), method: :delete) %></td>
+      <% if current_user.admin? %>
+        <td><%= button_to('Remover', price_per_distance_configuration_path(p.id), method: :delete) %></td>
+      <% end %>
     </tr>
   <% end %>
 </table>

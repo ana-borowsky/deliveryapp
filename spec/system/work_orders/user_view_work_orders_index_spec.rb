@@ -3,7 +3,7 @@ require 'rails_helper'
 describe 'Usuario visita tela inicial' do
   it 'e vê o nome da app' do
     #arrange
-    user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema')
+    user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema', admin: true)
     #act
     login_as(user)
     visit work_orders_path
@@ -13,7 +13,7 @@ describe 'Usuario visita tela inicial' do
 
   it 'e vê o subtítulo' do
     #arrange
-    user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema')
+    user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema', admin: true)
     #act
     login_as(user)
     visit work_orders_path
@@ -23,7 +23,7 @@ describe 'Usuario visita tela inicial' do
 
   it 'e encontra o link para as Ordens de Serviço' do
     #arrange
-    user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema')
+    user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema', admin: true)
     #act
     login_as(user)
     visit work_orders_path
@@ -34,7 +34,7 @@ describe 'Usuario visita tela inicial' do
 
   it 'e vê ordens de serviço cadastradas' do
     #arrange
-    user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema')
+    user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema', admin: true)
     work_order_a = WorkOrder.create!(pickup_address: 'Rua das Laranjeiras, 100', delivery_address: 'Avenida dos Cáctos, 300', 
                                     product_code: 'HJUH123450', product_weight: 100, distance: 10)
     work_order_b = WorkOrder.create!(pickup_address: 'Rua das Araucárias, 2000', delivery_address: 'Avenida dos Ipês Amarelos, 20', 
@@ -62,7 +62,7 @@ describe 'Usuario visita tela inicial' do
 
   it 'e verifica que não há ordens de serviço cadastradas no momento' do
     #arrange
-    user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema')
+    user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema', admin: true)
     #act
     login_as(user)
     visit work_orders_path

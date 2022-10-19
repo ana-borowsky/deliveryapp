@@ -113,9 +113,11 @@ Commit 'Add delayed justification to work order'
 - Adicionar motivo de atraso, caso seja ordem de serviço seja finalizada com atraso.
 - Melhorada página de busca por ordem de serviço por usuário não autenticado
 
+Commit 'Add regular and admin user differentiation'
+- Adicionada diferenciação entre usuário regular e administrador
+
 Próximas tarefas:
 bloquear rotas de edição quando for o caso
 Colocar páginas de configuração junto nas de modalidades de transporte
-Colocar diferenciação entre user e user_admin
 REVISÃO
 Adicionar bootstrap

@@ -14,7 +14,7 @@ describe 'Usuário vê a página de veículos' do
 
   it 'e vê os veículos cadastrados' do
       #arrange
-      user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema')
+      user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema', admin: true)
       vehicle_a = Vehicle.create!(manufacturer: 'Honda', model: 'CG', year: '2020', load_capacity: 10000, license_plate: 'ASD3434')
       vehicle_b = Vehicle.create!(manufacturer: 'Fiat', model: 'Fiorino', year: '2018', load_capacity: 100000, license_plate: 'AQW3456')
       #act
@@ -34,7 +34,7 @@ describe 'Usuário vê a página de veículos' do
 
   it 'e verifica que não há veiculos cadastrados no momento' do
     # Arrange
-    user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema')
+    user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema', admin: true)
     # Act
     login_as(user)
     visit work_orders_path

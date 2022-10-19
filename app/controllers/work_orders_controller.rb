@@ -1,5 +1,6 @@
 class WorkOrdersController < ApplicationController
   skip_before_action :authenticate_user!, only: [:search]
+  skip_before_action :allow_admin_only, only: [:search, :index, :show,:pending, :select_shipping_type, :start, :end, :late, :late_cause]
   before_action :set_work_order, only:[:show, :edit, :update, :end_work_order]
 
   def index

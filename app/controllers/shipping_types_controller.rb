@@ -1,5 +1,6 @@
 class ShippingTypesController < ApplicationController
   before_action :set_work_order, only:[:show, :edit, :update]
+  skip_before_action :allow_admin_only, only: [:index, :show]
 
   def index
     @shipping_types = ShippingType.all

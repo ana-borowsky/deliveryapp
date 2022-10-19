@@ -3,7 +3,7 @@ require 'rails_helper'
 describe 'Usuário cadastra novo veículo' do
   it 'a partir da tela inicial' do
     #arrange
-    user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema')
+    user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema', admin: true)
     #act
     login_as(user)
     visit work_orders_path
@@ -19,7 +19,7 @@ describe 'Usuário cadastra novo veículo' do
 
   it 'com sucesso' do
     #arrange
-    user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema')
+    user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema', admin: true)
     #act
     login_as user
     visit work_orders_path

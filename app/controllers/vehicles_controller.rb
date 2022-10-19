@@ -1,5 +1,6 @@
 class VehiclesController < ApplicationController
   before_action :set_vehicle, only:[:show, :edit, :update]
+  skip_before_action :allow_admin_only, only: [:search, :index, :show]
 
   def index
     @vehicles = Vehicle.all

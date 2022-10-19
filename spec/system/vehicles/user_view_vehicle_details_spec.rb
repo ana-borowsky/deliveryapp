@@ -3,7 +3,7 @@ require 'rails_helper'
 describe 'Usuário vê detalhes de um veículo' do
   it 'e vê informações adicionais' do
     # Arrange
-    user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema')
+    user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema', admin: true)
     vehicle = Vehicle.new(manufacturer: 'Honda', model: 'CG', year: '2020', load_capacity: 10000, license_plate: 'ASD3434')
     vehicle.save()
 
@@ -23,7 +23,7 @@ describe 'Usuário vê detalhes de um veículo' do
 
   it 'e volta para a tela inicial' do
     # Arrange
-    user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema')
+    user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema', admin: true)
     vehicle = Vehicle.create!(manufacturer: 'Honda', model: 'CG', year: '2020', load_capacity: 10000, license_plate: 'ASD3434')
     # Act
     login_as user

@@ -1,5 +1,7 @@
 <h2>Configurações de prazo</h2>
-<%= link_to 'Adicionar nova configuração', new_delivery_time_configuration_path %>
+<% if current_user.admin? %>
+  <%= link_to 'Adicionar nova configuração', new_delivery_time_configuration_path %>
+<% end %>
 
 <% if @delivery_time_configurations.empty? %>
   <p> Não existem configurações cadastradas. </p>
@@ -18,7 +20,9 @@
       <td><%= d.minimum_distance %> a <%= d.maximum_distance %>km</td>
       <td><%= d.delivery_time %>h</td>
       <td><%= d.shipping_type.name %></td>
-      <td><%= button_to('Remover', delivery_time_configuration_path(d.id), method: :delete) %></td>
+      <% if current_user.admin? %>
+        <td><%= button_to('Remover', delivery_time_configuration_path(d.id), method: :delete) %></td>
+      <% end %>
     </tr>
   <% end %>
 </table>

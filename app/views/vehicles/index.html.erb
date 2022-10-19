@@ -5,7 +5,9 @@
   <%= f.text_field :query_vehicle %>
   <%= f.submit 'Buscar' %>
 <% end %>
-<%= link_to 'Adicionar novo veículo', new_vehicle_path %>
+<% if current_user.admin? %>
+  <%= link_to 'Adicionar novo veículo', new_vehicle_path %>
+<% end %>
 <div>
 <% @vehicles.each do |v| %>
   <div>

@@ -1,4 +1,5 @@
 class WeightConfigurationsController < ApplicationController
+  skip_before_action :allow_admin_only, only: [:index]
   def index 
     @weight_configurations = WeightConfiguration.all
   end

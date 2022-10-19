@@ -1,4 +1,6 @@
 class DeliveryTimeConfigurationsController < ApplicationController
+  skip_before_action :allow_admin_only, only: [:index]
+
   def index
     @delivery_time_configurations = DeliveryTimeConfiguration.all
   end

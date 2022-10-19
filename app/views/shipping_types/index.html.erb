@@ -1,6 +1,8 @@
 <section id="shipping_types">
 <h2>Modalidades de Transporte</h2>
-<%= link_to 'Adicionar nova modalidade de transporte', new_shipping_type_path %>
+<% if current_user.admin? %>
+  <%= link_to 'Adicionar nova modalidade de transporte', new_shipping_type_path %>
+<% end %>
 <div>
 <% @shipping_types.each do |s| %>
   <div>

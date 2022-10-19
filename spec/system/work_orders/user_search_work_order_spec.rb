@@ -2,7 +2,7 @@ require 'rails_helper'
 describe 'Usuario busca por uma ordem de serviço' do
   it 'a partir do menu' do
     #arrange
-    user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema')
+    user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema', admin: true)
     #act
     login_as(user)
     visit work_orders_path
@@ -14,7 +14,7 @@ describe 'Usuario busca por uma ordem de serviço' do
   end
   it 'e encontra uma ordem de serviço' do
     #arrange
-    user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema')
+    user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema', admin: true)
     work_order = WorkOrder.create!(pickup_address: 'Rua das Laranjeiras, 2000', delivery_address: 'Avenida dos Cáctos, 3000', 
                                   product_code: 'GHFJ123450', product_weight: 10000, distance: 100)
     #act

@@ -3,7 +3,7 @@ require 'rails_helper'
 describe 'Usuario visita index de ordens de serviço' do
   it 'e vê apenas as com status pendente' do
     #arrange
-    user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema')
+    user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema', admin: true)
     work_order_a = WorkOrder.create!(pickup_address: 'Rua das Laranjeiras, 2000', delivery_address: 'Avenida dos Cáctos, 3000', 
                                   product_code: 'GHFJ123450', product_weight: 10000, distance: 100)
     work_order_b = WorkOrder.create!(pickup_address: 'Rua dos Coqueiros, 10', delivery_address: 'Avenida dos Ipês Roxos, 42', 
@@ -21,7 +21,7 @@ describe 'Usuario visita index de ordens de serviço' do
 
   it 'e verifica que não há ordens de serviço pendentes' do
     #arrange
-    user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema')
+    user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema', admin: true)
     #act
     login_as(user)
     visit work_orders_path

@@ -3,7 +3,7 @@ require 'rails_helper'
 describe 'Usuário vê a página de modalidades de transporte' do
   it 'a partir da tela inicial' do
     #arrange
-    user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema')
+    user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema', admin: true)
     #act
     login_as(user)
     visit work_orders_path
@@ -14,7 +14,7 @@ describe 'Usuário vê a página de modalidades de transporte' do
 
   it 'e vê as modalidades de transporte cadastradas' do
     #arrange
-    user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema')
+    user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema', admin: true)
     shipping_type_a = ShippingType.create!(name: 'Motoboy', minimum_distance: 1, maximum_distance: 30, minimum_weight:1000, maximum_weight:20000, fee:500)
     shipping_type_b = ShippingType.create!(name: 'Padrão', minimum_distance: 10, maximum_distance: 300, minimum_weight:5000, maximum_weight:50000, fee:1000)
     #act
@@ -40,7 +40,7 @@ describe 'Usuário vê a página de modalidades de transporte' do
 
   it 'e verifica que não há modalidades de transporte cadastradas no momento' do
     # Arrange
-    user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema')
+    user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema', admin: true)
     # Act
     login_as(user)
     visit work_orders_path

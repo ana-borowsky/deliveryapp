@@ -3,7 +3,7 @@ require 'rails_helper'
 describe 'Usuário vê detalhes de uma modalidade de transporte' do
   it 'e vê informações adicionais' do
     # Arrange
-    user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema')
+    user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema', admin: true)
     shipping_type = ShippingType.new(name: 'Motoboy', minimum_distance: 1, maximum_distance: 30, minimum_weight:1000, maximum_weight:20000, fee:500)
     shipping_type.save()
 
@@ -24,7 +24,7 @@ describe 'Usuário vê detalhes de uma modalidade de transporte' do
 
   it 'e volta para a tela inicial' do
     # Arrange
-    user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema')
+    user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema', admin: true)
     shipping_type = ShippingType.create!(name: 'Motoboy', minimum_distance: 1, maximum_distance: 30, minimum_weight:1000, maximum_weight:20000, fee:500)
 
     # Act

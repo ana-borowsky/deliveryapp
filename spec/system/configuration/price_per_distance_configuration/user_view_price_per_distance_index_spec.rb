@@ -3,7 +3,7 @@ require 'rails_helper'
 describe 'Usuário vê a página de configurações de preço por distância' do
   it 'a partir da tela inicial' do
     #arrange
-    user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema')
+    user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema', admin: true)
     #act
     login_as(user)
     visit work_orders_path
@@ -16,7 +16,7 @@ describe 'Usuário vê a página de configurações de preço por distância' do
 
   it 'e verifica que não há configurações de preço por distância cadastradas no momento' do
     #arrange
-    user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema')
+    user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema', admin: true)
     #act
     login_as(user)
     visit work_orders_path

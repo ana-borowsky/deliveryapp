@@ -1,4 +1,5 @@
-user = User.create!(name: 'João', email: 'joao@sistemadefrete.com.br', password: 'sistema')
+user_admin = User.create!(name: 'João', email: 'joao@sistemadefrete.com.br', password: 'sistema', admin: true)
+user = ser.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema')
 
 shipping_type_a = ShippingType.create!(name: 'Padrão', minimum_distance: 1, maximum_distance: 1000, minimum_weight:100, maximum_weight:10_000, fee:500)
 shipping_type_b = ShippingType.create!(name: 'Rápida', minimum_distance: 1, maximum_distance: 1000, minimum_weight:1000, maximum_weight:10_000, fee:1000)

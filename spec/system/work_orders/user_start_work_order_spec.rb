@@ -3,7 +3,7 @@ require 'rails_helper'
 describe 'Usuario visita página de detalhes da ordem de serviço' do
   it 'e escolhe uma modalidade de transporte' do
     #arrange
-    user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema')
+    user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema', admin: true)
     work_order = WorkOrder.create!(pickup_address: 'Rua das Laranjeiras, 2000', delivery_address: 'Avenida dos Cáctos, 3000', 
                                   product_code: 'GHFJ123450', product_weight: 1000, distance: 100)
     shipping_type = ShippingType.create!(name: 'Motoboy', minimum_distance: 1, maximum_distance: 300, minimum_weight:1000, maximum_weight:20000, fee:500)
@@ -23,7 +23,7 @@ describe 'Usuario visita página de detalhes da ordem de serviço' do
 
   it 'e inicia uma ordem de serviço' do
     #arrange
-    user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema')
+    user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema', admin: true)
     work_order = WorkOrder.create!(pickup_address: 'Rua das Laranjeiras, 2000', delivery_address: 'Avenida dos Cáctos, 3000', 
                                   product_code: 'GHFJ123450', product_weight: 1000, distance: 100)
     shipping_type = ShippingType.create!(name: 'Motoboy', minimum_distance: 1, maximum_distance: 300, minimum_weight:1, maximum_weight:20000, fee:500)

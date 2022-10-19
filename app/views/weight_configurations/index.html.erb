@@ -1,5 +1,7 @@
 <h2>Configurações de preço por peso</h2>
-<%= link_to 'Adicionar nova configuração', new_weight_configuration_path %>
+<% if current_user.admin? %>
+  <%= link_to 'Adicionar nova configuração', new_weight_configuration_path %>
+<% end %>
 
 <% if @weight_configurations.empty? %>
   <p> Não existem configurações cadastradas. </p><br>
@@ -18,7 +20,9 @@
       <td><%= w.minimum_weight/100 %> a <%= w.maximum_weight/100 %>kg</td>
       <td><%= number_to_currency(w.price/100.to_f) %></td>
       <td><%= w.shipping_type.name %></td>
-      <td><%= button_to('Remover', weight_configuration_path(w.id), method: :delete) %></td>
+      <% if current_user.admin? %>
+        <td><%= button_to('Remover', weight_configuration_path(w.id), method: :delete) %></td>
+      <% end %>
     </tr>
   <% end %>
 </table>
