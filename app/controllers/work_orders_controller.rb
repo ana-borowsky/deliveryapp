@@ -94,9 +94,9 @@ class WorkOrdersController < ApplicationController
   def end
     @work_order = WorkOrder.find(params[:work_order_id])
     @work_order.end_date = Date.today
-    if @work_order.end_date && @work_order.end_date > @work_order.date
-      @work_order.status = 'late'
-      redirect_to late_work_order_path(@work_order.id), notice: 'Ordem de serviço finalizada com atraso!'
+    if @work_order.end_date > @work_order.date
+      @work_order.update(status: :late)
+      redirect_to work_order_late_path(@work_order.id), notice: 'Ordem de serviço finalizada com atraso!'
       return
     else
       @work_order.status = 'delivered'
@@ -104,6 +104,24 @@ class WorkOrdersController < ApplicationController
     end
     @work_order.vehicle.update(available: true)
     @work_order.save!
+  end
+
+  def late
+    @work_order = WorkOrder.find(params[:work_order_id])
+    if @work_order.status != 'late'
+      redirect_to work_orders_path, notice: 'Você não tem autorização para acessar essa página!'
+    end
+  end
+
+  def late_cause
+    @work_order = WorkOrder.find(params[:work_order_id])
+    @work_order.delay_cause = params[:delay_cause]
+    if !@work_order.delay_cause.strip.empty?
+      @work_order.save
+      redirect_to work_order_path(@work_order.id), notice: 'Justificativa de atraso adicionada.'
+    else
+      redirect_to work_order_late_path(@work_order.id), notice: 'Insira justificativa para o atraso na entrega!!!'
+    end
   end
 
   private

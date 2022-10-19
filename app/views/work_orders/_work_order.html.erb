@@ -7,5 +7,14 @@
   <dt><%= WorkOrder.human_attribute_name(:product_code) %>: <%= work_order.product_code %></dt>
   <dt><%= WorkOrder.human_attribute_name(:product_weight) %>: <%= work_order.product_weight/100 %>kg</dt>
   <dt><%= WorkOrder.human_attribute_name(:distance) %>: <%= work_order.distance %>km</dt>
+  <% if work_order.status != 'pending' %>
+    <dt><%= WorkOrder.human_attribute_name(:vehicle) %>: <%= work_order.vehicle.manufacturer %> <%= work_order.vehicle.model %> - <%= work_order.vehicle.license_plate %></dt>
+    <dt><%= WorkOrder.human_attribute_name(:start_date) %>: <%= I18n.localize(work_order.start_date) %></dt>
+    <dt><%= WorkOrder.human_attribute_name(:date) %>: <%= I18n.localize(work_order.date) %></dt>
+    <dt><%= WorkOrder.human_attribute_name(:end_date) %>: <%= I18n.localize(work_order.end_date) %></dt>
+  <% end %>
   <dt><%= WorkOrder.human_attribute_name(:status) %>: <%= I18n.translate(work_order.status) %></dt>
+  <% if work_order.status == 'late' %>
+    <dt><%= WorkOrder.human_attribute_name(:delay_cause) %>: <%= work_order.delay_cause %></dt>
+  <% end %>
 </dl>

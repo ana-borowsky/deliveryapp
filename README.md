@@ -109,11 +109,12 @@ Commit 'Add index to pending work orders'
 Commit 'Fix bugs on vehicles'
 - Arrumados problemas encontrados nos veículos
 
+Commit 'Add delayed justification to work order'
+- Adicionar motivo de atraso, caso seja ordem de serviço seja finalizada com atraso.
+- Melhorada página de busca por ordem de serviço por usuário não autenticado
+
 Próximas tarefas:
-Adicionar motivo de atraso, caso seja o caso
 bloquear rotas de edição quando for o caso
-modificar teste da index de work order
-veiculo nao pode estar em manutencao e disponivel ao mesmo tempo
 Colocar páginas de configuração junto nas de modalidades de transporte
 Colocar diferenciação entre user e user_admin
 REVISÃO

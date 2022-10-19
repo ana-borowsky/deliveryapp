@@ -23,6 +23,12 @@ pt-BR:
         distance: 'Distância'
         status: 'Status'
         code: 'Código'
+        vehicle: 'Veículo'
+        shipping_type: 'Modalidade de transporte'
+        date: 'Prazo'
+        start_date: 'Data de início'
+        end_date: 'Data de finalização'
+        delay_cause: 'Justificativa do atraso'
         statuses:
           canceled: 'Cancelado'
           delivered: 'Entregue'

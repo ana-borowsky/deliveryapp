@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     post 'select_shipping_type'
     post 'start'
     post 'end'
+    get 'late'
+    post 'late_cause'
     get 'pending', on: :collection
   end
   resources :shipping_types, only: [:index, :new, :create, :edit, :show, :update]

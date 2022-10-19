@@ -8,13 +8,13 @@
   <strong>Status: </strong><%= I18n.translate(@work_order.status) %><br>
 
   <% if @work_order.status == 'on_the_way' %>
-    <strong>Veículo: </strong><%= @work_order.vehicle.license_plate.upcase %></strong> <br>
+    <strong>Veículo: </strong><%= @work_order.vehicle.license_plate.upcase %> <br>
     <strong>Prazo: </strong> <%= I18n.localize(@work_order.date)%><br>
     <strong>Data de início: </strong><%= I18n.localize(@work_order.start_date) %><br>
   <% end %>
 
   <% if @work_order.status == 'delivered' %>
-    <strong>Veículo: </strong><%= @work_order.vehicle.license_plate.upcase %></strong> <br>
+    <strong>Veículo: </strong><%= @work_order.vehicle.license_plate.upcase %><br>
     <strong>Prazo: </strong> <%= I18n.localize(@work_order.date)%><br>
     <strong>Data de início: </strong><%= I18n.localize(@work_order.start_date) %><br>
     <strong>Data de finalização: </strong><%= I18n.localize(@work_order.end_date) %><br>
@@ -30,6 +30,10 @@
     <% end %>
   <% end %>
 </div>
+
+<% if @work_order.status == 'late' %>
+  <strong>Justificativa de atraso: </strong><%= @work_order.delay_cause %><br>
+<% end %>
 
 <%= link_to('Voltar', work_orders_path) %><br>
 
