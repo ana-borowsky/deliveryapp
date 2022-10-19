@@ -1,5 +1,5 @@
 user_admin = User.create!(name: 'João', email: 'joao@sistemadefrete.com.br', password: 'sistema', admin: true)
-user = ser.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema')
+user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema')
 
 shipping_type_a = ShippingType.create!(name: 'Padrão', minimum_distance: 1, maximum_distance: 1000, minimum_weight:100, maximum_weight:10_000, fee:500)
 shipping_type_b = ShippingType.create!(name: 'Rápida', minimum_distance: 1, maximum_distance: 1000, minimum_weight:1000, maximum_weight:10_000, fee:1000)
@@ -45,7 +45,7 @@ weight_config_q = WeightConfiguration.create!(minimum_weight: 2001, maximum_weig
 weight_config_r = WeightConfiguration.create!(minimum_weight: 5001, maximum_weight: 10_000, price: 450, shipping_type: shipping_type_c)
 weight_config_s = WeightConfiguration.create!(minimum_weight: 5001, maximum_weight: 10_000, price: 500, shipping_type: shipping_type_c)
 weight_config_t = WeightConfiguration.create!(minimum_weight: 10_001, maximum_weight: 50_000, price: 550, shipping_type: shipping_type_c)
-weight_config_u = WeightConfiguration.create!(minimum_weight: 50_001, maximum_weight: 100_000, price: 600, shipping_type: shipping_type_c
+weight_config_u = WeightConfiguration.create!(minimum_weight: 50_001, maximum_weight: 100_000, price: 600, shipping_type: shipping_type_c)
 
 price_per_distance_config_a = PricePerDistanceConfiguration.create!(minimum_distance: 1, maximum_distance: 30, price_per_distance: 100, shipping_type: shipping_type_a)
 price_per_distance_config_b = PricePerDistanceConfiguration.create!(minimum_distance: 31, maximum_distance: 100, price_per_distance: 150, shipping_type: shipping_type_a)

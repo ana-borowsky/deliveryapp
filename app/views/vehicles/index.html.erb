@@ -1,14 +1,14 @@
 <section id="vehicles">
 <h2>Veículos</h2>
+<div class='page-title'>
+<% if current_user.admin? %>
+  <%= link_to 'Adicionar novo veículo', new_vehicle_path, class:'link' %>
+<% end %>
 <%= form_with(url: search_vehicles_path, method: :get) do |f| %>
-  <%= f.label :query_vehicle, 'Buscar veículo' %>
-  <%= f.text_field :query_vehicle %>
+  <%= f.text_field :query_vehicle, placeholder: 'Placa do veículo', class: 'search-bar' %>
   <%= f.submit 'Buscar' %>
 <% end %>
-<% if current_user.admin? %>
-  <%= link_to 'Adicionar novo veículo', new_vehicle_path %>
-<% end %>
-<div>
+</div>
 <% @vehicles.each do |v| %>
   <div>
     <h3><%= v.manufacturer %> <%= v.model %> <%= link_to(v.license_plate, vehicle_path(v.id)) %> </h3>
@@ -22,4 +22,5 @@
 <% if @vehicles.empty? %>
   <p> Não existem veículos cadastrados. </p>
 <% end %>
+</div>
 </section>

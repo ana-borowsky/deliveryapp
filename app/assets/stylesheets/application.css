@@ -13,3 +13,95 @@
  *= require_tree .
  *= require_self
  */
+
+* {
+    font-family: 'roboto', sans-serif;
+} 
+
+body {
+    padding: 0 60px;
+
+
+    /* background-color: #26004C; */
+}
+
+header h1 {
+    display: inline;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 25px;
+}
+
+header .first-line {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .first-line form {
+    display: inline;
+}
+
+header .search-bar {
+    width: 270px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav .selected {
+    font-weight: bold;
+    }
+
+h2 {
+    margin-top: 60px;
+    text-align: center;
+}
+
+#work_orders .page-title {
+    margin-bottom: 60px;
+}
+
+#work_orders {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#shipping_types {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#vehicles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#vehicles .page-title {
+    margin-bottom: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
+}
+
+#vehicles .page-title form {
+    display: inline;
+}
+
+#vehicles .search-bar {
+    width: 150px;
+}
+
+#configurations {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+

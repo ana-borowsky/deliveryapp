@@ -116,8 +116,9 @@ Commit 'Add delayed justification to work order'
 Commit 'Add regular and admin user differentiation'
 - Adicionada diferenciação entre usuário regular e administrador
 
+Commit 'Add style'
+- Melhora da aparência da app.
+
 Próximas tarefas:
-bloquear rotas de edição quando for o caso
 Colocar páginas de configuração junto nas de modalidades de transporte
 REVISÃO
-Adicionar bootstrap

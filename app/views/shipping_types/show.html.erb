@@ -8,6 +8,7 @@
   <strong>Ativada: </strong><%= I18n.translate(@shipping_type.active.to_s) %> <br>
 
 </div>
-
-<%= link_to('Editar', edit_shipping_type_path(@shipping_type.id)) %><br><br>
+<% if current_user.admin? %>
+  <%= link_to('Editar', edit_shipping_type_path(@shipping_type.id)) %><br><br>
+<% end %>
 <%= link_to('Voltar', shipping_types_path) %>
