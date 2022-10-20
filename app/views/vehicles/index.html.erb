@@ -1,7 +1,7 @@
 <section id="vehicles">
 <h2>Veículos</h2>
 <div class='page-title'>
-<% if current_user.admin? %>
+<% if true#current_user.admin? %>
   <%= link_to 'Adicionar novo veículo', new_vehicle_path, class: 'button' %>
 <% end %>
 <%= form_with(url: search_vehicles_path, method: :get) do |f| %>

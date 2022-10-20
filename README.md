@@ -139,6 +139,9 @@ Commit 'Continue work on design, fix bugs'
 
 Commit 'Fix some problems'
 
+Commit 'Add message to search if result is 0'
+- Adicionada mensagem na busca: 'Nenhum resultado encontrado.'
+
 Próximas tarefas:
 Revisar testes
 Ainda há erros no design

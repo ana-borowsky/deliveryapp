@@ -5,4 +5,9 @@
 <% @work_orders.each do |w| %>
   <%= render w %>
 <% end %>
+
+<% if @work_orders.empty? %>
+  <p>Nenhum resultado encontrado.</p>
+<% end %>
+
 </section>

@@ -5,4 +5,9 @@
 <% @vehicles.each do |v| %>
   <%= render v %>
 <% end %>
+
+<% if @vehicles.empty? %>
+  <p>Nenhum resultado encontrado.</p>
+<% end %>
+
 </section>
