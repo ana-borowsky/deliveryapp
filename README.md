@@ -137,7 +137,10 @@ Commit 'Continue work on design, fix bugs'
 - Arrumados frases faltando tradução no Devise
 - Testes que estavam falhando corrigidos
 
+Commit 'Fix some problems'
+
 Próximas tarefas:
 Revisar testes
+Ainda há erros no design
 Colocar páginas de configuração junto nas de modalidades de transporte
 REVISÃO
