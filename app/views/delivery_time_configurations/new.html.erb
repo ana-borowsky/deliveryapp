@@ -1,12 +1,15 @@
-<% if(@delivery_time_configuration.errors.any?) %>
-  <p>Verifique os erros abaixo:</p>
-  <ul>
-    <% @delivery_time_configuration.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-  </ul>
-<% end %>
-<h2>Nova configuração de prazo</h2>
-<%= render 'form' %><br>
-<%= link_to 'Voltar', delivery_time_configurations_path %>
+<section id="new_delivery_time_configuration">
+  <% if(@delivery_time_configuration.errors.any?) %>
+    <p>Verifique os erros abaixo:</p>
+    <ul>
+      <% @delivery_time_configuration.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  <h2>Nova configuração de prazo</h2>
+    <%= link_to 'Voltar', delivery_time_configurations_path %>
+  <%= render 'form' %>
+</section>
+
 

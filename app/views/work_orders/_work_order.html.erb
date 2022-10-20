@@ -1,3 +1,4 @@
+
 <% if user_signed_in? %>
   <h3><%= WorkOrder.human_attribute_name(:code) %>: <%= link_to(work_order.code, work_order_path(work_order.id)) %></h3>
 <% end %>

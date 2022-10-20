@@ -1,12 +1,16 @@
-<% if(@work_order.errors.any?) %>
-  <p>Verifique os erros abaixo:</p>
-  <ul>
-    <% @work_order.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-  </ul>
-<% end %>
+<section id="new_work_order">
+  <% if(@work_order.errors.any?) %>
+    <p>Verifique os erros abaixo:</p>
+    <ul>
+      <% @work_order.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
 <h2>Nova ordem de serviço</h2>
-<%= render 'form' %><br>
-<%= link_to 'Voltar', work_orders_path %>
+<div class='page-title'>
+  <%= link_to 'Voltar', work_orders_path, class: 'button' %>
+</div>
+<%= render 'form' %>
+</section>
 

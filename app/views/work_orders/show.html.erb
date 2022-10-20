@@ -1,4 +1,11 @@
+<section id="show_work_order">
 <h2>Ordem de Serviço: <%= @work_order.code %> </h2>
+<div class='page-title'>
+  <%= link_to 'Voltar', work_orders_path, class: 'button' %>
+  <% if @work_order.status == 'pending' %>
+    <%= link_to('Editar', edit_work_order_path(@work_order.id), class: 'button') %>
+  <% end %>
+</div>
 <div>
   <strong>Endereço de saída: </strong><%= @work_order.pickup_address %><br>
   <strong>Endereço de entrega: </strong><%= @work_order.delivery_address %><br>
@@ -31,15 +38,7 @@
   <% end %>
 </div>
 
-<% if @work_order.status == 'late' %>
-  <strong>Justificativa de atraso: </strong><%= @work_order.delay_cause %><br>
-<% end %>
-
-<%= link_to('Voltar', work_orders_path) %><br>
-
 <% if @work_order.status == 'pending' %>
-  <br><%= link_to('Editar', edit_work_order_path(@work_order.id)) %><br><br>
-
   <h3>Modalidades de transporte disponíveis:</h3>
   <% @available_shipping_types.each do |s| %>
     <table>
@@ -54,12 +53,17 @@
         <td><%= button_to('Selecionar', work_order_select_shipping_type_path(@work_order.id, shipping_type_id:s.id), method: :post) %></td>
       </tr>
     </table>
+    <% end %>
+<% end %>
+<% if @work_order.status == 'late' %>
+  <strong>Justificativa de atraso: </strong><%= @work_order.delay_cause %><br>
 <% end %>
 
-  <% if @available_shipping_types.empty? %>
-    <p> Não existem modalidades de transporte disponíveis para atender esta ordem de serviço. </p>
-  <% end %>
+<% if @available_shipping_types.empty? %>
+  <p> Não existem modalidades de transporte disponíveis para atender esta ordem de serviço. </p>
 <% end %>
+
+</section>
 
 
 

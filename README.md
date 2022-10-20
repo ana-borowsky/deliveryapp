@@ -119,6 +119,10 @@ Commit 'Add regular and admin user differentiation'
 Commit 'Add style'
 - Melhora da aparência da app.
 
+Commit 'Continue work on app style'
+- Continuação do trabalho na aparência da app.
+
 Próximas tarefas:
+Revisar testes
 Colocar páginas de configuração junto nas de modalidades de transporte
 REVISÃO

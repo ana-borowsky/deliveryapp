@@ -1,29 +1,31 @@
-<h2>Configurações de preço por distância percorrida</h2>
-<% if current_user.admin? %>
-  <%= link_to 'Adicionar nova configuração', new_price_per_distance_configuration_path %>
-<% end %>
-
-<% if @price_per_distance_configurations.empty? %>
-  <p> Não existem configurações cadastradas. </p>
-<% end %>
-
-<p>Tabela de preço por distância percorrida</p>
-<table>
-  <tr>
-    <th>Intervalo de distância</th>
-    <th>Preço</th>
-    <th>Modalidade de transporte</th>
-    <th></th>
-  </tr>
-  <% @price_per_distance_configurations.each do |p| %>
-    <tr>
-      <td><%= p.minimum_distance%> a <%= p.maximum_distance %>km</td>
-      <td><%= number_to_currency(p.price_per_distance/100) %></td>
-      <td><%= p.shipping_type.name %></td>
-      <% if current_user.admin? %>
-        <td><%= button_to('Remover', price_per_distance_configuration_path(p.id), method: :delete) %></td>
-      <% end %>
-    </tr>
+<section id="price_per_distance_configurations">
+  <h2>Configurações de preço por distância percorrida</h2>
+  <% if current_user.admin? %>
+    <%= link_to 'Adicionar nova configuração', new_price_per_distance_configuration_path, class: 'button' %>
   <% end %>
-</table>
+
+  <% if @price_per_distance_configurations.empty? %>
+    <p> Não existem configurações cadastradas. </p>
+  <% end %>
+
+  <p>Tabela de preço por distância percorrida</p>
+  <table>
+    <tr>
+      <th>Intervalo de distância</th>
+      <th>Preço</th>
+      <th>Modalidade de transporte</th>
+      <th></th>
+    </tr>
+    <% @price_per_distance_configurations.each do |p| %>
+      <tr>
+        <td><%= p.minimum_distance%> a <%= p.maximum_distance %>km</td>
+        <td><%= number_to_currency(p.price_per_distance/100) %></td>
+        <td><%= p.shipping_type.name %></td>
+        <% if current_user.admin? %>
+          <td><%= button_to('Remover', price_per_distance_configuration_path(p.id), method: :delete) %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </table>
+</section>
 

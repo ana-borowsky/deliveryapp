@@ -1,25 +1,26 @@
-<%= form_with(model: @work_order) do |f| %>
-  <div>
+<%= form_with(model: @work_order, class: 'form') do |f| %>
+  <div class='input-wrapper'>
     <%= f.label :pickup_address, 'Endereço de saída:' %>
     <%= f.text_field :pickup_address %>
   </div>
-    <div>
+  <div class='input-wrapper'>
     <%= f.label :delivery_address, 'Endereço de entrega:' %>
     <%= f.text_field :delivery_address %>
   </div>
-    <div>
+  <div class='input-wrapper'>
     <%= f.label :product_code, 'Código do produto:' %>
     <%= f.text_field :product_code %>
   </div>
-    <div>
+  <div class='input-wrapper'>
     <%= f.label :product_weight, 'Peso do produto:' %>
-    <%= f.number_field :product_weight %>
+    <%= f.number_field :product_weight, placeholder: 'Peso em gramas' %>
   </div>
-  <div>
+  <div class='input-wrapper'>
     <%= f.label :distance, 'Distância:' %>
-    <%= f.number_field :distance %>
+    <%= f.number_field :distance, placeholder: 'Distância em kilômetros' %>
   </div>
   <div>
     <br><%= f.submit 'Salvar' %>
   </div>
 <% end %>
+

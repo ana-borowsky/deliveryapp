@@ -1,28 +1,29 @@
-<%= form_with(model: @vehicle) do |f| %>
-  <div>
+<%= form_with(model: @vehicle, class: 'form') do |f| %>
+    <div class='input-wrapper'>
     <%= f.label :license_plate, 'Placa:' %>
     <%= f.text_field :license_plate %>
   </div>
-    <div>
+      <div class='input-wrapper'>
     <%= f.label :manufacturer, 'Fabricante:' %>
     <%= f.text_field :manufacturer %>
   </div>
-    <div>
+      <div class='input-wrapper'>
     <%= f.label :model, 'Modelo:' %>
     <%= f.text_field :model %>
   </div>
-    <div>
+      <div class='input-wrapper'>
     <%= f.label :year, 'Ano de fabricação:' %>
     <%= f.text_field :year %>
   </div>
-  <div>
+    <div class='input-wrapper'>
     <%= f.label :load_capacity, 'Capacidade de carga:' %>
-    <%= f.number_field :load_capacity %>
+    <%= f.number_field :load_capacity, placeholder: 'Carga em gramas' %>
   </div>
-  <div>
+    <div>
     <%= f.label :maintenance, 'Em manutenção:' %>
     <%= f.check_box :maintenance %>
   </div>
+  <div>
     <br><%= f.submit 'Salvar' %>
   </div>
 <% end %>

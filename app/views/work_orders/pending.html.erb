@@ -1,10 +1,9 @@
-<section id="pending work_orders">
+<section id="pending_work_orders">
 <h2>Ordens de Serviço Pendentes</h2>
-<div>
-Número de ordens de serviço pendentes encontradas: <%= @pending_work_orders.count %><br>
-<%= link_to('Voltar', work_orders_path) %><br>
+<div class='page-title'>
+  <%= link_to 'Voltar', work_orders_path, class: 'button' %>
+  Ordens de serviço pendentes encontradas: <%= @pending_work_orders.count %>
 </div>
-<div>
 <% @pending_work_orders.each do |w| %>
   <div>
     <h3>Código: <%= link_to(w.code, work_order_path(w.id)) %></h3>

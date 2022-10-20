@@ -1,28 +1,30 @@
-<h2>Configurações de prazo</h2>
-<% if current_user.admin? %>
-  <%= link_to 'Adicionar nova configuração', new_delivery_time_configuration_path %>
-<% end %>
-
-<% if @delivery_time_configurations.empty? %>
-  <p> Não existem configurações cadastradas. </p>
-<% end %>
-
-<p>Tabela de prazos</p>
-<table>
-  <tr>
-    <th>Intervalo de distância</th>
-    <th>Prazo</th>
-    <th>Modalidade de transporte</th>
-    <th></th>
-  </tr>
-  <% @delivery_time_configurations.each do |d| %>
-    <tr>
-      <td><%= d.minimum_distance %> a <%= d.maximum_distance %>km</td>
-      <td><%= d.delivery_time %>h</td>
-      <td><%= d.shipping_type.name %></td>
-      <% if current_user.admin? %>
-        <td><%= button_to('Remover', delivery_time_configuration_path(d.id), method: :delete) %></td>
-      <% end %>
-    </tr>
+<section id="delivery_time_configurations">
+  <h2>Configurações de prazo</h2>
+  <% if current_user.admin? %>
+    <%= link_to 'Adicionar nova configuração', new_delivery_time_configuration_path, class: 'button' %>
   <% end %>
-</table>
+
+  <% if @delivery_time_configurations.empty? %>
+    <p> Não existem configurações cadastradas. </p>
+  <% end %>
+
+  <p>Tabela de prazos</p>
+  <table>
+    <tr>
+      <th>Intervalo de distância</th>
+      <th>Prazo</th>
+      <th>Modalidade de transporte</th>
+      <th></th>
+    </tr>
+    <% @delivery_time_configurations.each do |d| %>
+      <tr>
+        <td><%= d.minimum_distance %> a <%= d.maximum_distance %>km</td>
+        <td><%= d.delivery_time %>h</td>
+        <td><%= d.shipping_type.name %></td>
+        <% if current_user.admin? %>
+          <td><%= button_to('Remover', delivery_time_configuration_path(d.id), method: :delete) %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </table>
+</section>

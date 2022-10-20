@@ -1,29 +1,29 @@
-<%= form_with(model: @shipping_type) do |f| %>
-  <div>
+<%= form_with(model: @shipping_type, class: 'form') do |f| %>
+  <div class='input-wrapper'>
     <%= f.label :name, 'Nome:' %>
     <%= f.text_field :name %>
   </div>
-    <div>
+    <div class='input-wrapper'>
     <%= f.label :minimum_distance, 'Distância mínima:' %>
-    <%= f.number_field :minimum_distance %>
+    <%= f.number_field :minimum_distance, placeholder: 'Distância em kilômetros' %>
   </div>
-    <div>
+    <div class='input-wrapper'>
     <%= f.label :maximum_distance, 'Distância máxima:' %>
-    <%= f.number_field :maximum_distance %>
+    <%= f.number_field :maximum_distance, placeholder: 'Distância em kilômetros' %>
   </div>
-    <div>
+    <div class='input-wrapper'>
     <%= f.label :minimum_weight, 'Peso mínimo:' %>
-    <%= f.number_field :minimum_weight %>
+    <%= f.number_field :minimum_weight, placeholder: 'Peso em gramas' %>
   </div>
-    <div>
+    <div class='input-wrapper'>
     <%= f.label :maximum_weight, 'Peso máximo:' %>
-    <%= f.number_field :maximum_weight %>
+    <%= f.number_field :maximum_weight, placeholder: 'Peso em gramas' %>
   </div>
-  <div>
+  <div class='input-wrapper'>
     <%= f.label :fee, 'Taxa:' %>
-    <%= f.number_field :fee %>
+    <%= f.number_field :fee, placeholder: 'Valor em centavos' %>
   </div>
-    <div>
+    <div class='input-wrapper'>
     <%= f.label :active, 'Ativada:' %>
     <%= f.check_box :active %>
   </div>

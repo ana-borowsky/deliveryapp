@@ -1,29 +1,30 @@
-<h2>Configurações de preço por peso</h2>
-<% if current_user.admin? %>
-  <%= link_to 'Adicionar nova configuração', new_weight_configuration_path %>
-<% end %>
+<section id="vehicles">
+  <h2>Configurações de preço por peso</h2>
+    <% if current_user.admin? %>
+      <%= link_to 'Adicionar nova configuração', new_weight_configuration_path, class: 'button' %>
+    <% end %>
+    <% if @weight_configurations.empty? %>
+      <p> Não existem configurações cadastradas. </p>
+    <% end %>
 
-<% if @weight_configurations.empty? %>
-  <p> Não existem configurações cadastradas. </p><br>
-<% end %>
-
-<p>Tabela de preço por peso</p>
-<table>
-  <tr>
-    <th>Intervalo de peso</th>
-    <th>Preço</th>
-    <th>Modalidade de transporte</th>
-    <th></th>
-  </tr>
-  <% @weight_configurations.each do |w| %>
+  <p>Tabela de preço por peso</p>
+  <table>
     <tr>
-      <td><%= w.minimum_weight/100 %> a <%= w.maximum_weight/100 %>kg</td>
-      <td><%= number_to_currency(w.price/100.to_f) %></td>
-      <td><%= w.shipping_type.name %></td>
-      <% if current_user.admin? %>
-        <td><%= button_to('Remover', weight_configuration_path(w.id), method: :delete) %></td>
-      <% end %>
+      <th>Intervalo de peso</th>
+      <th>Preço</th>
+      <th>Modalidade de transporte</th>
+      <th></th>
     </tr>
-  <% end %>
-</table>
+    <% @weight_configurations.each do |w| %>
+      <tr>
+        <td><%= w.minimum_weight/100 %> a <%= w.maximum_weight/100 %>kg</td>
+        <td><%= number_to_currency(w.price/100.to_f) %></td>
+        <td><%= w.shipping_type.name %></td>
+        <% if current_user.admin? %>
+          <td><%= button_to('Remover', weight_configuration_path(w.id), method: :delete) %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </table>
+</section>
 

@@ -1,3 +1,4 @@
+<section id="new_vehicle">
 <% if(@vehicle.errors.any?) %>
   <p>Verifique os erros abaixo:</p>
   <ul>
@@ -7,6 +8,9 @@
   </ul>
 <% end %>
 <h2>Novo veículo</h2>
-<%= render 'form' %><br>
-<%= link_to 'Voltar', vehicles_path %>
+<div class='page-title'>
+  <%= link_to 'Voltar', vehicles_path, class: 'button' %>
+</div>
+<%= render 'form' %>
+</section>
 

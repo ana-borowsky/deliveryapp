@@ -1,4 +1,11 @@
+<section id="show_shipping_type">
 <h2>Modalidade de transporte: <%= @shipping_type.name %> </h2>
+<div class='page-title'>
+  <%= link_to 'Voltar', shipping_types_path, class: 'button' %>
+  <% if current_user.admin? %>
+    <%= link_to 'Editar', edit_shipping_type_path(@shipping_type.id), class: 'button' %>
+  <% end %>
+</div>
 <div>
   <strong>Distância mínima: </strong><%= @shipping_type.minimum_distance %>km<br>
   <strong>Distância máxima: </strong><%= @shipping_type.maximum_distance %>km<br>
@@ -6,9 +13,6 @@
   <strong>Peso máximo: </strong><%= @shipping_type.maximum_weight/100 %>kg<br>
   <strong>Taxa: </strong><%= number_to_currency(@shipping_type.fee/100) %> <br>
   <strong>Ativada: </strong><%= I18n.translate(@shipping_type.active.to_s) %> <br>
-
 </div>
-<% if current_user.admin? %>
-  <%= link_to('Editar', edit_shipping_type_path(@shipping_type.id)) %><br><br>
-<% end %>
-<%= link_to('Voltar', shipping_types_path) %>
+</section>
+
