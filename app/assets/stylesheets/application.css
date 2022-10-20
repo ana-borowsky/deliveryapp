@@ -275,6 +275,13 @@ h2 {
     align-items: center;   
 }
 
+#delivery_time_configurations {
+    display: flex;
+    flex-direction: column;
+    align-items: center;   
+}
+
+
 #price_per_distance_configurations {
     display: flex;
     flex-direction: column;
@@ -291,4 +298,10 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;   
+}
+
+.session {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
 }

@@ -1,4 +1,14 @@
 # README
+
+Usuário Regular: 
+    Nome: Ana
+    email: ana@sistemadefrete.com.br
+    senha: sistema
+Usuário Administrador:
+    Nome: João
+    email: joao@sistemadefrete.com.br
+    senha: sistema
+
 O planejamento para o projeto encontra-se em um PDF dentro da pasta DOCS.
 
 A cada commit, uma lista das atividades que foram realizadas será descrita neste README.
@@ -121,6 +131,11 @@ Commit 'Add style'
 
 Commit 'Continue work on app style'
 - Continuação do trabalho na aparência da app.
+
+Commit 'Continue work on design, fix bugs'
+- Continuação do trabalho de design.
+- Arrumados frases faltando tradução no Devise
+- Testes que estavam falhando corrigidos
 
 Próximas tarefas:
 Revisar testes

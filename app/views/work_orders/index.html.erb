@@ -2,7 +2,7 @@
 <h2>Ordens de Serviço</h2>
 <div class='page-title'>
   <% if current_user.admin? %>
-    <%= link_to 'Adicionar nova ordem de serviço', new_work_order_path, class:'link', class: 'button' %><br>
+    <%= link_to 'Adicionar nova ordem de serviço', new_work_order_path, class: 'button' %><br>
   <% end %>
   <%= link_to 'Mostrar ordens de serviço pendentes', pending_work_orders_path, class: 'button' %><br>
 </div>

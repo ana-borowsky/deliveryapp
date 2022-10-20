@@ -5,20 +5,18 @@ describe 'Usuário regular se autentica' do
     #arrange
     #act
     visit work_orders_path
-    click_on 'Sign up'
-    fill_in 'Nome', with: 'Ana'
-    fill_in 'E-mail', with: 'ana@sistemadefrete.com.br'
+    click_on 'Inscrever-se'
+    fill_in 'Nome', with: 'Joana'
+    fill_in 'E-mail', with: 'joana@sistemadefrete.com.br'
     fill_in 'Senha', with: 'sistema'
     fill_in 'Confirme sua senha', with: 'sistema'
     click_button 'Sign up'
     
     #assert
     expect(page).to have_content 'Registro realizado com sucesso.'
-    within('nav') do
-      expect(page).not_to have_link 'Log in'
-      expect(page).to have_button 'Log out'
-      expect(page).to have_content 'ana@sistemadefrete.com.br'
-    end
+    expect(page).not_to have_link 'Log in'
+    expect(page).to have_button 'Log out'
+    expect(page).to have_content 'joana@sistemadefrete.com.br'
   end
 
   it 'e faz logout' do
@@ -32,10 +30,8 @@ describe 'Usuário regular se autentica' do
 
     #assert
     expect(page).to have_content 'Logout efetuado com sucesso.'
-    within('nav') do
-      expect(page).to have_link 'Log in'
-      expect(page).not_to have_button 'Log out'
-      expect(page).not_to have_content 'ana@sistemadefrete.com.br' 
-    end
+    expect(page).to have_link 'Log in'
+    expect(page).not_to have_button 'Log out'
+    expect(page).not_to have_content 'joana@sistemadefrete.com.br' 
   end
 end

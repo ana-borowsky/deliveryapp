@@ -7,7 +7,7 @@ describe 'Usuário não autenticado busca por uma ordem de serviço' do
                                     product_code: 'HJUH123450', product_weight: 10000, distance: 10)
     #act
     visit root_path
-    fill_in 'Buscar ordem de serviço', with: work_order.code
+    fill_in 'Insira o código da ordem de serviço', with: work_order.code
     click_on 'Buscar'
     #assert
     expect(page).to have_content "Resultado da busca por: #{work_order.code}"
@@ -30,7 +30,7 @@ describe 'Usuário não autenticado busca por uma ordem de serviço' do
                                         date: Date.today - 1.day, end_date: Date.today, delay_cause: 'Veículo sofreu avarias no caminho.')
     #act
     visit root_path
-    fill_in 'Buscar ordem de serviço', with: work_order.code
+    fill_in 'Insira o código da ordem de serviço', with: work_order.code
     click_on 'Buscar'
     #assert
     expect(page).to have_content 'Status: Atrasada'

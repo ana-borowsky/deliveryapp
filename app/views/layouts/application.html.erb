@@ -17,7 +17,7 @@
           <%= button_to 'Log out', destroy_user_session_path, method: :delete %>
         </div>
       <% else %>
-        <%= link_to 'Log in', new_user_session_path %>
+        <%= link_to 'Log in', new_user_session_path, class: 'button' %>
       <% end %>
     </div>
     <nav>

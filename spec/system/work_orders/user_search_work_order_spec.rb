@@ -8,7 +8,7 @@ describe 'Usuario busca por uma ordem de serviço' do
     visit work_orders_path
     #assert
     within('header nav') do
-      expect(page).to have_field('Buscar ordem de serviço')
+      expect(page).to have_field('Insira o código da ordem de serviço')
       expect(page).to have_button('Buscar')
     end
   end
@@ -20,7 +20,7 @@ describe 'Usuario busca por uma ordem de serviço' do
     #act
     login_as(user)
     visit work_orders_path
-    fill_in 'Buscar ordem de serviço', with: work_order.code
+    fill_in 'Insira o código da ordem de serviço', with: work_order.code
     click_on 'Buscar'
     #assert
     expect(page).to have_content "Resultado da busca por: #{work_order.code}"

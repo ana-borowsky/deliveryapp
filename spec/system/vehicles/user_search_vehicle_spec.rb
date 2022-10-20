@@ -8,7 +8,7 @@ describe 'Usuario busca por um veículo' do
     visit work_orders_path
     click_on 'Veículos'
     #assert
-    expect(page).to have_field('Buscar veículo')
+    expect(page).to have_field('Placa do veículo')
     expect(page).to have_button('Buscar')
   end
 
@@ -29,7 +29,7 @@ describe 'Usuario busca por um veículo' do
     login_as(user)
     visit work_orders_path
     click_on 'Veículos'
-    fill_in 'Buscar veículo', with: 'ASD3434'
+    fill_in 'Placa do veículo', with: 'ASD3434'
     within '#vehicles' do
       click_on 'Buscar'
     end

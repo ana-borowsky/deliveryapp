@@ -9,7 +9,7 @@ describe 'Usuário não autenticado' do
     visit root_path
     #assert
     expect(page).to have_content 'Sistema de Fretes'
-    expect(page).to have_content 'Buscar ordem de serviço'
+    expect(page).to have_field(placeholder:'Insira o código da ordem de serviço')
     expect(page).to have_button 'Buscar'
     expect(page).to have_link 'Log in'
     expect(page).not_to have_content 'Ordens de Serviço'
