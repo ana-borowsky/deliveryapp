@@ -10,6 +10,9 @@ class WeightConfigurationsController < ApplicationController
 
   def create
     @weight_configuration = WeightConfiguration.new(weight_configuration_params)
+    if  @weight_configuration.price
+      @weight_configuration.price = @weight_configuration.price*100
+    end
     if @weight_configuration.save()
       redirect_to weight_configurations_path, notice: 'Configuração cadastrada com sucesso!'
     else
@@ -27,6 +30,6 @@ class WeightConfigurationsController < ApplicationController
   private 
 
   def weight_configuration_params
-    params.require(:weight_configuration).permit(:name, :minimum_weight, :maximum_weight, :price, :shipping_type_id)
+    params.require(:weight_configuration).permit(:minimum_weight, :maximum_weight, :price, :weight_configuration_id, :shipping_type_id)
   end
 end

@@ -12,6 +12,9 @@ class ShippingTypesController < ApplicationController
 
   def create
     @shipping_type = ShippingType.new(shipping_type_params)
+    if @shipping_type.fee
+      @shipping_type.fee = @shipping_type.fee*100
+    end
     if @shipping_type.save()
       redirect_to shipping_types_path, notice: 'Modalidade de transporte cadastrada com sucesso!'
     else
@@ -27,7 +30,10 @@ class ShippingTypesController < ApplicationController
   end
 
   def update
-    if @shipping_type.update(shipping_type_params)
+    modified_params = shipping_type_params
+    modified_params[:fee] = shipping_type_params[:fee].to_i*100
+    
+    if @shipping_type.update(modified_params)
       redirect_to shipping_type_path(@shipping_type.id), notice: 'Modalidade de serviço editada com sucesso!'
     else
       flash.now[:notice] = 'Não foi possível atualizar a modalidade de transporte.'

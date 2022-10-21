@@ -9,7 +9,7 @@
   </div>
   <div class='input-wrapper'>
     <%= f.label :price, 'Preço:' %>
-    <%= f.number_field :price, placeholder: 'R$' %>
+    <%= f.number_field :price, placeholder: 'R$', value: (@weight_configuration.price ? @weight_configuration.price/100 : '') %>
   </div>
   <div class='input-wrapper'>
     <%= f.label :shipping_type_id, 'Modalidade de transporte:' %>

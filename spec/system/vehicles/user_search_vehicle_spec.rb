@@ -30,7 +30,7 @@ describe 'Usuario busca por um veículo' do
     visit work_orders_path
     click_on 'Veículos'
     fill_in 'Placa do veículo', with: 'ASD3434'
-    within '#vehicles' do
+    within '.page-title-two-buttons' do
       click_on 'Buscar'
     end
 
@@ -50,7 +50,7 @@ describe 'Usuario busca por um veículo' do
     visit work_orders_path
     click_on 'Veículos'
     fill_in 'Placa do veículo', with: 'ASD3434'
-    within '#vehicles' do
+    within '.page-title-two-buttons' do
       click_on 'Buscar'
     end
 

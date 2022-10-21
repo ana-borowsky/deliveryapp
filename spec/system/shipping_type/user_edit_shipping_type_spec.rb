@@ -19,7 +19,7 @@ describe 'Usuário edita uma modalidade de transporte' do
     expect(page).to have_field 'Distância máxima', with: '30'
     expect(page).to have_field 'Peso mínimo', with: '1000'
     expect(page).to have_field 'Peso máximo', with: '20000'
-    expect(page).to have_field 'Taxa', with: '500'
+    expect(page).to have_field 'Taxa', with: '5'
   end
 
   it 'com sucesso' do

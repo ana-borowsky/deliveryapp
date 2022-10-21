@@ -11,6 +11,9 @@ class  PricePerDistanceConfigurationsController < ApplicationController
 
   def create
     @price_per_distance_configuration = PricePerDistanceConfiguration.new(price_per_distance_configuration_params)
+    if  @price_per_distance_configuration.price_per_distance
+      @price_per_distance_configuration.price_per_distance = @price_per_distance_configuration.price_per_distance*100
+    end
     if @price_per_distance_configuration.save()
       redirect_to price_per_distance_configurations_path, notice: 'Configuração cadastrada com sucesso!'
     else

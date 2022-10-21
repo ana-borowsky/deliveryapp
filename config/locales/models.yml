@@ -59,10 +59,12 @@ pt-BR:
         minimum_weight: 'Peso mínimo'
         maximum_weight: 'Peso máximo'
         price: 'Preço'
+        shipping_type: 'Modalidade de transporte'
       price_per_distance_configuration:
         minimum_distance: 'Distância mínima'
         maximum_distance: 'Distância máxima'
         price_per_distance: 'Preço' 
+        shipping_type: 'Modalidade de transporte'
 
 
 

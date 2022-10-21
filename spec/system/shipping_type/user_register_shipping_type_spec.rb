@@ -32,7 +32,7 @@ describe 'Usuário cadastra uma modalidade de transporte' do
     fill_in 'Distância máxima', with: '30'
     fill_in 'Peso mínimo', with: '1000'
     fill_in 'Peso máximo', with: '20000'
-    fill_in 'Taxa', with: '500'
+    fill_in 'Taxa', with: '5'
     click_on 'Salvar'
 
     #assert

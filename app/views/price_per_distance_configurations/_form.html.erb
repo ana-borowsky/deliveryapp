@@ -9,7 +9,7 @@
   </div>
   <div class='input-wrapper'>
     <%= f.label :price_per_distance, 'Preço:' %>
-    <%= f.number_field :price_per_distance, placeholder: 'R$' %>
+    <%= f.number_field :price_per_distance, placeholder: 'R$', value: (@price_per_distance_configuration.price_per_distance ? @price_per_distance_configuration.price_per_distance/100 : '') %>
   </div>
   <div class='input-wrapper'>
     <%= f.label :shipping_type_id, 'Modalidade de transporte:' %>
