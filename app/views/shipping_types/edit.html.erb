@@ -8,6 +8,8 @@
   </ul>
 <% end %>
 <h2>Editar modalidade de transporte</h2>
-<%= render 'form' %><br>
-<%= link_to 'Voltar', shipping_type_path %>
+<div class='page-title'>
+  <%= link_to 'Voltar', shipping_type_path, class: 'button' %>
+</div>
+<%= render 'form' %>
 <section class='page-layout'>

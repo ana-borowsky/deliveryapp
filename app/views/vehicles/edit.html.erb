@@ -8,6 +8,9 @@
   </ul>
 <% end %>
 <h2>Editar veículo</h2>
-<%= render 'form' %><br>
-<%= link_to 'Voltar', vehicle_path %>
+<div class='page-title'>
+  <%= link_to 'Voltar', vehicle_path, class: 'button' %>
+</div>
+<%= render 'form' %>
+
 <section class='page-layout'>

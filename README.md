@@ -144,8 +144,4 @@ Commit 'Add message to search if result is 0'
 
 Commit 'Continue work on design'
 
-Próximas tarefas:
-Revisar testes
-Ainda há erros no design
-Colocar páginas de configuração junto nas de modalidades de transporte
 REVISÃO

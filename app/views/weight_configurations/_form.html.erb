@@ -1,15 +1,15 @@
 <%= form_with(model: @weight_configuration, class: 'form') do |f| %>
   <div class='input-wrapper'>
     <%= f.label :minimum_weight, 'Peso mínimo:' %>
-    <%= f.number_field :minimum_weight %>
+    <%= f.number_field :minimum_weight, placeholder: 'Peso em gramas' %>
   </div>
   <div class='input-wrapper'>
     <%= f.label :maximum_weight, 'Peso máximo:' %>
-    <%= f.number_field :maximum_weight %>
+    <%= f.number_field :maximum_weight, placeholder: 'Peso em gramas' %>
   </div>
   <div class='input-wrapper'>
     <%= f.label :price, 'Preço:' %>
-    <%= f.number_field :price %>
+    <%= f.number_field :price, placeholder: 'R$' %>
   </div>
   <div class='input-wrapper'>
     <%= f.label :shipping_type_id, 'Modalidade de transporte:' %>

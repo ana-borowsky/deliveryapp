@@ -1,15 +1,15 @@
 <%= form_with(model: @price_per_distance_configuration, class: 'form') do |f| %>
   <div class='input-wrapper'>
     <%= f.label :minimum_distance, 'Distância mínima:' %>
-    <%= f.number_field :minimum_distance %>
+    <%= f.number_field :minimum_distance, placeholder: 'Distância em kilômetros' %>
   </div>
     <div class='input-wrapper'>
     <%= f.label :maximum_distance, 'Distância máxima:' %>
-    <%= f.number_field :maximum_distance %>
+    <%= f.number_field :maximum_distance, placeholder: 'Distância em kilômetros' %>
   </div>
   <div class='input-wrapper'>
     <%= f.label :price_per_distance, 'Preço:' %>
-    <%= f.number_field :price_per_distance %>
+    <%= f.number_field :price_per_distance, placeholder: 'R$' %>
   </div>
   <div class='input-wrapper'>
     <%= f.label :shipping_type_id, 'Modalidade de transporte:' %>

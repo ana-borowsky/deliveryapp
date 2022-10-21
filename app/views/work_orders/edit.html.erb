@@ -8,6 +8,8 @@
   </ul>
 <% end %>
 <h2>Editar ordem de serviço <%= @work_order.code %> </h2>
-<%= render 'form' %><br>
-<%= link_to 'Voltar', work_order_path %>
+<div class='page-title-two-buttons'>
+  <%= link_to 'Voltar', work_order_path, class: 'button', class: 'button' %>
+</div>
+<%= render 'form' %>
 </section>
