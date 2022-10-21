@@ -41,4 +41,21 @@ describe 'Usuario busca por um veículo' do
     expect(page).to have_content 'Disponível:'
     expect(page).to have_button('Buscar')
   end
+
+  it 'e não encontra o veículo' do
+    #arrange
+    user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema', admin: true)
+    #act
+    login_as(user)
+    visit work_orders_path
+    click_on 'Veículos'
+    fill_in 'Placa do veículo', with: 'ASD3434'
+    within '#vehicles' do
+      click_on 'Buscar'
+    end
+
+    #assert
+    expect(page).to have_content "Resultado da busca por: ASD3434"
+    expect(page).to have_content 'Nenhum resultado encontrado.'
+  end
 end

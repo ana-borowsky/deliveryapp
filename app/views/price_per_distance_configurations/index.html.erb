@@ -1,9 +1,10 @@
-<section id="price_per_distance_configurations">
+<section class='page-layout'>
   <h2>Configurações de preço por distância percorrida</h2>
-  <% if current_user.admin? %>
-    <%= link_to 'Adicionar nova configuração', new_price_per_distance_configuration_path, class: 'button' %>
-  <% end %>
-
+  <div class='page-title-two-buttons'>
+    <% if current_user.admin? %>
+      <%= link_to 'Adicionar nova configuração', new_price_per_distance_configuration_path, class: 'button' %>
+    <% end %>
+  </div>
   <% if @price_per_distance_configurations.empty? %>
     <p> Não existem configurações cadastradas. </p>
   <% end %>

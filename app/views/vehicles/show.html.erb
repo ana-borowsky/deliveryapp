@@ -1,6 +1,6 @@
-<section id="show_vehicle">
+<section class='page-layout'>
 <h2>Veículo: <%= @vehicle.manufacturer %> <%= @vehicle.model %> - <%= @vehicle.license_plate %> </h2>
-<div class='page-title'>
+<div class='page-title-two-buttons'>
   <%= link_to 'Voltar', vehicles_path, class: 'button' %>
   <% if current_user.admin? %>
     <%= link_to 'Editar', edit_vehicle_path(@vehicle.id), class: 'button' %>

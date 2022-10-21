@@ -1,4 +1,4 @@
-<section id="new_price_per_distance_configuration">
+<section class='page-layout'>
   <% if(@price_per_distance_configuration.errors.any?) %>
     <p>Verifique os erros abaixo:</p>
     <ul>
@@ -8,6 +8,8 @@
     </ul>
   <% end %>
   <h2>Nova configuração de preço por distância</h2>
-  <%= link_to 'Voltar', price_per_distance_configurations_path, class: 'button' %>
-  <%= render 'form' %><br>
+  <div class='page-title'>
+    <%= link_to 'Voltar', price_per_distance_configurations_path, class: 'button' %>
+  </div>
+  <%= render 'form' %>
 </section>

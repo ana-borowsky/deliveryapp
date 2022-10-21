@@ -1,6 +1,6 @@
-<section id="show_shipping_type">
+<section class='page-layout'>
 <h2>Modalidade de transporte: <%= @shipping_type.name %> </h2>
-<div class='page-title'>
+<div class='page-title-two-buttons'>
   <%= link_to 'Voltar', shipping_types_path, class: 'button' %>
   <% if current_user.admin? %>
     <%= link_to 'Editar', edit_shipping_type_path(@shipping_type.id), class: 'button' %>

@@ -1,3 +1,4 @@
+<section class='page-layout'>
 <% if(@work_order.errors.any?) %>
   <p>Verifique os erros abaixo:</p>
   <ul>
@@ -9,3 +10,4 @@
 <h2>Editar ordem de serviço <%= @work_order.code %> </h2>
 <%= render 'form' %><br>
 <%= link_to 'Voltar', work_order_path %>
+</section>

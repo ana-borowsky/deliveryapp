@@ -30,6 +30,8 @@ body {
     /* background-color: #26004C; */
 }
 
+/* ====== header ====== */
+
 header h1 {
     display: inline;
     font-style: italic;
@@ -66,11 +68,6 @@ nav .menu-links {
     gap: 40px;
 }
 
-h2 {
-    margin-top: 60px;
-    text-align: center;
-}
-
 .alert {
     padding: 20px;
     text-align: center;
@@ -95,213 +92,40 @@ h2 {
     width: 200px;
 }
 
-/* ================== */
+/* =======layout====== */
 
-#work_orders .page-title {
+.page-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ============= */
+
+.page-title {
     margin-bottom: 60px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 50%;
 }
 
-#work_orders {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#new_work_order {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#new_work_order .page-title {
+.page-title-two-buttons {
     margin-bottom: 60px;
     display: flex;
     align-items: center;
+    justify-content: space-evenly;
+    width: 50%; 
 }
 
-#pending_work_orders {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#pending_work_orders .page-title {
-    margin-bottom: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 40%;
-}
-
-#show_work_order {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#show_work_order .page-title {
-    margin-bottom: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 25%;
-}
-
-#search_work_order {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#searcg_work_order .page-title {
-    margin-bottom: 60px;
-    display: flex;
-    align-items: center;
-}
-
-#shipping_types {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#shipping_types .page-title{
-    margin-bottom: 60px;
-}
-
-#show_shipping_type {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#show_shipping_type .page-title {
-    margin-bottom: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 25%;
-}
-
-#new_shipping_type{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#new_shipping_type .page-title {
-    margin-bottom: 60px;
-    display: flex;
-    align-items: center;
-}
-
-#vehicles {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#vehicles .page-title {
-    margin-bottom: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 50%;
-}
-
-#vehicles .page-title form {
-    display: inline;
-}
-
-#show_vehicle {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#show_vehicle .page-title {
-    margin-bottom: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 25%;
-}
-
-#new_vehicle {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#new_vehicle .page-title {
-    margin-bottom: 60px;
-    display: flex;
-    align-items: center;
-}
-
-#search_vehicle {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#search_vehicle .page-title {
-    margin-bottom: 60px;
-    display: flex;
-    align-items: center;
-}
-
-#vehicles .search-bar {
-    width: 150px;
-}
-
-#configurations {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#configurations .page-title{
-    margin-bottom: 60px;
-}
-
-#weight_configurations {
-    display: flex;
-    flex-direction: column;
-    align-items: center;   
-}
-
-#delivery_time_configurations {
-    display: flex;
-    flex-direction: column;
-    align-items: center;   
-}
-
-
-#price_per_distance_configurations {
-    display: flex;
-    flex-direction: column;
-    align-items: center;   
-}
-
-#new_delivery_time_configuration {
-    display: flex;
-    flex-direction: column;
-    align-items: center;   
-}
-
-#new_price_per_distance_configuration {
-    display: flex;
-    flex-direction: column;
-    align-items: center;   
-}
+/* ============= */
 
 .session {
     display: flex;
     flex-direction: column;
     align-items: center;    
+}
+
+h2 {
+    margin-top: 60px;
+    text-align: center;
 }

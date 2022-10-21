@@ -1,4 +1,4 @@
-<section id="new_delivery_time_configuration">
+<section class='page-layout'>
   <% if(@delivery_time_configuration.errors.any?) %>
     <p>Verifique os erros abaixo:</p>
     <ul>
@@ -8,7 +8,9 @@
     </ul>
   <% end %>
   <h2>Nova configuração de prazo</h2>
-    <%= link_to 'Voltar', delivery_time_configurations_path %>
+  <div class='page-title'>
+    <%= link_to 'Voltar', delivery_time_configurations_path, class: 'button' %>
+  </div>
   <%= render 'form' %>
 </section>
 

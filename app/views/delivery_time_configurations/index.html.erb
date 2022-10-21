@@ -1,9 +1,10 @@
-<section id="delivery_time_configurations">
+<section class='page-layout'>
   <h2>Configurações de prazo</h2>
-  <% if current_user.admin? %>
-    <%= link_to 'Adicionar nova configuração', new_delivery_time_configuration_path, class: 'button' %>
-  <% end %>
-
+  <div class='page-title-two-buttons'>
+    <% if current_user.admin? %>
+      <%= link_to 'Adicionar nova configuração', new_delivery_time_configuration_path, class: 'button' %>
+    <% end %>
+  </div>
   <% if @delivery_time_configurations.empty? %>
     <p> Não existem configurações cadastradas. </p>
   <% end %>

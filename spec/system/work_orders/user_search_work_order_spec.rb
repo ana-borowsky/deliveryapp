@@ -32,4 +32,17 @@ describe 'Usuario busca por uma ordem de serviço' do
     expect(page).to have_content "Peso do produto: 100kg"
     expect(page).to have_button('Buscar')
   end
+
+  it 'e não encontra uma ordem de serviço' do
+    #arrange
+    user = User.create!(name: 'Ana', email: 'ana@sistemadefrete.com.br', password: 'sistema', admin: true)
+    #act
+    login_as(user)
+    visit work_orders_path
+    fill_in 'Insira o código da ordem de serviço', with: '12345qwert12345'
+    click_on 'Buscar'
+    #assert
+    expect(page).to have_content 'Resultado da busca por: 12345qwert12345'
+    expect(page).to have_content 'Nenhum resultado encontrado.'
+  end
 end

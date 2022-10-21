@@ -1,4 +1,4 @@
-<section id="weight_configurations">
+<section class='page-layout'>
   <% if(@weight_configuration.errors.any?) %>
     <p>Verifique os erros abaixo:</p>
     <ul>
@@ -8,6 +8,8 @@
     </ul>
   <% end %>
   <h2>Nova configuração de preço por peso</h2>
-  <%= render 'form' %><br>
-  <%= link_to 'Voltar', weight_configurations_path %>
+  <div class='page-title'>
+    <%= link_to 'Voltar', weight_configurations_path, class: 'button' %>
+  </div>
+  <%= render 'form' %>
 </section>

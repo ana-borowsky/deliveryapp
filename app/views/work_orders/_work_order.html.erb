@@ -1,21 +1,20 @@
-
 <% if user_signed_in? %>
   <h3><%= WorkOrder.human_attribute_name(:code) %>: <%= link_to(work_order.code, work_order_path(work_order.id)) %></h3>
 <% end %>
 <dl>
-  <dt><%= WorkOrder.human_attribute_name(:pickup_address) %>: <%= work_order.pickup_address %></dt>
-  <dt><%= WorkOrder.human_attribute_name(:delivery_address) %>: <%= work_order.delivery_address %></dt>
-  <dt><%= WorkOrder.human_attribute_name(:product_code) %>: <%= work_order.product_code %></dt>
-  <dt><%= WorkOrder.human_attribute_name(:product_weight) %>: <%= work_order.product_weight/100 %>kg</dt>
-  <dt><%= WorkOrder.human_attribute_name(:distance) %>: <%= work_order.distance %>km</dt>
+  <dt><strong><%= WorkOrder.human_attribute_name(:pickup_address) %>: </strong><%= work_order.pickup_address %></dt>
+  <dt><strong><%= WorkOrder.human_attribute_name(:delivery_address) %>: </strong><%= work_order.delivery_address %></dt>
+  <dt><strong><%= WorkOrder.human_attribute_name(:product_code) %>: </strong><%= work_order.product_code %></dt>
+  <dt><strong><%= WorkOrder.human_attribute_name(:product_weight) %>: </strong><%= work_order.product_weight/100 %>kg</dt>
+  <dt><strong><%= WorkOrder.human_attribute_name(:distance) %>: </strong><%= work_order.distance %>km</dt>
   <% if work_order.status != 'pending' %>
-    <dt><%= WorkOrder.human_attribute_name(:vehicle) %>: <%= work_order.vehicle.manufacturer %> <%= work_order.vehicle.model %> - <%= work_order.vehicle.license_plate %></dt>
-    <dt><%= WorkOrder.human_attribute_name(:start_date) %>: <%= I18n.localize(work_order.start_date) %></dt>
-    <dt><%= WorkOrder.human_attribute_name(:date) %>: <%= I18n.localize(work_order.date) %></dt>
-    <dt><%= WorkOrder.human_attribute_name(:end_date) %>: <%= I18n.localize(work_order.end_date) %></dt>
+    <dt><strong><%= WorkOrder.human_attribute_name(:vehicle) %>: </strong><%= work_order.vehicle.manufacturer %> <%= work_order.vehicle.model %> - <%= work_order.vehicle.license_plate %></dt>
+    <dt><strong><%= WorkOrder.human_attribute_name(:start_date) %>: </strong><%= I18n.localize(work_order.start_date) %></dt>
+    <dt><strong><%= WorkOrder.human_attribute_name(:date) %>: </strong><%= I18n.localize(work_order.date) %></dt>
+    <dt><strong><%= WorkOrder.human_attribute_name(:end_date) %>: </strong><%= I18n.localize(work_order.end_date) %></dt>
   <% end %>
-  <dt><%= WorkOrder.human_attribute_name(:status) %>: <%= I18n.translate(work_order.status) %></dt>
+  <dt><strong><%= WorkOrder.human_attribute_name(:status) %>: </strong><%= I18n.translate(work_order.status) %></dt>
   <% if work_order.status == 'late' %>
-    <dt><%= WorkOrder.human_attribute_name(:delay_cause) %>: <%= work_order.delay_cause %></dt>
+    <dt><strong><%= WorkOrder.human_attribute_name(:delay_cause) %>: </strong><%= work_order.delay_cause %></dt>
   <% end %>
 </dl>

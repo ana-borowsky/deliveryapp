@@ -1,11 +1,12 @@
-<section id="work_orders">
+<section class='page-layout'>
 <h2>Ordens de Serviço</h2>
-<div class='page-title'>
+<div class='page-title-two-buttons'>
   <% if current_user.admin? %>
-    <%= link_to 'Adicionar nova ordem de serviço', new_work_order_path, class: 'button' %><br>
+    <%= link_to 'Adicionar nova ordem de serviço', new_work_order_path, class: 'button' %>
   <% end %>
-  <%= link_to 'Mostrar ordens de serviço pendentes', pending_work_orders_path, class: 'button' %><br>
+  <%= link_to 'Mostrar ordens de serviço pendentes', pending_work_orders_path, class: 'button' %>
 </div>
+<div>
 <% @work_orders.each do |w| %>
   <div>
     <h3>Código: <%= link_to(w.code, work_order_path(w.id)) %> </h3>
@@ -17,6 +18,7 @@
       <dl>
   </div>  
 <% end %>
+</div>
 
 <% if @work_orders.empty? %>
   <p> Não existem ordens de serviço cadastradas. </p>
