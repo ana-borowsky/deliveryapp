@@ -1,13 +1,14 @@
 # Sistema de Fretes
 
 Usuário Regular: 
-    - Nome: Ana
-    - email: ana@sistemadefrete.com.br
-    - senha: sistema
+- nome: Ana
+- email: ana@sistemadefrete.com.br
+- senha: sistema
+  
 Usuário Administrador:
-    - Nome: João
-    - email: joao@sistemadefrete.com.br
-    - senha: sistema
+- nome: João
+- email: joao@sistemadefrete.com.br
+- senha: sistema
 
 O planejamento para o projeto encontra-se em um PDF dentro da pasta DOCS.
 
