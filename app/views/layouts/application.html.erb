@@ -10,7 +10,14 @@
   <body>
   <header>
     <div class='first-line'>
-      <h1>Sistema de Fretes</h1>
+      <div class="logo">
+        <img src=<%= image_path('box.svg') %>>
+        Frete<strong>Box</strong>
+      </div>
+      <%= form_with(url: search_work_orders_path, method: :get, class: 'search-form') do |f| %>
+        <%= f.text_field :query, placeholder: 'Insira o código da ordem de serviço', class: 'search-bar' %>
+        <%= f.submit 'Buscar' %>
+      <% end %>
       <% if user_signed_in? %>
         <div>
           <span><%= current_user.description %></span>
@@ -23,17 +30,13 @@
     <nav>
       <% if user_signed_in? %>
         <div class='menu-links'>
-          <%= link_to 'Ordens de Serviço', work_orders_path, class: controller_name == 'work_orders' ? 'selected': '' %> 
-          <%= link_to 'Modalidades de Transporte', shipping_types_path, class: controller_name == 'shipping_types' ? 'selected': ''  %> 
-          <%= link_to 'Veículos', vehicles_path, class: controller_name == 'vehicles' ? 'selected': ''  %> 
-          <%= link_to 'Configurações', configurations_path, class: controller_name == 'configurations' ? 'selected': ''  %> 
+          <%= link_to 'Ordens de Serviço', work_orders_path, class: controller_name == 'work_orders' ? 'selected': '' %>
+          <%= link_to 'Modalidades de Transporte', shipping_types_path, class: controller_name == 'shipping_types' ? 'selected': ''  %>
+          <%= link_to 'Veículos', vehicles_path, class: controller_name == 'vehicles' ? 'selected': ''  %>
+          <%= link_to 'Configurações', configurations_path, class: controller_name == 'configurations' ? 'selected': ''  %>
         </div>
       <% end %>
-      <%= form_with(url: search_work_orders_path, method: :get, class: 'search-form') do |f| %>
-        
-        <%= f.text_field :query, placeholder: 'Insira o código da ordem de serviço', class: 'search-bar' %>
-        <%= f.submit 'Buscar' %>
-      <% end %>
+
     </nav>
   </header>
   <main>

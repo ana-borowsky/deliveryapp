@@ -2,7 +2,7 @@
 <h2>Ordens de Serviço</h2>
 <div class='page-title-two-buttons'>
   <% if current_user.admin? %>
-    <%= link_to 'Adicionar nova ordem de serviço', new_work_order_path, class: 'button' %>
+    <%= link_to 'Adicionar nova ordem de serviço', new_work_order_path, class: 'button' %><br>
   <% end %>
   <%= link_to 'Mostrar ordens de serviço pendentes', pending_work_orders_path, class: 'button' %>
 </div>
@@ -16,7 +16,7 @@
         <dt>Código do produto: <%= w.product_code %>
         <dt>Status: <%= I18n.translate(w.status) %> </dt>
       <dl>
-  </div>  
+  </div>
 <% end %>
 </div>
 

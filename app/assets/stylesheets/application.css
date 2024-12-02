@@ -1,48 +1,32 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
-
 * {
-    font-family: 'roboto', sans-serif;
+    font-family: 'inter', sans-serif;
     text-decoration: none;
-} 
-
-.button {
-    border: 1px ridge #CCC;
-    padding: 5px;
-    border-radius: 5px;
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
 }
 
-body {
-    padding: 0 60px;
-    /* background-color: #26004C; */
+body  {
+    color: #5A5A5A;
 }
 
 /* ====== header ====== */
 
-header h1 {
-    display: inline;
-    font-style: italic;
-    font-weight: normal;
-    font-size: 25px;
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 header .first-line {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color: #009DFF;
+    color: white;
+    height: 80px;
+    padding: 0 40px 0 40px;
 }
 
 header .first-line form {
@@ -50,13 +34,40 @@ header .first-line form {
 }
 
 header .search-bar {
-    width: 270px;
+    width: 420px;
+    height: 46px;
+    border-radius: 23px;
+    border-style: none;
+    padding-left: 20px;
+}
+
+header button {
+    width: 100px;
+    height: 46px;
+    border-radius: 23px;
+    color:#009DFF;
+    background-color: white;
+    border-style: none;
+    font-weight: bold;
+}
+
+header input[type=submit] {
+    color: #009DFF;
+    background-color: white;
+    cursor: pointer;
 }
 
 nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    height: 50px;
+    background-color: #E5E5E5;
+    padding: 0 40px 0 40px;
+}
+
+nav a {
+    color: #5A5A5A;
 }
 
 nav .selected {
@@ -66,6 +77,46 @@ nav .selected {
 nav .menu-links {
     display: flex;
     gap: 40px;
+}
+
+input {
+    height: 46px;
+    border-radius: 23px;
+    border-style: none;
+    padding-left: 20px;
+}
+
+input[type=submit] {
+    background-color: #009DFF;
+    color: white;
+    font-weight: bold;
+    width: 100px;
+    padding: 0;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    color: #1d88cb;
+}
+
+.button {
+    font-weight: bold;
+    /* align-items: center;
+    justify-content: center;
+    background-color: #009DFF;
+    color: white;
+    font-weight: bold;
+    width: auto;
+    height: 46px;
+    border-radius: 23px;
+    border-style: none;
+    padding-left:20px;
+    padding-right: 20px;
+    display: block; */
+}
+
+a:hover {
+    color: #1d88cb
 }
 
 .alert {
@@ -81,7 +132,6 @@ nav .menu-links {
 }
 
 .form .input-wrapper {
-    margin-bottom: 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -93,38 +143,59 @@ nav .menu-links {
 }
 
 /* =======layout====== */
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
 
 .page-layout {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 450px;
+    border-radius: 23px;
+    background-color: rgb(233, 233, 233);
+    box-shadow: 0px 0px 26px 13px rgba(0,0,0,0.25);
+    padding: 100px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    margin: 0 auto;
+    gap: 30px;
 }
 
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:hover {
+    color: #1d88cb
+}
 /* ============= */
 
 .page-title {
-    margin-bottom: 60px;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    gap: 40px;
 }
 
-.page-title-two-buttons {
-    margin-bottom: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 50%; 
+a {
+    color:#009DFF;
 }
 /* ============= */
 
-.session {
-    display: flex;
-    flex-direction: column;
-    align-items: center;    
-}
-
 h2 {
-    margin-top: 60px;
     text-align: center;
+    font-weight: bold;
+    font-size: 24px;
 }

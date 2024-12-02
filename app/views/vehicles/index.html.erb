@@ -1,6 +1,5 @@
 <section class='page-layout'>
 <h2>Veículos</h2>
-<div class='page-title-two-buttons'>
 <% if current_user.admin? %>
   <%= link_to 'Adicionar novo veículo', new_vehicle_path, class: 'button' %>
 <% end %>
@@ -8,7 +7,6 @@
   <%= f.text_field :query_vehicle, placeholder: 'Placa do veículo', class: 'search-bar' %>
   <%= f.submit 'Buscar' %>
 <% end %>
-</div>
 <div>
 <% @vehicles.each do |v| %>
   <div>
@@ -17,7 +15,7 @@
         <dt>Em manutenção: <%= I18n.translate(v.maintenance) %></dt>
         <dt>Disponível: <%= I18n.translate(v.available && !v.maintenance) %></dt>
       <dl>
-    </div>  
+    </div>
 <% end %>
 </div>
 
