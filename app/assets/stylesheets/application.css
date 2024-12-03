@@ -3,9 +3,10 @@
     --blue: #1d88cb;
     --dark-blue: #0e669e;
     --white: #ffffff;
+    --light-gray: #ececec;
+    --gray:  rgb(225, 225, 225);
+    --dark-gray: #5A5A5A;
   }
-
-
 
 * {
     font-family: 'inter', sans-serif;
@@ -16,8 +17,8 @@
 }
 
 body  {
-    color: #5A5A5A;
-    background-color: #ececec;
+    color: var(--dark-gray);
+    background-color:   var(--light-gray);
 }
 
 /* ====== header ====== */
@@ -94,12 +95,13 @@ nav {
     align-items: center;
     justify-content: space-between;
     height: 50px;
-    background-color: rgb(225, 225, 225);
+    background-color:   var(--gray);
+
     padding: 0 40px 0 40px;
 }
 
 nav a {
-    color: #5A5A5A;
+    color: var(--dark-gray);
 }
 
 nav .selected {
@@ -212,8 +214,23 @@ nav {
     align-items: center;
     width: 500px;
     border-radius: 23px;
-    background-color: rgb(225, 225, 225);
+    background-color:  var(--gray);
     /* box-shadow: 0px 0px 26px 13px rgba(0,0,0,0.25); */
+    padding: 60px;
+    margin: 0 auto;
+    gap: 50px;
+    border-style: solid;
+    border-color: rgb(205, 205, 205);
+    border-width: 1px;;
+}
+
+.table-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 23px;
+    background-color:   var(--gray);
+
     padding: 60px;
     margin: 0 auto;
     gap: 50px;
@@ -226,6 +243,16 @@ nav {
     border-style: solid;
     border-color: rgb(205, 205, 205);
     border-width: 1px;;
+}
+
+select {
+    border-style: solid;
+    border-color: rgb(205, 205, 205);
+    border-width: 1px;
+    height: 46px;
+    border-radius: 23px;
+    min-width: 130px;
+    padding-left: 20px;
 }
 
 table {
@@ -325,6 +352,10 @@ h3 {
 
 h3 a {
     font-size: 20px;
+}
+
+h3 a:hover {
+    color: var(--blue);
 }
 
 .page-title {

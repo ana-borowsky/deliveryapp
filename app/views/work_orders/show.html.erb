@@ -2,9 +2,13 @@
 <h2>Ordem de Serviço: <%= @work_order.code %> </h2>
 <div class='page-title-two-buttons'>
   <%= link_to 'Voltar', work_orders_path, class: 'button' %>
-  <% if @work_order.status == 'pending' %>
-    <%= link_to('Editar', edit_work_order_path(@work_order.id), class: 'button') %>
+
+  <% if current_user.admin? %>
+    <% if @work_order.status == 'pending' %>
+      <%= link_to('Editar', edit_work_order_path(@work_order.id), class: 'button') %>
+    <% end %>
   <% end %>
+
 </div>
 <div class="list-item">
   <dl>
