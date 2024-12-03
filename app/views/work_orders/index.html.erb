@@ -6,7 +6,7 @@
   <% end %>
   <%= link_to 'Mostrar ordens de serviço pendentes', pending_work_orders_path, class: 'button' %>
 </div>
-<div>
+<div class="list">
 <% @work_orders.each do |w| %>
   <div>
     <h3>Código: <%= link_to(w.code, work_order_path(w.id)) %> </h3>

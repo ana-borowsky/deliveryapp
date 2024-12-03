@@ -7,7 +7,7 @@
   <%= f.text_field :query_vehicle, placeholder: 'Placa do veículo', class: 'search-bar' %>
   <%= f.submit 'Buscar' %>
 <% end %>
-<div>
+<div class="list">
 <% @vehicles.each do |v| %>
   <div>
     <h3><%= v.manufacturer %> <%= v.model %> <%= link_to(v.license_plate, vehicle_path(v.id)) %> </h3>

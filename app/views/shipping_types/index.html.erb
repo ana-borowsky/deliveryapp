@@ -5,7 +5,7 @@
   <%= link_to 'Adicionar nova modalidade de transporte', new_shipping_type_path, class: 'button' %>
 <% end %>
 </div>
-<div>
+<div class="list">
 <% @shipping_types.each do |s| %>
   <div>
     <h3><%= link_to(s.name, shipping_type_path(s.id)) %> </h3>
@@ -17,7 +17,7 @@
         <dt>Taxa: <%= number_to_currency(s.fee/100.to_f) %>
         <dt>Ativada: <%= I18n.translate(s.active.to_s) %></dt>
       <dl>
-    </div>  
+    </div>
 <% end %>
 </div>
 
