@@ -3,12 +3,10 @@ ShippingBox é um sistema de fretes desenvolvido para o curso TreinaDev da Campu
 
 ## Acesso ao sistema
 Usuário padrão:
-- nome: Ana
 - email: ana@sistemadefrete.com.br
 - senha: sistema
 
 Usuário administrador:
-- nome: João
 - email: joao@sistemadefrete.com.br
 - senha: sistema
 
@@ -19,7 +17,7 @@ Usuário administrador:
     - buscar ordens de serviço
     - listar ordens de servico pendentes
     - editar ordens de serviço (admin)
-    - criar ordens de serviçco (admin)
+    - criar ordens de serviço (admin)
     - selecionar modalidades de transporte
     - iniciar ordens de serviço
     - finalizar ordens de serviço
@@ -41,9 +39,9 @@ Usuário administrador:
     - listar configurações de preço por peso
     - listar configurações de preço por distância percorrida
     - listar configurações de prazo
-    - adicionar/deleter configurações de preço por peso (admin)
-    - adicionar/deleter configurações de preço por distância percorrida (admin)
-    - adicionar/deleter configurações de prazo (admin)
+    - adicionar/deletar configurações de preço por peso (admin)
+    - adicionar/deletar configurações de preço por distância percorrida (admin)
+    - adicionar/deletar configurações de prazo (admin)
 
 ## Ferramentas utilizadas
 Ruby on Rails, SQLite

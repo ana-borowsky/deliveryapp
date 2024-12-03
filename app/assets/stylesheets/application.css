@@ -1,3 +1,12 @@
+:root {
+    --light-blue: #009DFF;
+    --blue: #1d88cb;
+    --dark-blue: #0e669e;
+    --white: #ffffff;
+  }
+
+
+
 * {
     font-family: 'inter', sans-serif;
     text-decoration: none;
@@ -23,7 +32,7 @@ header .first-line {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #009DFF;
+    background-color:   var(--light-blue);
     color: white;
     height: 80px;
     padding: 0 40px 0 40px;
@@ -46,33 +55,33 @@ header button {
     height: 46px;
     border-radius: 23px;
     color:white;
-    background-color: #1d88cb;
+    background-color: var(--blue);
     border-style: none;
     font-weight: bold;
     padding: 0;
 }
 
 header button:hover {
-    background-color: #0e669e;
+    background-color:   var(--dark-blue);
     color: white;
 }
 
 header input[type=submit] {
     color: white;
-    background-color: #1d88cb;
+    background-color: var(--blue);
     cursor: pointer;
 }
 
 header input[type=submit]:hover {
-    background-color: #0e669e;
+    background-color:   var(--dark-blue);
 }
 
 header .button {
-    background-color: #1d88cb;
+    background-color: var(--blue);
 }
 
 header .button:hover {
-    background-color: #0e669e;
+    background-color:   var(--dark-blue);
 }
 
 .search-bar-user {
@@ -95,7 +104,7 @@ nav a {
 
 nav .selected {
     font-weight: bold;
-    color:#009DFF;
+    color:   var(--light-blue);
 }
 
 nav .menu-links {
@@ -111,7 +120,7 @@ input {
 }
 
 input[type=submit] {
-    background-color: #009DFF;
+    background-color:   var(--light-blue);
     color: white;
     font-weight: bold;
     width: 100px;
@@ -120,7 +129,7 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-    background-color: #1d88cb;
+    background-color: var(--blue);
 }
 
 .buttons input[type=submit] {
@@ -132,7 +141,7 @@ input[type=submit]:hover {
     padding: 15px;
     border-radius: 23px;
     color: white;
-    background-color: #009DFF;
+    background-color:   var(--light-blue);
     padding-left:30px;
     padding-right: 30px;
     cursor: pointer;
@@ -140,11 +149,11 @@ input[type=submit]:hover {
 }
 
 .button:hover {
-    background-color: #1d88cb;
+    background-color: var(--blue);
 }
 
 nav a:hover {
-    color:  #009DFF;
+    color:    var(--light-blue);
 }
 
 nav {
@@ -235,7 +244,7 @@ tr button {
 
 tr button:hover {
     color: white;
-    background-color: #1d88cb;
+    background-color: var(--blue);
 }
 
 td .button_to {
@@ -264,14 +273,14 @@ button {
     padding: 15px;
     border-radius: 23px;
     color: white;
-    background-color: #009DFF;
+    background-color:   var(--light-blue);
     padding-left:30px;
     padding-right: 30px;
     border-style: none;
 }
 
 button:hover {
-    background-color: #1d88cb
+    background-color: var(--blue)
 }
 /* ============= */
 /*
@@ -283,7 +292,7 @@ button:hover {
 } */
 
 a {
-    color:#009DFF;
+    color:  var(--light-blue);
 }
 /* ============= */
 
