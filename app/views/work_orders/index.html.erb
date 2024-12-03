@@ -1,8 +1,8 @@
 <section class='page-layout'>
 <h2>Ordens de Serviço</h2>
-<div class='page-title-two-buttons'>
+<div class='buttons'>
   <% if current_user.admin? %>
-    <%= link_to 'Adicionar nova ordem de serviço', new_work_order_path, class: 'button' %><br>
+    <%= link_to 'Adicionar nova ordem de serviço', new_work_order_path, class: 'button' %>
   <% end %>
   <%= link_to 'Mostrar ordens de serviço pendentes', pending_work_orders_path, class: 'button' %>
 </div>

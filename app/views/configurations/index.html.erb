@@ -1,8 +1,8 @@
 <section class='page-layout'>
 <h2>Configurações</h2>
-<div class='page-title'>
+<div class='buttons'>
+<%= link_to 'Configurações de preço por peso', weight_configurations_path, class: 'button' %>
+<%= link_to 'Configurações de prazo', delivery_time_configurations_path, class: 'button' %>
+<%= link_to 'Configurações de preço por distância percorrida', price_per_distance_configurations_path, class: 'button' %>
 </div>
-<%= link_to 'Configurações de preço por peso', weight_configurations_path, class: 'button' %><br>
-<%= link_to 'Configurações de prazo', delivery_time_configurations_path, class: 'button' %><br>
-<%= link_to 'Configurações de preço por distância percorrida', price_per_distance_configurations_path, class: 'button' %><br>
 </section>

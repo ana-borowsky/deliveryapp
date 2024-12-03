@@ -12,7 +12,9 @@
     <div class='first-line'>
       <div class="logo">
         <img src=<%= image_path('box.svg') %>>
-        Frete<strong>Box</strong>
+        <div>
+          Frete<strong>Box</strong>
+        </div>
       </div>
       <%= form_with(url: search_work_orders_path, method: :get, class: 'search-form') do |f| %>
         <%= f.text_field :query, placeholder: 'Insira o código da ordem de serviço', class: 'search-bar' %>
