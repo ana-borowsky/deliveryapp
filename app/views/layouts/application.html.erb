@@ -21,7 +21,7 @@
         <%= f.submit 'Buscar' %>
       <% end %>
       <% if user_signed_in? %>
-        <div>
+        <div class="logo">
           <span><%= current_user.description %></span>
           <%= button_to 'Log out', destroy_user_session_path, method: :delete %>
         </div>
