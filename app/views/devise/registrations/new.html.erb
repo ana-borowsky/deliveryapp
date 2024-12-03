@@ -2,36 +2,33 @@
   <section class="page-layout">
     <h2>Inscreva-se</h2>
 
-      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: 'form'}) do |f| %>
         <%= render "devise/shared/error_messages", resource: resource %>
 
         <div class="field">
-          <%= f.label :name %>
-          <%= f.text_field :name, autofocus: true %>
+          <%= f.text_field :name, autofocus: true, placeholder: 'Nome' %>
         </div>
 
         <div class="field">
-          <%= f.label :email %>
           <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: '@sistemadefrete.com.br' %>
         </div>
 
         <div class="field">
-          <%= f.label :password %>
           <% if @minimum_password_length %>
-          <em>(mínimo de <%= @minimum_password_length %> caracteres)</em>
           <% end %>
-          <%= f.password_field :password, autocomplete: "new-password" %>
+          <%= f.password_field :password, autocomplete: "new-password", placeholder: 'Senha' %>
         </div>
 
         <div class="field">
-          <%= f.label :password_confirmation %>
-          <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: 'Confirme sua senha' %>
         </div>
-        <div class="actions">
+        <div class="buttons">
           <%= f.submit "Sign up" %>
         </div>
       <% end %>
+      <div class="buttons singup">
       <%= render "devise/shared/links" %>
+      </div>
       </form>
     </section>
   </div>

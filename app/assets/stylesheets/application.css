@@ -3,7 +3,7 @@
     --blue: #1d88cb;
     --dark-blue: #0e669e;
     --white: #ffffff;
-    --light-gray: #ececec;
+    --light-gray: #f5f3f3;
     --gray:  rgb(225, 225, 225);
     --dark-gray: #5A5A5A;
   }
@@ -373,4 +373,6 @@ h3 a:hover {
     width: 100%;
 }
 
-
+.singup a {
+    width: 160px;
+}
