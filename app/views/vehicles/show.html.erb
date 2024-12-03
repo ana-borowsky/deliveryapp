@@ -6,10 +6,12 @@
     <%= link_to 'Editar', edit_vehicle_path(@vehicle.id), class: 'button' %>
   <% end %>
 </div>
-<div>
-  Ano de fabricação: <%= @vehicle.year %><br>
-  Capacidade de carga: <%= @vehicle.load_capacity/100 %>kg<br>
-  Em manutenção:  <%= I18n.translate(@vehicle.maintenance) %><br>
-  Disponível: <%= I18n.translate(@vehicle.available && !@vehicle.maintenance) %><br>
+<div class="list-item">
+  <dl>
+    <dt><img src=<%= image_path('tool.svg') %>>Ano de fabricação: <%= @vehicle.year %></dt>
+    <dt><img src=<%= image_path('archive.svg') %>>Capacidade de carga: <%= @vehicle.load_capacity/100 %>kg</dt>
+    <dt><img src=<%= image_path('tool.svg') %>>Em manutenção:  <%= I18n.translate(@vehicle.maintenance) %></dt>
+    <dt><img src=<%= image_path('check-circle.svg') %>>Disponível: <%= I18n.translate(@vehicle.available && !@vehicle.maintenance) %></dt>
+  <dl>
 </div>
 </section>

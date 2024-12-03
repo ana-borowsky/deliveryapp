@@ -123,7 +123,7 @@ input[type=submit]:hover {
     background-color: #1d88cb;
 }
 
-.page-layout input[type=submit] {
+.buttons input[type=submit] {
     width: 100%;
 }
 
@@ -309,3 +309,20 @@ h3 {
 h3 a {
     font-size: 20px;
 }
+
+.page-title {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.page-title input[type=submit] {
+    width: 100%;
+    margin-top: 30px;
+}
+
+.page-title a {
+    width: 100%;
+}
+
+

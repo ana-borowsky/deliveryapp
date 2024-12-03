@@ -1,12 +1,13 @@
 <section class='page-layout'>
 <h2>Veículos</h2>
-<% if current_user.admin? %>
-  <%= link_to 'Adicionar novo veículo', new_vehicle_path, class: 'button' %>
-<% end %>
-<%= form_with(url: search_vehicles_path, method: :get) do |f| %>
-  <%= f.text_field :query_vehicle, placeholder: 'Placa do veículo', class: 'search-bar' %>
-  <%= f.submit 'Buscar', class: 'search-button' %>
-<% end %>
+  <% if current_user.admin? %>
+    <%= link_to 'Adicionar novo veículo', new_vehicle_path, class: 'button' %>
+  <% end %>
+  <%= form_with(url: search_vehicles_path, method: :get) do |f| %>
+    <%= f.text_field :query_vehicle, placeholder: 'Placa do veículo', class: 'search-bar' %>
+    <%= f.submit 'Buscar', class: 'search-button' %>
+  <% end %>
+
 <div class="list">
 <% @vehicles.each do |v| %>
   <div class="list-item">
