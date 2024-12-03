@@ -2,27 +2,48 @@
 ShippingBox é um sistema de fretes desenvolvido para o curso TreinaDev da CampusCode. O planejamento para o projeto encontra-se em um PDF dentro da pasta DOCS. É um sistema completo em Ruby on Rails.
 
 ## Acesso ao sistema
-Usuário Regular:
+Usuário padrão:
 - nome: Ana
 - email: ana@sistemadefrete.com.br
 - senha: sistema
 
-Usuário Administrador:
+Usuário administrador:
 - nome: João
 - email: joao@sistemadefrete.com.br
 - senha: sistema
 
 ## Conteúdo
-- CRUD de veículos
-- Busca de veículos por placa
-- CRUD de modalidades de transporte
-- CRUD de ordens de serviço
-- Busca por ordens de serviço
-- CRUD de configurações de
-    - preço por peso
-    - preço por distância percorrida
-    - prazo
-- Modo administrador
+- Ordens de serviço:
+    - listar ordens de serviço
+    - mostrar ordem de serviço
+    - buscar ordens de serviço
+    - listar ordens de servico pendentes
+    - editar ordens de serviço (admin)
+    - criar ordens de serviçco (admin)
+    - selecionar modalidades de transporte
+    - iniciar ordens de serviço
+    - finalizar ordens de serviço
+
+- Modalidades de transporte:
+    - listar modalidades de transporte
+    - mostrar modalidade de transporte
+    - adicionar modalidade de transporte (admin)
+    - editar modalidade de transporte (admin)
+
+- Veículos:
+    - listar veículos
+    - mostrar veículo
+    - adicionar veículo (admin)
+    - editar veículo (admin)
+    - buscar veículo
+
+- Configurações:
+    - listar configurações de preço por peso
+    - listar configurações de preço por distância percorrida
+    - listar configurações de prazo
+    - adicionar/deleter configurações de preço por peso (admin)
+    - adicionar/deleter configurações de preço por distância percorrida (admin)
+    - adicionar/deleter configurações de prazo (admin)
 
 ## Ferramentas utilizadas
 Ruby on Rails, SQLite
@@ -34,17 +55,14 @@ Em seguida, clone o repositório com o comando:
 ```
 git clone git@github.com:ana-borowsky/deliveryapp.git
 ```
-
 Então, efetue o comando para atualizar as dependências do Ruby:
 ```
 bundle
 ```
-
 Rode as migrations com:
 ```
 railsdb:migrate
 ```
-
 E, por último, rode o seed:
 ```
 railsdb:seed

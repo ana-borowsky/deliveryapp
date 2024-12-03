@@ -30,7 +30,7 @@
 
   <% if @work_order.shipping_type %>
     <dt>Modalidade de transporte: <%= @work_order.shipping_type.name %> - <%= number_to_currency(@work_order.price) %></dt>
-  </div>
+    </div>
     <% if @work_order.status == 'pending' %>
     <%= button_to('Iniciar ordem de serviço', work_order_start_path(@work_order.id), method: :post) %>
     <% end %>
@@ -39,7 +39,7 @@
     <% end %>
   <% end %>
   </dl>
-
+  </div>
 <% if @work_order.status == 'pending' %>
   <h3>Modalidades de transporte disponíveis:</h3>
   <% @available_shipping_types.each do |s| %>
