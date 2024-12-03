@@ -229,13 +229,21 @@ table {
 
 tr button {
     height: 30px;
-    width: 100px;
+    width: 120px;
     padding: 0;
 }
 
 tr button:hover {
     color: white;
     background-color: #1d88cb;
+}
+
+td .button_to {
+    width: 120px;
+}
+
+td {
+    width: 120px;
 }
 
 .list {
@@ -263,7 +271,7 @@ button {
 }
 
 button:hover {
-    color: #1d88cb
+    background-color: #1d88cb
 }
 /* ============= */
 /*
