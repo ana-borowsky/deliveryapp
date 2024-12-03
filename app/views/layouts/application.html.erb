@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Deliveryapp</title>
+    <title>shippingbox</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -16,6 +16,7 @@
           Shipping<strong>Box</strong>
         </div>
       </div>
+      <div class="search-bar-user">
       <% if user_signed_in? %>
       <%= form_with(url: search_work_orders_path, method: :get, class: 'search-form') do |f| %>
         <%= f.text_field :query, placeholder: 'Insira o código da ordem de serviço', class: 'search-bar' %>
@@ -28,6 +29,7 @@
       <% else %>
         <%= link_to 'Log in', new_user_session_path, class: 'button' %>
       <% end %>
+      </div>
     </div>
     <% if user_signed_in? %>
       <nav>

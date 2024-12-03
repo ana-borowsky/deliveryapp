@@ -75,6 +75,11 @@ header .button:hover {
     background-color: #0e669e;
 }
 
+.search-bar-user {
+    display: flex;
+    gap: 100px;
+}
+
 nav {
     display: flex;
     align-items: center;
@@ -277,10 +282,26 @@ a {
 h2 {
     text-align: center;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 24px;
 }
 
 h3 {
     font-weight: bold;
-    font-size: 16px;
+    font-size: 20px;
+}
+
+.list-item h3 {
+    margin-bottom: 10px;
+}
+
+.list-item dt {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 10px;
+}
+
+.space-between {
+    display: flex;
+    justify-content: space-between;
 }

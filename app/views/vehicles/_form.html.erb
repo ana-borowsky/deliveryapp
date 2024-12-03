@@ -3,11 +3,11 @@
     <%= f.label :license_plate, 'Placa:' %>
     <%= f.text_field :license_plate %>
   </div>
-      <div class='input-wrapper'>
+    <div class='input-wrapper'>
     <%= f.label :manufacturer, 'Fabricante:' %>
     <%= f.text_field :manufacturer %>
   </div>
-      <div class='input-wrapper'>
+    <div class='input-wrapper'>
     <%= f.label :model, 'Modelo:' %>
     <%= f.text_field :model %>
   </div>
@@ -24,6 +24,6 @@
     <%= f.check_box :maintenance %>
     </div>
   <div>
-    <br><%= f.submit 'Salvar' %>
+    <%= f.submit 'Salvar' %>
   </div>
 <% end %>
