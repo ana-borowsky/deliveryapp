@@ -3,13 +3,13 @@
   <%= link_to 'Voltar', work_orders_path, class: 'button' %>
 <div class="list">
 <% @pending_work_orders.each do |w| %>
-  <div>
-    <h3>Código: <%= link_to(w.code, work_order_path(w.id)) %></h3>
+  <div class="list-item">
+    <h3>Código: <%= link_to(w.code, work_order_path(w.id)) %> </h3>
       <dl>
-        <dt>Endereço de saída: <%= w.pickup_address %></dt>
-        <dt>Endereço de entrega: <%= w.delivery_address%></dt>
-        <dt>Código do produto: <%= w.product_code %>
-        <dt>Status: <%= I18n.translate(w.status) %></dt>
+        <dt><img src=<%= image_path('log-out.svg') %>>Endereço de saída: <%= w.pickup_address %></dt>
+        <dt><img src=<%= image_path('log-in.svg') %>>Endereço de entrega: <%= w.delivery_address%></dt>
+        <dt><img src=<%= image_path('archive.svg') %>>Código do produto: <%= w.product_code %>
+        <dt><img src=<%= image_path('bar-chart-2.svg') %>>Status: <%= I18n.translate(w.status) %> </dt>
       <dl>
   </div>
 <% end %>

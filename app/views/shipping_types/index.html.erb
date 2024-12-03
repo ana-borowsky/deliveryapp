@@ -5,15 +5,15 @@
 <% end %>
 <div class="list">
 <% @shipping_types.each do |s| %>
-  <div>
+  <div class="list-item">
     <h3><%= link_to(s.name, shipping_type_path(s.id)) %> </h3>
       <dl>
-        <dt>Distância mínima: <%= s.minimum_distance %>km</dt>
-        <dt>Distância máxima: <%= s.maximum_distance %>km
-        <dt>Peso mínimo: <%= s.minimum_weight/100 %>kg
-        <dt>Peso máximo: <%= s.maximum_weight/100 %>kg
-        <dt>Taxa: <%= number_to_currency(s.fee/100.to_f) %>
-        <dt>Ativada: <%= I18n.translate(s.active.to_s) %></dt>
+        <dt><img src=<%= image_path('arrow-down.svg') %>>Distância mínima: <%= s.minimum_distance %>km</dt>
+        <dt><img src=<%= image_path('arrow-up.svg') %>>Distância máxima: <%= s.maximum_distance %>km
+        <dt><img src=<%= image_path('arrow-down-circle.svg') %>>Peso mínimo: <%= s.minimum_weight/100 %>kg
+        <dt><img src=<%= image_path('arrow-up-circle.svg') %>>Peso máximo: <%= s.maximum_weight/100 %>kg
+        <dt><img src=<%= image_path('dollar-sign.svg') %>>Taxa: <%= number_to_currency(s.fee/100.to_f) %>
+        <dt><img src=<%= image_path('bar-chart-2.svg') %>>Ativada: <%= I18n.translate(s.active.to_s) %></dt>
       <dl>
     </div>
 <% end %>
