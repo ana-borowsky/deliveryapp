@@ -1,10 +1,7 @@
 <section class='page-layout'>
-<h2>Ordens de Serviço Pendentes</h2>
-<div class='page-title'>
+<h2>Ordens de Serviço Pendentes: <%= @pending_work_orders.count %></h2>
   <%= link_to 'Voltar', work_orders_path, class: 'button' %>
-  Ordens de serviço pendentes encontradas: <%= @pending_work_orders.count %>
-</div>
-<div>
+<div class="list">
 <% @pending_work_orders.each do |w| %>
   <div>
     <h3>Código: <%= link_to(w.code, work_order_path(w.id)) %></h3>
@@ -14,11 +11,11 @@
         <dt>Código do produto: <%= w.product_code %>
         <dt>Status: <%= I18n.translate(w.status) %></dt>
       <dl>
-  </div> 
+  </div>
 <% end %>
 </div>
 <% if @pending_work_orders.empty? %>
   <p> Não existem ordens de serviço pendentes no momento.</p>
-<% end %> 
+<% end %>
 </section>
 

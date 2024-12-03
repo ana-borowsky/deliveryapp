@@ -1,6 +1,6 @@
-<section class='page-layout'>
+<section class='page-layout table'>
   <h2>Configurações de preço por distância percorrida</h2>
-  <div class='page-title-two-buttons'>
+  <div class='buttons'>
     <% if current_user.admin? %>
       <%= link_to 'Adicionar nova configuração', new_price_per_distance_configuration_path, class: 'button' %>
     <% end %>
@@ -9,7 +9,7 @@
     <p> Não existem configurações cadastradas. </p>
   <% end %>
 
-  <p>Tabela de preço por distância percorrida</p>
+  <h3>Tabela de preço por distância percorrida</h3>
   <table>
     <tr>
       <th>Intervalo de distância</th>

@@ -1,10 +1,8 @@
 <section class='page-layout'>
 <h2>Modalidades de Transporte</h2>
-<div class='page-title'>
 <% if current_user.admin? %>
   <%= link_to 'Adicionar nova modalidade de transporte', new_shipping_type_path, class: 'button' %>
 <% end %>
-</div>
 <div class="list">
 <% @shipping_types.each do |s| %>
   <div>

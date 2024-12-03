@@ -13,9 +13,9 @@
   </div>
   <div class='input-wrapper'>
     <%= f.label :shipping_type_id, 'Modalidade de transporte:' %>
-    <%= f.select :shipping_type_id, PricePerDistanceConfiguration.shipping_types_for_select %><br>
+    <%= f.select :shipping_type_id, PricePerDistanceConfiguration.shipping_types_for_select %>
   </div>
   <div>
-    <br><%= f.submit 'Salvar' %>
+    <%= f.submit 'Salvar' %>
   </div>
 <% end %>

@@ -13,14 +13,14 @@
       <div class="logo">
         <img src=<%= image_path('box.svg') %>>
         <div>
-          Frete<strong>Box</strong>
+          Shipping<strong>Box</strong>
         </div>
       </div>
+      <% if user_signed_in? %>
       <%= form_with(url: search_work_orders_path, method: :get, class: 'search-form') do |f| %>
         <%= f.text_field :query, placeholder: 'Insira o código da ordem de serviço', class: 'search-bar' %>
         <%= f.submit 'Buscar' %>
       <% end %>
-      <% if user_signed_in? %>
         <div class="logo">
           <span><%= current_user.description %></span>
           <%= button_to 'Log out', destroy_user_session_path, method: :delete %>
@@ -29,17 +29,16 @@
         <%= link_to 'Log in', new_user_session_path, class: 'button' %>
       <% end %>
     </div>
-    <nav>
-      <% if user_signed_in? %>
+    <% if user_signed_in? %>
+      <nav>
         <div class='menu-links'>
           <%= link_to 'Ordens de Serviço', work_orders_path, class: controller_name == 'work_orders' ? 'selected': '' %>
           <%= link_to 'Modalidades de Transporte', shipping_types_path, class: controller_name == 'shipping_types' ? 'selected': ''  %>
           <%= link_to 'Veículos', vehicles_path, class: controller_name == 'vehicles' ? 'selected': ''  %>
           <%= link_to 'Configurações', configurations_path, class: controller_name == 'configurations' ? 'selected': ''  %>
         </div>
-      <% end %>
-
-    </nav>
+      </nav>
+    <% end %>
   </header>
   <main>
     <div class='alert'>
