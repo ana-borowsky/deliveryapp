@@ -16,7 +16,7 @@ class WorkOrdersController < ApplicationController
     if @work_order.save()
       redirect_to work_orders_path, notice: 'Ordem de serviço cadastrada com sucesso!'
     else
-      flash.now[:notice] = 'Ordem de serviço NÃO cadastrada!'      
+      flash.now[:notice] = 'Ordem de serviço NÃO cadastrada!'
       render 'new'
     end
   end
@@ -54,7 +54,7 @@ class WorkOrdersController < ApplicationController
     @work_order = WorkOrder.find(params[:work_order_id])
     @work_order.shipping_type = ShippingType.find(params[:shipping_type_id])
     @work_order.price = @work_order.shipping_type.calculate_price(@work_order.distance, @work_order.product_weight)
-    if !@work_order.price 
+    if !@work_order.price
       redirect_to work_order_path(@work_order.id), notice: 'Não foi possível calcular o preço.'
       return
     end
@@ -130,7 +130,7 @@ class WorkOrdersController < ApplicationController
   def work_order_params
     params.require(:work_order).permit(:pickup_address, :delivery_address, :product_code, :product_weight, :distance, :date, :status, :shipping_type, :vehicle, :start_date, :end_date, :delay_cause)
   end
-  
+
   def set_work_order
     @work_order = WorkOrder.find(params[:id])
   end

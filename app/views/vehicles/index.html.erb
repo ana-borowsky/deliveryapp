@@ -1,23 +1,22 @@
 <section class='page-layout'>
 <h2>Veículos</h2>
-<div class='page-title-two-buttons'>
-<% if current_user.admin? %>
-  <%= link_to 'Adicionar novo veículo', new_vehicle_path, class: 'button' %>
-<% end %>
-<%= form_with(url: search_vehicles_path, method: :get) do |f| %>
-  <%= f.text_field :query_vehicle, placeholder: 'Placa do veículo', class: 'search-bar' %>
-  <%= f.submit 'Buscar' %>
-<% end %>
-</div>
-<div>
+  <% if current_user.admin? %>
+    <%= link_to 'Adicionar novo veículo', new_vehicle_path, class: 'button' %>
+  <% end %>
+  <%= form_with(url: search_vehicles_path, method: :get) do |f| %>
+    <%= f.text_field :query_vehicle, placeholder: 'Placa do veículo', class: 'search-bar' %>
+    <%= f.submit 'Buscar', class: 'search-button' %>
+  <% end %>
+
+<div class="list">
 <% @vehicles.each do |v| %>
-  <div>
+  <div class="list-item">
     <h3><%= v.manufacturer %> <%= v.model %> <%= link_to(v.license_plate, vehicle_path(v.id)) %> </h3>
       <dl>
-        <dt>Em manutenção: <%= I18n.translate(v.maintenance) %></dt>
-        <dt>Disponível: <%= I18n.translate(v.available && !v.maintenance) %></dt>
+        <dt><img src=<%= image_path('tool.svg') %>> Em manutenção: <%= I18n.translate(v.maintenance) %></dt>
+        <dt><img src=<%= image_path('check-circle.svg') %>>Disponível: <%= I18n.translate(v.available && !v.maintenance) %></dt>
       <dl>
-    </div>  
+    </div>
 <% end %>
 </div>
 

@@ -1,22 +1,22 @@
 <section class='page-layout'>
 <h2>Ordens de Serviço</h2>
-<div class='page-title-two-buttons'>
+<div class='buttons'>
   <% if current_user.admin? %>
     <%= link_to 'Adicionar nova ordem de serviço', new_work_order_path, class: 'button' %>
   <% end %>
   <%= link_to 'Mostrar ordens de serviço pendentes', pending_work_orders_path, class: 'button' %>
 </div>
-<div>
+<div class="list">
 <% @work_orders.each do |w| %>
-  <div>
+  <div class="list-item">
     <h3>Código: <%= link_to(w.code, work_order_path(w.id)) %> </h3>
       <dl>
-        <dt>Endereço de saída: <%= w.pickup_address %></dt>
-        <dt>Endereço de entrega: <%= w.delivery_address%></dt>
-        <dt>Código do produto: <%= w.product_code %>
-        <dt>Status: <%= I18n.translate(w.status) %> </dt>
+        <dt><img src=<%= image_path('log-out.svg') %>>Endereço de saída: <%= w.pickup_address %></dt>
+        <dt><img src=<%= image_path('log-in.svg') %>>Endereço de entrega: <%= w.delivery_address%></dt>
+        <dt><img src=<%= image_path('archive.svg') %>>Código do produto: <%= w.product_code %>
+        <dt><img src=<%= image_path('bar-chart-2.svg') %>>Status: <%= I18n.translate(w.status) %> </dt>
       <dl>
-  </div>  
+  </div>
 <% end %>
 </div>
 

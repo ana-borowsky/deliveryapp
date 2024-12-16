@@ -1,15 +1,13 @@
-<section class='page-layout'>
+<section class='page-layout table'>
   <h2>Configurações de prazo</h2>
-  <div class='page-title-two-buttons'>
     <% if current_user.admin? %>
       <%= link_to 'Adicionar nova configuração', new_delivery_time_configuration_path, class: 'button' %>
     <% end %>
-  </div>
   <% if @delivery_time_configurations.empty? %>
     <p> Não existem configurações cadastradas. </p>
   <% end %>
 
-  <p>Tabela de prazos</p>
+  <h3>Tabela de prazos</h3>
   <table>
     <tr>
       <th>Intervalo de distância</th>

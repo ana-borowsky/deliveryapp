@@ -6,13 +6,15 @@
     <%= link_to 'Editar', edit_shipping_type_path(@shipping_type.id), class: 'button' %>
   <% end %>
 </div>
-<div>
-  <strong>Distância mínima: </strong><%= @shipping_type.minimum_distance %>km<br>
-  <strong>Distância máxima: </strong><%= @shipping_type.maximum_distance %>km<br>
-  <strong>Peso mínimo: </strong><%= @shipping_type.minimum_weight/100 %>kg<br>
-  <strong>Peso máximo: </strong><%= @shipping_type.maximum_weight/100 %>kg<br>
-  <strong>Taxa: </strong><%= number_to_currency(@shipping_type.fee/100) %> <br>
-  <strong>Ativada: </strong><%= I18n.translate(@shipping_type.active.to_s) %> <br>
+<div class="list-item">
+  <dl>
+    <dt><img src=<%= image_path('arrow-down.svg')%>>Distância mínima: <%= @shipping_type.minimum_distance %>km</dt>
+    <dt><img src=<%= image_path('arrow-up.svg') %>>Distância máxima: <%= @shipping_type.maximum_distance %>km</dt>
+    <dt><img src=<%= image_path('arrow-down-circle.svg') %>>Peso mínimo: <%= @shipping_type.minimum_weight/100 %>kg</dt>
+    <dt><img src=<%= image_path('arrow-up-circle.svg') %>>Peso máximo: <%= @shipping_type.maximum_weight/100 %>kg</dt>
+    <dt><img src=<%= image_path('dollar-sign.svg') %>>Taxa: <%= number_to_currency(@shipping_type.fee/100) %> </dt>
+    <dt><img src=<%= image_path('bar-chart-2.svg') %>>Ativada: <%= I18n.translate(@shipping_type.active.to_s) %> </dt>
+  </dl>
 </div>
 </section>
 
