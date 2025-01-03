@@ -1,6 +1,10 @@
 # ShippingBox
 ShippingBox é um sistema de gerenciamento de fretes desenvolvido para o curso TreinaDev da CampusCode. O planejamento para o projeto encontra-se em um PDF dentro da pasta "docs". É um sistema completo em Ruby on Rails.
 
+![Captura de tela 2025-01-03 123651](https://github.com/user-attachments/assets/35bd8a37-17f8-4c77-999f-2cd0f22634cf)
+![Captura de tela 2025-01-03 123749](https://github.com/user-attachments/assets/08684b1f-1974-49f5-b61f-22d9fcb3c0f0)
+![Captura de tela 2025-01-03 123651](https://github.com/user-attachments/assets/17e3ce15-eff8-48ba-a45b-10aa3a5033a0)
+
 ## Acesso ao sistema
 Usuário padrão:
 - Email: ana@sistemadefrete.com.br
